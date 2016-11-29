@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>KyneSilverhide</title>
+  <subtitle>Sharing some of my developper experiences to the world</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://kynesilverhide.github.io/"/>
+  <updated>2016-11-29T20:08:53.788Z</updated>
+  <id>http://kynesilverhide.github.io/</id>
+  
+  <author>
+    <name>KyneSilverhide</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World, and building your own blog</title>
+    <link href="http://kynesilverhide.github.io/2016/11/26/Hello-World/"/>
+    <id>http://kynesilverhide.github.io/2016/11/26/Hello-World/</id>
+    <published>2016-11-26T13:27:16.000Z</published>
+    <updated>2016-11-29T20:08:53.788Z</updated>
+    
+    <content type="html"><![CDATA[<p>Hi ! I’m Aurélien, but you’ll find me around on the web as Kyne, or KyneSilverhide. I’m a developer from Belgium (yes, we have beer and chocolate).</p>
+<p>I’ve recently learned about <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>, a very powerful tool to build “static blogs”, using <a href="https://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a> and some command lines. As most developers should know, the best way to test or learn something is by using it in a real project. That’s why I’ve decided to start this blog mostly about programming stuff, and technologies.</p>
+<p>In this very first post, I’ll show you how to install Hexo for you own blog, and host it on <a href="https://github.com/" target="_blank" rel="external">Github</a> (for free, of course).<br>Also, English is not my main language, so I hope everything will be as smooth as possible.</p>
+<a id="more"></a>
+<h1 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h1><h2 id="Create-your-account"><a href="#Create-your-account" class="headerlink" title="Create your account"></a>Create your account</h2><p>Any developer should already know about Github. Basically, it will host your source code for free, and keep an history of changes using a version control system called <a href="https://git-scm.com/" target="_blank" rel="external">Git</a> (we may talk about this later…). Fortunately, you don’t need to know GIT in this case, because Hexo has already automated everything for you, so you can focus on writing content.<br>So, head over to <a href="https://github.com/" target="_blank" rel="external">https://github.com/</a>, create an account, and we’ll meet again in the next section.</p>
+<h2 id="Creating-your-first-repository"><a href="#Creating-your-first-repository" class="headerlink" title="Creating your first repository"></a>Creating your first repository</h2><p>Once your account is created, we’ll create a repository to store our website. But we won’t build a basic repository. Instead, we’ll use a “new” functionality from Github called <a href="https://pages.github.com/" target="_blank" rel="external">Githut Pages</a>. I won’t go into the details, but this will allow your blog (or website) to be accessible at “<a href="http://username.github.io" target="_blank" rel="external">http://username.github.io</a>“. As long as you only hosts static pages and assets (javascript, css, pictures…), everything is taken care of.</p>
+<p>Your repository <strong>must</strong> be called “username.github.io” (where username is your github username). From my experience, it’s seems case-insensitive.<br>Once created, we’ll need to download it on your computer. And to achieve that, we need to install Git.</p>
+<ul>
+<li>For windows users, the installation can be downloaded here : <a href="https://git-scm.com/download/win" target="_blank" rel="external">https://git-scm.com/download/win</a></li>
+<li>For UNIX users, you should easily find the installation steps here : <a href="https://git-scm.com/download/linux" target="_blank" rel="external">https://git-scm.com/download/linux</a></li>
+<li>For MAC users, head over to this page : <a href="https://git-scm.com/download/mac" target="_blank" rel="external">https://git-scm.com/download/mac</a></li>
+</ul>
+<p>Once Git is installed, open a terminal (or Git-Bash on windows), and go to your workspace (If you don’t have one, just pick a folder somewhere on your computer)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /path/to/my/workspace</div><div class="line">git clone https://github.com/username/username.github.io</div><div class="line">cd username.github.io</div></pre></td></tr></table></figure></p>
+<p><em>(don’t forget to replace “username” with your github username)</em></p>
+<p>Using any text editor or IDE, create a new file called index.html inside the newly created folder, and fill it with anything your want (as long as it’s valid HTML.. of course)<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World<span class="tag">&lt;<span class="name">h1</span>&gt;</span></div><div class="line">This is my website hosted on Github pages</div></pre></td></tr></table></figure></p>
+<p>And then, in order to publish everything on Github, we’ll need to type some GIT commands. Don’t worry, it’s the only time.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git add --all</div><div class="line">git commit -m &quot;Initial commit&quot;</div><div class="line">git push -u origin master</div></pre></td></tr></table></figure></p>
+<p>If you have already worked with any other VCS <em>(Version Control System)</em>, these commands may look familiar. The main difference between Git and SVN or CVS is that you first have to “commit” your changes to a local repository, and then “push” everything to the remote server.</p>
+<p>You should now be able to access your website in your favorite web browser by accessing this URL : <a href="http://username.github.io" target="_blank" rel="external">http://username.github.io</a></p>
+<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><h1 id="Installing-Node-and-NPM"><a href="#Installing-Node-and-NPM" class="headerlink" title="Installing Node and NPM"></a>Installing Node and NPM</h1><p>Ok, if you are still reading this, let’s continue with <a href="https://nodejs.org/en/" target="_blank" rel="external">Node</a> and <a href="https://www.npmjs.com/" target="_blank" rel="external">NPM</a>. NPM is nothing more than a package manager. It will help you install program, libraries, etc.. and handle dependencies.</p>
+<p>Go to <a href="https://nodejs.org/en/download/" target="_blank" rel="external">https://nodejs.org/en/download/</a> and choose the proper installer for your operating system (Node comes with NPM installed). If you are using windows, you should continue using <em>Git-Bash</em> as your terminal (it emulates some features from Unix-based terminals). <a href="http://cmder.net/" target="_blank" rel="external">Cmder</a> is another great terminal on Windows that you may consider using for this tutorial.</p>
+<h1 id="Installing-Hexo"><a href="#Installing-Hexo" class="headerlink" title="Installing Hexo"></a>Installing Hexo</h1><p>Once Node is installed, let’s finally start installing Hexo. (<em>On UNIX environments, you will need to run this command as the administrator</em>)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g</div></pre></td></tr></table></figure></p>
+<p>Now, somewhere in your workspace, let’s setup a new folder that will contain your blog</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cd /path/to/my/workspace</div><div class="line">hexo init blog</div><div class="line">cd blog</div><div class="line">npm install</div></pre></td></tr></table></figure>
+<h1 id="Configuring-the-blog"><a href="#Configuring-the-blog" class="headerlink" title="Configuring the blog"></a>Configuring the blog</h1><p>The first step is to change the basic configuration defined in <code>_config.yml</code> (by the way, .yml files, for <a href="http://yaml.org/" target="_blank" rel="external">YAML</a>, are just plain text files using indentation to define the structure. With XML and JSON, these are the main formats for configuration files)</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="attr">title:</span> My awesome blog</div><div class="line"><span class="attr">subtitle:</span> Made with Hexo</div><div class="line"><span class="attr">description:</span> Some more text</div><div class="line"><span class="attr">author:</span> KyneSilverhide</div><div class="line"><span class="attr">language:</span> en</div><div class="line"><span class="attr">timezone:</span> Europe/Brussels</div><div class="line"></div><div class="line"><span class="attr">url:</span> http://username.github.io</div><div class="line"><span class="attr">root:</span> /</div><div class="line"><span class="attr">permalink:</span> :year/:month/:day/:title/</div><div class="line"><span class="attr">permalink_defaults:</span></div></pre></td></tr></table></figure>
+<p>Everything else can be left with the default values.</p>
+<h1 id="Creating-a-post"><a href="#Creating-a-post" class="headerlink" title="Creating a post"></a>Creating a post</h1><p>Save the configuration file, and go back to the terminal. Let’s write our first post.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new post &quot;My first post&quot;</div></pre></td></tr></table></figure></p>
+<p>All your posts are created inside the <code>source/_posts</code> folder. Open the <code>.md</code> file (for Markdown) matching your post title, and edit it.</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: My first post</div><div class="line">date: 2016-11-26 14:27:16</div><div class="line">tags: [blog]</div><div class="line"><span class="section">categories: [Blog]</span></div><div class="line">---</div><div class="line">This is my first post ! I'm so happy.</div></pre></td></tr></table></figure>
+<p>Note : some themes may allow additional elements, such as a thumbnail, a banner, etc.<br>Tags and categories may not be shown depending on your theme, but it seems to be a good practice to fill them. If you want to add multiple tags or categories, just put a <code>,</code> between each.</p>
+<p>Ok, now that we have some content, we want to preview it before deploying everything to Github. But if you remember right, Hexo is a tool used to build <em>static blogs</em>. This means we have to “build” our site first, using this simple command :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate</div></pre></td></tr></table></figure></p>
+<p>You’ll see some files being created or updated, and then you are done. Now, let’s see a preview. Another great feature with Hexo, is that you don’t need to setup a web server such as Apache. You just have to run this command :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">hexo server</div><div class="line"></div><div class="line">INFO  Start processing</div><div class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</div></pre></td></tr></table></figure>
+<p>Open the given url <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> in your browser, and you should see your first post !</p>
+<p>If you want to know more about the Markdown syntax that you can use in your posts, just head over to this <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code" target="_blank" rel="external">Markdown CheatSheet</a>.<br>This syntax can also be used in some Wikis and other tools.</p>
+<h1 id="Publishing-it-to-Github"><a href="#Publishing-it-to-Github" class="headerlink" title="Publishing it to Github"></a>Publishing it to Github</h1><p>If everything works fine, it’s time to show your blog to the world. Let’s start by some configuration. Open <code>_config.yml</code>, and change this part</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> git</div><div class="line"><span class="attr">  repository:</span> https://github.com/username/username.github.io.git</div><div class="line"><span class="attr">  branch:</span> master</div></pre></td></tr></table></figure>
+<p>Of course, you have to change “username” with your Github account.<br>Don’t forget that you need to generate your blog content before deploying it. You have three options</p>
+<p><strong>Manually generating and then deploying</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo generate</div><div class="line">hexo deploy</div></pre></td></tr></table></figure></p>
+<p><strong>Using any of these two shortcuts</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate --deploy</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy --generate</div></pre></td></tr></table></figure>
+<p>During the deployment, you’ll be asked for your Github login and password. Fill them in, and the deployment process should continue.<br>This will also remove the test <code>index.html</code> that we wrote at the beginning of this tutorial. Don’t worry, we won’t need it anymore.</p>
+<p>Your blog should now be accessible at <a href="http://username.github.io" target="_blank" rel="external">http://username.github.io</a>. Congratulations !</p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>Now that we have do so many awesome things <em>(yes, auto-congratulation is very important as a developer)</em>, let’s take a step back and list what we have accomplished today.</p>
+<ul>
+<li>First, we have created a <strong>Github</strong> account to host our blog. But Github is also one of the best solution to host the source code of all your projects, so feel free to check their website.</li>
+<li>Then, we use some <strong>Git</strong> commands to send our test page to Github. Git is also a very famous tool (and my favorite VCS), but it can be hard to master, so I only scratched the surface in this blog. You should find some more tutorials on Github, or around the web.</li>
+<li>After this, we installed <strong>Node</strong> and <strong>NPM</strong>. If you are a web developer, you should already have these installed. There are so many libraries, projects and applications built on top of node, and available through NPM. But be aware that NPM seems to download the whole Internet each time you use it.</li>
+<li>The next step was to Install Hexo, and write some content. If you want to continue your blog, I recommend you to browse some of the <a href="https://hexo.io/themes/" target="_blank" rel="external">Hexo Themes</a>, learn more about <strong>Markdown</strong>, or read the <a href="https://hexo.io/docs/" target="_blank" rel="external">Hexo Documentation</a></li>
+<li>Lastly, we published our blog to Github. Feel free to test it on your tablet or mobile phone too !</li>
+</ul>
+<p>This concludes my first post. I hope that this tutorial have taught you something, or helped you somehow, and we’ll meet again in the next post !</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Hi ! I’m Aurélien, but you’ll find me around on the web as Kyne, or KyneSilverhide. I’m a developer from Belgium (yes, we have beer and chocolate).&lt;/p&gt;
+&lt;p&gt;I’ve recently learned about &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;, a very powerful tool to build “static blogs”, using &lt;a href=&quot;https://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt; and some command lines. As most developers should know, the best way to test or learn something is by using it in a real project. That’s why I’ve decided to start this blog mostly about programming stuff, and technologies.&lt;/p&gt;
+&lt;p&gt;In this very first post, I’ll show you how to install Hexo for you own blog, and host it on &lt;a href=&quot;https://github.com/&quot;&gt;Github&lt;/a&gt; (for free, of course).&lt;br&gt;Also, English is not my main language, so I hope everything will be as smooth as possible.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Programming" scheme="http://kynesilverhide.github.io/categories/Programming/"/>
+    
+      <category term="Hexo" scheme="http://kynesilverhide.github.io/categories/Programming/Hexo/"/>
+    
+    
+      <category term="blog" scheme="http://kynesilverhide.github.io/tags/blog/"/>
+    
+      <category term="hexo" scheme="http://kynesilverhide.github.io/tags/hexo/"/>
+    
+      <category term="github" scheme="http://kynesilverhide.github.io/tags/github/"/>
+    
+      <category term="git" scheme="http://kynesilverhide.github.io/tags/git/"/>
+    
+      <category term="markdown" scheme="http://kynesilverhide.github.io/tags/markdown/"/>
+    
+      <category term="node" scheme="http://kynesilverhide.github.io/tags/node/"/>
+    
+      <category term="npm" scheme="http://kynesilverhide.github.io/tags/npm/"/>
+    
+  </entry>
+  
+</feed>
