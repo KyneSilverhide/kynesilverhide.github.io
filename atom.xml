@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kynesilverhide.github.io/"/>
-  <updated>2016-11-29T20:08:53.788Z</updated>
+  <updated>2016-12-01T20:06:46.797Z</updated>
   <id>http://kynesilverhide.github.io/</id>
   
   <author>
@@ -14,6 +14,76 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Discovering and installing Ubuntu in VirtualBox (Part 1)</title>
+    <link href="http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/"/>
+    <id>http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/</id>
+    <published>2016-11-30T18:41:26.000Z</published>
+    <updated>2016-12-01T20:06:46.797Z</updated>
+    
+    <content type="html"><![CDATA[<p>If you are working as a developer, if you have some technical background, or simply if you label yourself as a bit geeky, you are probably aware that Windows is not the only operating system in the world (this is especially true if you are reading this blog on a Mac). Even your smartphone is probably running on Android instead of Windows (Phone).</p>
+<p>Arguing about the best of them is pointless. Each one of them has pros and cons, from their price to their “user-friendliness”.</p>
+<p> My goal in this post will be to show you Ubuntu, a free and open-source operating system based on Linux, and convince you that it is a very solid alternative to Windows <em>as a development environment</em>, that it’s easy to setup, easy to use, and completely free. And to achieve that, I will show you how to install it without running a single command in terminal, and without any risk of losing your data.</p>
+<p> <em>Note that this tutorial will be split into multiple posts. This one is the first part.</em></p>
+<a id="more"></a>
+<h1 id="What-is-Ubuntu"><a href="#What-is-Ubuntu" class="headerlink" title="What is Ubuntu"></a>What is Ubuntu</h1><p>Ok, so first, you probably want to learn more about Ubuntu. Why did I choose this operating system (OS)? What does it do?<br>I’ll start by quoting <a href="https://en.wikipedia.org/wiki/Ubuntu_(operating_system" target="_blank" rel="external">Wikipedia</a>) :</p>
+<blockquote>
+<p>Ubuntu is a Debian-based Linux operating system for personal computers, tablets and smartphones where Ubuntu Touch edition is used; and also runs network servers, usually with the Ubuntu Server edition, either on physical or virtual servers (such as on mainframes) and/or with containers, that is with enterprise-class features; runs on the most popular architectures, including server-class ARM-based.</p>
+</blockquote>
+<p>Yes.. that seems very technical, and not useful at all. So let’s split this information.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Linux" target="_blank" rel="external">Linux</a> is a UNIX-like operating system : it shares a common base with MacOS and other operating systems, but this one is based on a free and open-source model. Also, this is actually a very basic OS on top of which other elements are built.</li>
+<li><a href="https://en.wikipedia.org/wiki/Debian" target="_blank" rel="external">Debian</a> is what we will call a Linux distribution. Simply put, it’s a set of programs packaged together to build a fully functional OS. We could install Debian as it is, but we want something a little bit more user friendly and “cool”</li>
+<li><a href="https://www.ubuntu.com/" target="_blank" rel="external">Ubuntu</a> is based on Debian. You could see it as some kind of an “experimental” version of Debian, with more updates and recent features. But fear not, it’s actually quite stable</li>
+</ul>
+<h2 id="But-what-does-it-looks-like"><a href="#But-what-does-it-looks-like" class="headerlink" title="But what does it looks like?"></a>But what does it looks like?</h2><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/ubuntu-desktop.png" alt="Ubuntu desktop with Firefox, Rythmbox, a terminal and the file explorer" title="Ubuntu desktop with Firefox, Rythmbox, a terminal and the file explorer">
+<p>As you can see, this is not an obscure <em>ASCII</em> terminal in black and white, and it’s not the Matrix either.</p>
+<h2 id="And-why-would-I-need-it"><a href="#And-why-would-I-need-it" class="headerlink" title="And why would I need it?"></a>And why would I need it?</h2><p>As I said in the introduction, the goal is to install a very powerful development environment. Because let’s face it, while Windows will get the job done, it’s not the most efficient (it could actually be the worst of all) when it comes to pure development (especially coding). If you have read my first post on <a href="/2016/11/26/Hello-World/">how to install <em>Hexo</em></a>, you probably saw that installing something on Mac and Linux (I will say “Linux” when I’m referring to Unix-based operating system that are not MacOS) is most of the time done by running the proper command, while windows requires a dedicated installer that won’t integrate everything as smoothly.</p>
+<p>I will always try to add alternatives for Windows users on my next posts, but you should really give Ubuntu a try if you want to invest some time in custom projects at home.</p>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>When installing Ubuntu, you basically have three options</p>
+<ul>
+<li>Installing it on top of windows, losing all your files and programs (if you own an old laptop that you were planning to trash for example, it could be the easiest solution)</li>
+<li>Installing it next to windows, by splitting your hard drive into two partitions (or more)</li>
+<li>Installing it in a virtual environment</li>
+</ul>
+<p>In this post, we’ll cover the third option and install <a href="https://www.virtualbox.org/" target="_blank" rel="external">VirtualBox</a> to host our virtual OS.<br>Just go to <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="external">https://www.virtualbox.org/wiki/Downloads</a> and choose the “Windows hosts” or “OSX (Mac) hosts” (if you are already on another Linux distribution, it’s also possible, but I think you already know all the details).</p>
+<p>Install VirtualBox as any other software and start it.</p>
+<h3 id="Creating-the-machine"><a href="#Creating-the-machine" class="headerlink" title="Creating the machine"></a>Creating the machine</h3><p>The first step is to create a new virtual machine. Just click the “New” button in the top left corner.<br>This will start an assistant to help you setup your virtual machine. Let’s do this together</p>
+<p>First, you’ll have to choose a name for your machine. Pick anything you want, but don’t forget to select the proper type and version (Linux and Ubuntu 64)<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/vbox_install01.PNG" alt="Installation Step 1" title="Installation Step 1"></p>
+<p>Keep the default values for the memory, we’ll adjust it later. Click next, and choose to create a new virtual hard disk now. This will create a big file on your disk that contains the whole system.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/vbox_install02.PNG" alt="Installation Step 2" title="Installation Step 2"></p>
+<p>For every other steps, keep the default values. If you wish, you can use a “fixed sized” disk to create one single big file <em>(I choosed this option)</em>. We’ll continue tweaking the machine once it’s created. For the disk size, I recommend using at least 8 to 10 Gb.</p>
+<h3 id="Tweaking-the-machine"><a href="#Tweaking-the-machine" class="headerlink" title="Tweaking the machine"></a>Tweaking the machine</h3><p>Once the machine is created, select it, and click on “Settings”.</p>
+<p>Go to <em>System</em>. For the RAM, I decided to use half my RAM (4Gb/8Gb). You shouldn’t need more than 4Gb anyway.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/vbox_config01.PNG" alt="Configuration Step 1" title="Configuration Step 1"></p>
+<p>Go to the next tab, and try to use as many CPUs as available (don’t go into the red part of the slider)<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/vbox_config02.PNG" alt="Configuration Step 2" title="Configuration Step 2"></p>
+<p>Next tab. Use the same settings as the one from this screenshot.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/vbox_config03.PNG" alt="Configuration Step 3" title="Configuration Step 3"></p>
+<p>You can now open the <em>Display</em> section. Move the slider to the right until you reach 128mb.. or lower if your graphic card is old.<br>Right now, I’ve disabled 3D acceleration because it causes some problem in a virtual environment (you can’t take screenshots for example).<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/vbox_config04.PNG" alt="Configuration Step 4" title="Configuration Step 4"><br>I also manually changed some configuration file to use 256Mb. Without 3D acceleration, I don’t think it will matter much, but if you want, simply edit the <code>.vbox</code> file (right click on your virtual machine and select “Show in Explorer”) with any text editor, and change the following row :<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Display</span> <span class="attr">VRAMSize</span>=<span class="string">"256"</span> <span class="attr">monitorCount</span>=<span class="string">"1"</span> <span class="attr">accelerate3D</span>=<span class="string">"false"</span> <span class="attr">accelerate2DVideo</span>=<span class="string">"false"</span>/&gt;</span></div></pre></td></tr></table></figure></p>
+<p>Lastly, I only managed to have proper audio by using <em>Intel HD Audio</em>. You can try other settings if you want.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/vbox_config05.PNG" alt="Configuration Step 5" title="Configuration Step 5"></p>
+<h2 id="What’s-next"><a href="#What’s-next" class="headerlink" title="What’s next ?"></a>What’s next ?</h2><p>I’m sorry, but we have reached the end of this first part. Don’t worry, next part will follow quickly.<br>You now have a properly setup virtual machine, but it’s still empty. In the next post, we’ll install Ubuntu together, and I will keep my promise : we won’t use any terminal.</p>
+<p>To prepare for this next post, you can start downloading Ubuntu 64 here : <a href="https://www.ubuntu.com/download/desktop" target="_blank" rel="external">https://www.ubuntu.com/download/desktop</a><br>Click on <em>Download</em>, and then, decide if you want to pay or not by adjusting the sliders. Don’t feel ashamed to use it for free.<br>You won’t need any additional software to use the download <code>.iso</code> file, VirtualBox will take care of it.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;If you are working as a developer, if you have some technical background, or simply if you label yourself as a bit geeky, you are probably aware that Windows is not the only operating system in the world (this is especially true if you are reading this blog on a Mac). Even your smartphone is probably running on Android instead of Windows (Phone).&lt;/p&gt;
+&lt;p&gt;Arguing about the best of them is pointless. Each one of them has pros and cons, from their price to their “user-friendliness”.&lt;/p&gt;
+&lt;p&gt; My goal in this post will be to show you Ubuntu, a free and open-source operating system based on Linux, and convince you that it is a very solid alternative to Windows &lt;em&gt;as a development environment&lt;/em&gt;, that it’s easy to setup, easy to use, and completely free. And to achieve that, I will show you how to install it without running a single command in terminal, and without any risk of losing your data.&lt;/p&gt;
+&lt;p&gt; &lt;em&gt;Note that this tutorial will be split into multiple posts. This one is the first part.&lt;/em&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Operating System" scheme="http://kynesilverhide.github.io/categories/Operating-System/"/>
+    
+    
+      <category term="ubuntu" scheme="http://kynesilverhide.github.io/tags/ubuntu/"/>
+    
+      <category term="virtualbox" scheme="http://kynesilverhide.github.io/tags/virtualbox/"/>
+    
+      <category term="unity" scheme="http://kynesilverhide.github.io/tags/unity/"/>
+    
+      <category term="unix" scheme="http://kynesilverhide.github.io/tags/unix/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World, and building your own blog</title>
