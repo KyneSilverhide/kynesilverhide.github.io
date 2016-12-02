@@ -1,575 +1,705 @@
 <!DOCTYPE html>
 <html lang=en>
+
 <head>
-    <meta charset="utf-8">
-    
-    <title>Hello World, and building your own blog | KyneSilverhide</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Hi ! I’m Aurélien, but you’ll find me around on the web as Kyne, or KyneSilverhide. I’m a developer from Belgium (yes, we have beer and chocolate).
+  <meta charset="utf-8">
+
+  <title>Hello World, and building your own blog | KyneSilverhide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="description" content="Hi ! I’m Aurélien, but you’ll find me around on the web as Kyne, or KyneSilverhide. I’m a developer from Belgium (yes, we have beer and chocolate).
 I’ve recently learned about Hexo, a very powerful to">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hello World, and building your own blog">
-<meta property="og:url" content="http://kynesilverhide.github.io/2016/11/26/Hello-World/index.html">
-<meta property="og:site_name" content="KyneSilverhide">
-<meta property="og:description" content="Hi ! I’m Aurélien, but you’ll find me around on the web as Kyne, or KyneSilverhide. I’m a developer from Belgium (yes, we have beer and chocolate).
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Hello World, and building your own blog">
+  <meta property="og:url" content="http://kynesilverhide.github.io/2016/11/26/Hello-World/index.html">
+  <meta property="og:site_name" content="KyneSilverhide">
+  <meta property="og:description" content="Hi ! I’m Aurélien, but you’ll find me around on the web as Kyne, or KyneSilverhide. I’m a developer from Belgium (yes, we have beer and chocolate).
 I’ve recently learned about Hexo, a very powerful to">
-<meta property="og:image" content="http://kynesilverhide.github.io/images/thumb_blog.PNG">
-<meta property="og:updated_time" content="2016-11-29T20:08:53.788Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World, and building your own blog">
-<meta name="twitter:description" content="Hi ! I’m Aurélien, but you’ll find me around on the web as Kyne, or KyneSilverhide. I’m a developer from Belgium (yes, we have beer and chocolate).
+  <meta property="og:image" content="http://kynesilverhide.github.io/images/thumb_blog.PNG">
+  <meta property="og:updated_time" content="2016-11-29T20:08:53.788Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hello World, and building your own blog">
+  <meta name="twitter:description" content="Hi ! I’m Aurélien, but you’ll find me around on the web as Kyne, or KyneSilverhide. I’m a developer from Belgium (yes, we have beer and chocolate).
 I’ve recently learned about Hexo, a very powerful to">
-<meta name="twitter:image" content="http://kynesilverhide.github.io/images/thumb_blog.PNG">
-    
-
-    
-
-    
-
-    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/libs/open-sans/styles.css">
-    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-
-    <link rel="stylesheet" href="/css/style.css">
-
-    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
-    
-    
-        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-    
-    
-        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-    
-    
-    
-    
+  <meta name="twitter:image" content="http://kynesilverhide.github.io/images/thumb_blog.PNG">
 
 
+
+
+
+
+  <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/libs/open-sans/styles.css">
+  <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+
+
+  <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
 </head>
 
 <body>
-    <div id="container">
-        <header id="header">
-    <div id="header-main" class="header-inner">
+  <div id="container">
+    <header id="header">
+      <div id="header-main" class="header-inner">
         <div class="outer">
-            <a href="/" id="logo">
-                <i class="logo"></i>
-                <span class="site-title">KyneSilverhide</span>
-            </a>
-            <nav id="main-nav">
-                
-                    <a class="main-nav-link" href="/.">Home</a>
-                
-                    <a class="main-nav-link" href="/archives">Archives</a>
-                
-                    <a class="main-nav-link" href="/categories">Categories</a>
-                
-                    <a class="main-nav-link" href="/tags">Tags</a>
-                
-            </nav>
-            
-                
-                <nav id="sub-nav">
-                    <div class="profile" id="profile-nav">
-                        <a id="profile-anchor" href="javascript:;">
-                            <img class="avatar" src="https://www.gravatar.com/avatar/7eb59f97f7c777721a1d5385474c0e04" />
-                            <i class="fa fa-caret-down"></i>
-                        </a>
-                    </div>
-                </nav>
-            
-            <div id="search-form-wrap">
+          <a href="/" id="logo">
+            <i class="logo"></i>
+            <span class="site-title">KyneSilverhide</span>
+          </a>
+          <nav id="main-nav">
 
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
-<script src="/js/insight.js"></script>
+            <a class="main-nav-link" href="/.">Home</a>
 
-</div>
+            <a class="main-nav-link" href="/archives">Archives</a>
+
+            <a class="main-nav-link" href="/categories">Categories</a>
+
+            <a class="main-nav-link" href="/tags">Tags</a>
+
+          </nav>
+
+
+          <nav id="sub-nav">
+            <div class="profile" id="profile-nav">
+              <a id="profile-anchor" href="javascript:;">
+                <img class="avatar" src="https://www.gravatar.com/avatar/7eb59f97f7c777721a1d5385474c0e04" />
+                <i class="fa fa-caret-down"></i>
+              </a>
+            </div>
+          </nav>
+
+          <div id="search-form-wrap">
+
+            <form class="search-form">
+              <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+              <button type="submit" class="search-form-submit"></button>
+            </form>
+            <div class="ins-search">
+              <div class="ins-search-mask"></div>
+              <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                  <input type="text" class="ins-search-input" placeholder="Type something..." />
+                  <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+                </div>
+                <div class="ins-section-wrapper">
+                  <div class="ins-section-container"></div>
+                </div>
+              </div>
+            </div>
+            <script>
+              (function(window) {
+                var INSIGHT_CONFIG = {
+                  TRANSLATION: {
+                    POSTS: 'Posts',
+                    PAGES: 'Pages',
+                    CATEGORIES: 'Categories',
+                    TAGS: 'Tags',
+                    UNTITLED: '(Untitled)',
+                  },
+                  ROOT_URL: '/',
+                  CONTENT_URL: '/content.json',
+                };
+                window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+              })(window);
+            </script>
+            <script src="/js/insight.js"></script>
+
+          </div>
         </div>
-    </div>
-    <div id="main-nav-mobile" class="header-sub header-inner">
+      </div>
+      <div id="main-nav-mobile" class="header-sub header-inner">
         <table class="menu outer">
-            <tr>
-                
-                    <td><a class="main-nav-link" href="/.">Home</a></td>
-                
-                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
-                
-                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
-                
-                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
-                
-                <td>
-                    
-    <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
-    </div>
+          <tr>
 
-                </td>
-            </tr>
+            <td><a class="main-nav-link" href="/.">Home</a></td>
+
+            <td><a class="main-nav-link" href="/archives">Archives</a></td>
+
+            <td><a class="main-nav-link" href="/categories">Categories</a></td>
+
+            <td><a class="main-nav-link" href="/tags">Tags</a></td>
+
+            <td>
+              <div class="search-form">
+                <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+              </div>
+            </td>
+          </tr>
         </table>
-    </div>
-</header>
+      </div>
+    </header>
+    <div class="outer">
 
-        <div class="outer">
-            
-                
-
-<aside id="profile">
-    <div class="inner profile-inner">
-        <div class="base-info profile-block">
+      <aside id="profile">
+        <div class="inner profile-inner">
+          <div class="base-info profile-block">
             <img id="avatar" src="https://www.gravatar.com/avatar/7eb59f97f7c777721a1d5385474c0e04?s=128" />
             <h2 id="name">KyneSilverhide</h2>
             <h3 id="title">Java and Javascript software developper</h3>
             <span id="location"><i class="fa fa-map-marker"></i>Mons, Belgium</span>
             <a id="follow" target="_blank" href="https://github.com/kynesilverhide/">FOLLOW</a>
-        </div>
-        <div class="article-info profile-block">
+          </div>
+          <div class="article-info profile-block">
             <div class="article-info-block">
-                2
-                <span>posts</span>
+              3
+              <span>posts</span>
             </div>
             <div class="article-info-block">
-                11
-                <span>tags</span>
+              11
+              <span>tags</span>
             </div>
-        </div>
-        
-        <div class="profile-block social-links">
+          </div>
+
+          <div class="profile-block social-links">
             <table>
-                <tr>
-                    
-                    
-                    <td>
-                        <a href="https://github.com/kynesilverhide/" target="_blank" title="github" class=tooltip>
-                            <i class="fa fa-github"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="https://twitter.com/ALansmanne" target="_blank" title="twitter" class=tooltip>
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </td>
-                    
-                    <td>
-                        <a href="https://www.youtube.com/user/SilverhideKyne" target="_blank" title="youtube" class=tooltip>
-                            <i class="fa fa-youtube"></i>
-                        </a>
-                    </td>
-                    
-                </tr>
+              <tr>
+
+
+                <td>
+                  <a href="https://github.com/kynesilverhide/" target="_blank" title="github" class=tooltip>
+                    <i class="fa fa-github"></i>
+                  </a>
+                </td>
+
+                <td>
+                  <a href="https://twitter.com/ALansmanne" target="_blank" title="twitter" class=tooltip>
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </td>
+
+                <td>
+                  <a href="https://www.youtube.com/user/SilverhideKyne" target="_blank" title="youtube" class=tooltip>
+                    <i class="fa fa-youtube"></i>
+                  </a>
+                </td>
+
+              </tr>
             </table>
+          </div>
+
         </div>
-        
-    </div>
-</aside>
+      </aside>
 
-            
-            <section id="main"><article id="post-Hello-World" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            
-	
-		<img src="/images/banner_blog.PNG" class="article-banner" />
-	
+      <section id="main">
+        <article id="post-Hello-World" class="article article-type-post" itemscope itemprop="blogPost">
+          <div class="article-inner">
+
+            <img src="/images/banner_blog.PNG" class="article-banner" />
 
 
-
-        
-        
             <header class="article-header">
-                
-    
-        <h1 class="article-title" itemprop="name">
-            Hello World, and building your own blog
-        </h1>
-    
+              <h1 class="article-title" itemprop="name">
+                Hello World, and building your own blog
+              </h1>
 
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/11/26/Hello-World/">
-            <time datetime="2016-11-26T13:27:16.000Z" itemprop="datePublished">2016-11-26</time>
-        </a>
-    </div>
+              <div class="article-meta">
+                <div class="article-date">
+                  <i class="fa fa-calendar"></i>
+                  <a href="/2016/11/26/Hello-World/">
+                    <time datetime="2016-11-26T13:27:16.000Z" itemprop="datePublished">2016-11-26</time>
+                  </a>
+                </div>
+                <div class="article-category">
+                  <i class="fa fa-folder"></i>
+                  <a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Hexo/">Hexo</a>
+                </div>
+                <div class="article-tag">
+                  <i class="fa fa-tag"></i>
+                  <a class="tag-link" href="/tags/blog/">blog</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/github/">github</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>, <a class="tag-link" href="/tags/markdown/">markdown</a>,
+                  <a class="tag-link" href="/tags/node/">node</a>, <a class="tag-link" href="/tags/npm/">npm</a>
+                </div>
+              </div>
 
-
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Hexo/">Hexo</a>
-    </div>
-
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/blog/">blog</a>, <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/github/">github</a>, <a class="tag-link" href="/tags/hexo/">hexo</a>, <a class="tag-link" href="/tags/markdown/">markdown</a>, <a class="tag-link" href="/tags/node/">node</a>, <a class="tag-link" href="/tags/npm/">npm</a>
-    </div>
-
-                    </div>
-                
             </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>Hi ! I’m Aurélien, but you’ll find me around on the web as Kyne, or KyneSilverhide. I’m a developer from Belgium (yes, we have beer and chocolate).</p>
-<p>I’ve recently learned about <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>, a very powerful tool to build “static blogs”, using <a href="https://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a> and some command lines. As most developers should know, the best way to test or learn something is by using it in a real project. That’s why I’ve decided to start this blog mostly about programming stuff, and technologies.</p>
-<p>In this very first post, I’ll show you how to install Hexo for you own blog, and host it on <a href="https://github.com/" target="_blank" rel="external">Github</a> (for free, of course).<br>Also, English is not my main language, so I hope everything will be as smooth as possible.</p>
-<a id="more"></a>
-<h1 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h1><h2 id="Create-your-account"><a href="#Create-your-account" class="headerlink" title="Create your account"></a>Create your account</h2><p>Any developer should already know about Github. Basically, it will host your source code for free, and keep an history of changes using a version control system called <a href="https://git-scm.com/" target="_blank" rel="external">Git</a> (we may talk about this later…). Fortunately, you don’t need to know GIT in this case, because Hexo has already automated everything for you, so you can focus on writing content.<br>So, head over to <a href="https://github.com/" target="_blank" rel="external">https://github.com/</a>, create an account, and we’ll meet again in the next section.</p>
-<h2 id="Creating-your-first-repository"><a href="#Creating-your-first-repository" class="headerlink" title="Creating your first repository"></a>Creating your first repository</h2><p>Once your account is created, we’ll create a repository to store our website. But we won’t build a basic repository. Instead, we’ll use a “new” functionality from Github called <a href="https://pages.github.com/" target="_blank" rel="external">Githut Pages</a>. I won’t go into the details, but this will allow your blog (or website) to be accessible at “<a href="http://username.github.io" target="_blank" rel="external">http://username.github.io</a>“. As long as you only hosts static pages and assets (javascript, css, pictures…), everything is taken care of.</p>
-<p>Your repository <strong>must</strong> be called “username.github.io” (where username is your github username). From my experience, it’s seems case-insensitive.<br>Once created, we’ll need to download it on your computer. And to achieve that, we need to install Git.</p>
-<ul>
-<li>For windows users, the installation can be downloaded here : <a href="https://git-scm.com/download/win" target="_blank" rel="external">https://git-scm.com/download/win</a></li>
-<li>For UNIX users, you should easily find the installation steps here : <a href="https://git-scm.com/download/linux" target="_blank" rel="external">https://git-scm.com/download/linux</a></li>
-<li>For MAC users, head over to this page : <a href="https://git-scm.com/download/mac" target="_blank" rel="external">https://git-scm.com/download/mac</a></li>
-</ul>
-<p>Once Git is installed, open a terminal (or Git-Bash on windows), and go to your workspace (If you don’t have one, just pick a folder somewhere on your computer)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /path/to/my/workspace</div><div class="line">git clone https://github.com/username/username.github.io</div><div class="line">cd username.github.io</div></pre></td></tr></table></figure></p>
-<p><em>(don’t forget to replace “username” with your github username)</em></p>
-<p>Using any text editor or IDE, create a new file called index.html inside the newly created folder, and fill it with anything your want (as long as it’s valid HTML.. of course)<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World<span class="tag">&lt;<span class="name">h1</span>&gt;</span></div><div class="line">This is my website hosted on Github pages</div></pre></td></tr></table></figure></p>
-<p>And then, in order to publish everything on Github, we’ll need to type some GIT commands. Don’t worry, it’s the only time.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git add --all</div><div class="line">git commit -m &quot;Initial commit&quot;</div><div class="line">git push -u origin master</div></pre></td></tr></table></figure></p>
-<p>If you have already worked with any other VCS <em>(Version Control System)</em>, these commands may look familiar. The main difference between Git and SVN or CVS is that you first have to “commit” your changes to a local repository, and then “push” everything to the remote server.</p>
-<p>You should now be able to access your website in your favorite web browser by accessing this URL : <a href="http://username.github.io" target="_blank" rel="external">http://username.github.io</a></p>
-<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><h1 id="Installing-Node-and-NPM"><a href="#Installing-Node-and-NPM" class="headerlink" title="Installing Node and NPM"></a>Installing Node and NPM</h1><p>Ok, if you are still reading this, let’s continue with <a href="https://nodejs.org/en/" target="_blank" rel="external">Node</a> and <a href="https://www.npmjs.com/" target="_blank" rel="external">NPM</a>. NPM is nothing more than a package manager. It will help you install program, libraries, etc.. and handle dependencies.</p>
-<p>Go to <a href="https://nodejs.org/en/download/" target="_blank" rel="external">https://nodejs.org/en/download/</a> and choose the proper installer for your operating system (Node comes with NPM installed). If you are using windows, you should continue using <em>Git-Bash</em> as your terminal (it emulates some features from Unix-based terminals). <a href="http://cmder.net/" target="_blank" rel="external">Cmder</a> is another great terminal on Windows that you may consider using for this tutorial.</p>
-<h1 id="Installing-Hexo"><a href="#Installing-Hexo" class="headerlink" title="Installing Hexo"></a>Installing Hexo</h1><p>Once Node is installed, let’s finally start installing Hexo. (<em>On UNIX environments, you will need to run this command as the administrator</em>)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g</div></pre></td></tr></table></figure></p>
-<p>Now, somewhere in your workspace, let’s setup a new folder that will contain your blog</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cd /path/to/my/workspace</div><div class="line">hexo init blog</div><div class="line">cd blog</div><div class="line">npm install</div></pre></td></tr></table></figure>
-<h1 id="Configuring-the-blog"><a href="#Configuring-the-blog" class="headerlink" title="Configuring the blog"></a>Configuring the blog</h1><p>The first step is to change the basic configuration defined in <code>_config.yml</code> (by the way, .yml files, for <a href="http://yaml.org/" target="_blank" rel="external">YAML</a>, are just plain text files using indentation to define the structure. With XML and JSON, these are the main formats for configuration files)</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="attr">title:</span> My awesome blog</div><div class="line"><span class="attr">subtitle:</span> Made with Hexo</div><div class="line"><span class="attr">description:</span> Some more text</div><div class="line"><span class="attr">author:</span> KyneSilverhide</div><div class="line"><span class="attr">language:</span> en</div><div class="line"><span class="attr">timezone:</span> Europe/Brussels</div><div class="line"></div><div class="line"><span class="attr">url:</span> http://username.github.io</div><div class="line"><span class="attr">root:</span> /</div><div class="line"><span class="attr">permalink:</span> :year/:month/:day/:title/</div><div class="line"><span class="attr">permalink_defaults:</span></div></pre></td></tr></table></figure>
-<p>Everything else can be left with the default values.</p>
-<h1 id="Creating-a-post"><a href="#Creating-a-post" class="headerlink" title="Creating a post"></a>Creating a post</h1><p>Save the configuration file, and go back to the terminal. Let’s write our first post.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new post &quot;My first post&quot;</div></pre></td></tr></table></figure></p>
-<p>All your posts are created inside the <code>source/_posts</code> folder. Open the <code>.md</code> file (for Markdown) matching your post title, and edit it.</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: My first post</div><div class="line">date: 2016-11-26 14:27:16</div><div class="line">tags: [blog]</div><div class="line"><span class="section">categories: [Blog]</span></div><div class="line">---</div><div class="line">This is my first post ! I'm so happy.</div></pre></td></tr></table></figure>
-<p>Note : some themes may allow additional elements, such as a thumbnail, a banner, etc.<br>Tags and categories may not be shown depending on your theme, but it seems to be a good practice to fill them. If you want to add multiple tags or categories, just put a <code>,</code> between each.</p>
-<p>Ok, now that we have some content, we want to preview it before deploying everything to Github. But if you remember right, Hexo is a tool used to build <em>static blogs</em>. This means we have to “build” our site first, using this simple command :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate</div></pre></td></tr></table></figure></p>
-<p>You’ll see some files being created or updated, and then you are done. Now, let’s see a preview. Another great feature with Hexo, is that you don’t need to setup a web server such as Apache. You just have to run this command :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">hexo server</div><div class="line"></div><div class="line">INFO  Start processing</div><div class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</div></pre></td></tr></table></figure>
-<p>Open the given url <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> in your browser, and you should see your first post !</p>
-<p>If you want to know more about the Markdown syntax that you can use in your posts, just head over to this <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code" target="_blank" rel="external">Markdown CheatSheet</a>.<br>This syntax can also be used in some Wikis and other tools.</p>
-<h1 id="Publishing-it-to-Github"><a href="#Publishing-it-to-Github" class="headerlink" title="Publishing it to Github"></a>Publishing it to Github</h1><p>If everything works fine, it’s time to show your blog to the world. Let’s start by some configuration. Open <code>_config.yml</code>, and change this part</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> git</div><div class="line"><span class="attr">  repository:</span> https://github.com/username/username.github.io.git</div><div class="line"><span class="attr">  branch:</span> master</div></pre></td></tr></table></figure>
-<p>Of course, you have to change “username” with your Github account.<br>Don’t forget that you need to generate your blog content before deploying it. You have three options</p>
-<p><strong>Manually generating and then deploying</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo generate</div><div class="line">hexo deploy</div></pre></td></tr></table></figure></p>
-<p><strong>Using any of these two shortcuts</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate --deploy</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy --generate</div></pre></td></tr></table></figure>
-<p>During the deployment, you’ll be asked for your Github login and password. Fill them in, and the deployment process should continue.<br>This will also remove the test <code>index.html</code> that we wrote at the beginning of this tutorial. Don’t worry, we won’t need it anymore.</p>
-<p>Your blog should now be accessible at <a href="http://username.github.io" target="_blank" rel="external">http://username.github.io</a>. Congratulations !</p>
-<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>Now that we have do so many awesome things <em>(yes, auto-congratulation is very important as a developer)</em>, let’s take a step back and list what we have accomplished today.</p>
-<ul>
-<li>First, we have created a <strong>Github</strong> account to host our blog. But Github is also one of the best solution to host the source code of all your projects, so feel free to check their website.</li>
-<li>Then, we use some <strong>Git</strong> commands to send our test page to Github. Git is also a very famous tool (and my favorite VCS), but it can be hard to master, so I only scratched the surface in this blog. You should find some more tutorials on Github, or around the web.</li>
-<li>After this, we installed <strong>Node</strong> and <strong>NPM</strong>. If you are a web developer, you should already have these installed. There are so many libraries, projects and applications built on top of node, and available through NPM. But be aware that NPM seems to download the whole Internet each time you use it.</li>
-<li>The next step was to Install Hexo, and write some content. If you want to continue your blog, I recommend you to browse some of the <a href="https://hexo.io/themes/" target="_blank" rel="external">Hexo Themes</a>, learn more about <strong>Markdown</strong>, or read the <a href="https://hexo.io/docs/" target="_blank" rel="external">Hexo Documentation</a></li>
-<li>Lastly, we published our blog to Github. Feel free to test it on your tablet or mobile phone too !</li>
-</ul>
-<p>This concludes my first post. I hope that this tutorial have taught you something, or helped you somehow, and we’ll meet again in the next post !</p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
 
 
+            <div class="article-entry" itemprop="articleBody">
 
-</div>
 
-    <a data-url="http://kynesilverhide.github.io/2016/11/26/Hello-World/" data-id="ciw6slh050002th7r43kdlxhn" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
+              <p>Hi ! I’m Aurélien, but you’ll find me around on the web as Kyne, or KyneSilverhide. I’m a developer from Belgium (yes, we have beer and chocolate).</p>
+              <p>I’ve recently learned about <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>, a very powerful tool to build “static blogs”, using <a href="https://daringfireball.net/projects/markdown/" target="_blank" rel="external">Markdown</a>                and some command lines. As most developers should know, the best way to test or learn something is by using it in a real project. That’s why I’ve decided to start this blog mostly about programming stuff, and technologies.</p>
+              <p>In this very first post, I’ll show you how to install Hexo for you own blog, and host it on <a href="https://github.com/" target="_blank" rel="external">Github</a> (for free, of course).<br>Also, English is not my main language, so I hope
+                everything will be as smooth as possible.</p>
+              <a id="more"></a>
+              <h1 id="Github">
+                <a href="#Github" class="headerlink" title="Github"></a>Github</h1>
+              <h2 id="Create-your-account">
+                <a href="#Create-your-account" class="headerlink" title="Create your account"></a>Create your account</h2>
+              <p>Any developer should already know about Github. Basically, it will host your source code for free, and keep an history of changes using a version control system called <a href="https://git-scm.com/" target="_blank" rel="external">Git</a>                (we may talk about this later…). Fortunately, you don’t need to know GIT in this case, because Hexo has already automated everything for you, so you can focus on writing content.<br>So, head over to <a href="https://github.com/" target="_blank"
+                  rel="external">https://github.com/</a>, create an account, and we’ll meet again in the next section.</p>
+              <h2 id="Creating-your-first-repository">
+                <a href="#Creating-your-first-repository" class="headerlink" title="Creating your first repository"></a>Creating your first repository</h2>
+              <p>Once your account is created, we’ll create a repository to store our website. But we won’t build a basic repository. Instead, we’ll use a “new” functionality from Github called <a href="https://pages.github.com/" target="_blank" rel="external">Githut Pages</a>.
+                I won’t go into the details, but this will allow your blog (or website) to be accessible at “<a href="http://username.github.io" target="_blank" rel="external">http://username.github.io</a>“. As long as you only hosts static pages and
+                assets (javascript, css, pictures…), everything is taken care of.</p>
+              <p>Your repository <strong>must</strong> be called “username.github.io” (where username is your github username). From my experience, it’s seems case-insensitive.<br>Once created, we’ll need to download it on your computer. And to achieve that,
+                we need to install Git.</p>
+              <ul>
+                <li>For windows users, the installation can be downloaded here : <a href="https://git-scm.com/download/win" target="_blank" rel="external">https://git-scm.com/download/win</a></li>
+                <li>For UNIX users, you should easily find the installation steps here : <a href="https://git-scm.com/download/linux" target="_blank" rel="external">https://git-scm.com/download/linux</a></li>
+                <li>For MAC users, head over to this page : <a href="https://git-scm.com/download/mac" target="_blank" rel="external">https://git-scm.com/download/mac</a></li>
+              </ul>
+              <p>Once Git is installed, open a terminal (or Git-Bash on windows), and go to your workspace (If you don’t have one, just pick a folder somewhere on your computer)<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td>
+                      <td class="code"><pre><div class="line">cd /path/to/my/workspace</div><div class="line">git clone https://github.com/username/username.github.io</div><div class="line">cd username.github.io</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <p><em>(don’t forget to replace “username” with your github username)</em></p>
+              <p>Using any text editor or IDE, create a new file called index.html inside the newly created folder, and fill it with anything your want (as long as it’s valid HTML.. of course)<br>
+                <figure class="highlight html">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td>
+                      <td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World<span class="tag">&lt;<span class="name">h1</span>&gt;</span></div><div class="line">This is my website hosted on Github pages</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <p>And then, in order to publish everything on Github, we’ll need to type some GIT commands. Don’t worry, it’s the only time.<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td>
+                      <td class="code"><pre><div class="line">git add --all</div><div class="line">git commit -m &quot;Initial commit&quot;</div><div class="line">git push -u origin master</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <p>If you have already worked with any other VCS <em>(Version Control System)</em>, these commands may look familiar. The main difference between Git and SVN or CVS is that you first have to “commit” your changes to a local repository, and
+                then “push” everything to the remote server.</p>
+              <p>You should now be able to access your website in your favorite web browser by accessing this URL : <a href="http://username.github.io" target="_blank" rel="external">http://username.github.io</a></p>
+              <h1 id="Hexo">
+                <a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1>
+              <h1 id="Installing-Node-and-NPM">
+                <a href="#Installing-Node-and-NPM" class="headerlink" title="Installing Node and NPM"></a>Installing Node and NPM</h1>
+              <p>Ok, if you are still reading this, let’s continue with <a href="https://nodejs.org/en/" target="_blank" rel="external">Node</a> and <a href="https://www.npmjs.com/" target="_blank" rel="external">NPM</a>. NPM is nothing more than a package
+                manager. It will help you install program, libraries, etc.. and handle dependencies.</p>
+              <p>Go to <a href="https://nodejs.org/en/download/" target="_blank" rel="external">https://nodejs.org/en/download/</a> and choose the proper installer for your operating system (Node comes with NPM installed). If you are using windows, you should
+                continue using <em>Git-Bash</em> as your terminal (it emulates some features from Unix-based terminals). <a href="http://cmder.net/" target="_blank" rel="external">Cmder</a> is another great terminal on Windows that you may consider using
+                for this tutorial.</p>
+              <h1 id="Installing-Hexo">
+                <a href="#Installing-Hexo" class="headerlink" title="Installing Hexo"></a>Installing Hexo</h1>
+              <p>Once Node is installed, let’s finally start installing Hexo. (<em>On UNIX environments, you will need to run this command as the administrator</em>)<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div></pre></td>
+                      <td class="code"><pre><div class="line">npm install hexo-cli -g</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <p>Now, somewhere in your workspace, let’s setup a new folder that will contain your blog</p>
+              <figure class="highlight plain">
+                <table>
+                  <tr>
+                    <td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td>
+                    <td class="code"><pre><div class="line">cd /path/to/my/workspace</div><div class="line">hexo init blog</div><div class="line">cd blog</div><div class="line">npm install</div></pre></td>
+                  </tr>
+                </table>
+              </figure>
+              <h1 id="Configuring-the-blog">
+                <a href="#Configuring-the-blog" class="headerlink" title="Configuring the blog"></a>Configuring the blog</h1>
+              <p>The first step is to change the basic configuration defined in <code>_config.yml</code> (by the way, .yml files, for <a href="http://yaml.org/" target="_blank" rel="external">YAML</a>, are just plain text files using indentation to define
+                the structure. With XML and JSON, these are the main formats for configuration files)</p>
+              <figure class="highlight yaml">
+                <table>
+                  <tr>
+                    <td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td>
+                    <td class="code"><pre><div class="line"><span class="attr">title:</span> My awesome blog</div><div class="line"><span class="attr">subtitle:</span> Made with Hexo</div><div class="line"><span class="attr">description:</span> Some more text</div><div class="line"><span class="attr">author:</span> KyneSilverhide</div><div class="line"><span class="attr">language:</span> en</div><div class="line"><span class="attr">timezone:</span> Europe/Brussels</div><div class="line"></div><div class="line"><span class="attr">url:</span> http://username.github.io</div><div class="line"><span class="attr">root:</span> /</div><div class="line"><span class="attr">permalink:</span> :year/:month/:day/:title/</div><div class="line"><span class="attr">permalink_defaults:</span></div></pre></td>
+                  </tr>
+                </table>
+              </figure>
+              <p>Everything else can be left with the default values.</p>
+              <h1 id="Creating-a-post">
+                <a href="#Creating-a-post" class="headerlink" title="Creating a post"></a>Creating a post</h1>
+              <p>Save the configuration file, and go back to the terminal. Let’s write our first post.<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div></pre></td>
+                      <td class="code"><pre><div class="line">hexo new post &quot;My first post&quot;</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <p>All your posts are created inside the <code>source/_posts</code> folder. Open the <code>.md</code> file (for Markdown) matching your post title, and edit it.</p>
+              <figure class="highlight markdown">
+                <table>
+                  <tr>
+                    <td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td>
+                    <td class="code"><pre><div class="line">---</div><div class="line">title: My first post</div><div class="line">date: 2016-11-26 14:27:16</div><div class="line">tags: [blog]</div><div class="line"><span class="section">categories: [Blog]</span></div><div class="line">---</div><div class="line">This is my first post ! I'm so happy.</div></pre></td>
+                  </tr>
+                </table>
+              </figure>
+              <p>Note : some themes may allow additional elements, such as a thumbnail, a banner, etc.<br>Tags and categories may not be shown depending on your theme, but it seems to be a good practice to fill them. If you want to add multiple tags or categories,
+                just put a <code>,</code> between each.</p>
+              <p>Ok, now that we have some content, we want to preview it before deploying everything to Github. But if you remember right, Hexo is a tool used to build <em>static blogs</em>. This means we have to “build” our site first, using this simple
+                command :
+                <br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div></pre></td>
+                      <td class="code"><pre><div class="line">hexo generate</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <p>You’ll see some files being created or updated, and then you are done. Now, let’s see a preview. Another great feature with Hexo, is that you don’t need to setup a web server such as Apache. You just have to run this command :</p>
+              <figure class="highlight plain">
+                <table>
+                  <tr>
+                    <td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td>
+                    <td class="code"><pre><div class="line">hexo server</div><div class="line"></div><div class="line">INFO  Start processing</div><div class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</div></pre></td>
+                  </tr>
+                </table>
+              </figure>
+              <p>Open the given url <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> in your browser, and you should see your first post !</p>
+              <p>If you want to know more about the Markdown syntax that you can use in your posts, just head over to this <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#code" target="_blank" rel="external">Markdown CheatSheet</a>.<br>This
+                syntax can also be used in some Wikis and other tools.</p>
+              <h1 id="Publishing-it-to-Github">
+                <a href="#Publishing-it-to-Github" class="headerlink" title="Publishing it to Github"></a>Publishing it to Github</h1>
+              <p>If everything works fine, it’s time to show your blog to the world. Let’s start by some configuration. Open <code>_config.yml</code>, and change this part</p>
+              <figure class="highlight yaml">
+                <table>
+                  <tr>
+                    <td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td>
+                    <td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> git</div><div class="line"><span class="attr">  repository:</span> https://github.com/username/username.github.io.git</div><div class="line"><span class="attr">  branch:</span> master</div></pre></td>
+                  </tr>
+                </table>
+              </figure>
+              <p>Of course, you have to change “username” with your Github account.<br>Don’t forget that you need to generate your blog content before deploying it. You have three options</p>
+              <p><strong>Manually generating and then deploying</strong><br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td>
+                      <td class="code"><pre><div class="line">hexo generate</div><div class="line">hexo deploy</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <p><strong>Using any of these two shortcuts</strong><br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div></pre></td>
+                      <td class="code"><pre><div class="line">hexo generate --deploy</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <figure class="highlight plain">
+                <table>
+                  <tr>
+                    <td class="gutter"><pre><div class="line">1</div></pre></td>
+                    <td class="code"><pre><div class="line">hexo deploy --generate</div></pre></td>
+                  </tr>
+                </table>
+              </figure>
+              <p>During the deployment, you’ll be asked for your Github login and password. Fill them in, and the deployment process should continue.<br>This will also remove the test <code>index.html</code> that we wrote at the beginning of this tutorial.
+                Don’t worry, we won’t need it anymore.</p>
+              <p>Your blog should now be accessible at <a href="http://username.github.io" target="_blank" rel="external">http://username.github.io</a>. Congratulations !</p>
+              <h1 id="Conclusion">
+                <a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1>
+              <p>Now that we have do so many awesome things <em>(yes, auto-congratulation is very important as a developer)</em>, let’s take a step back and list what we have accomplished today.</p>
+              <ul>
+                <li>First, we have created a <strong>Github</strong> account to host our blog. But Github is also one of the best solution to host the source code of all your projects, so feel free to check their website.</li>
+                <li>Then, we use some <strong>Git</strong> commands to send our test page to Github. Git is also a very famous tool (and my favorite VCS), but it can be hard to master, so I only scratched the surface in this blog. You should find some more
+                  tutorials on Github, or around the web.</li>
+                <li>After this, we installed <strong>Node</strong> and <strong>NPM</strong>. If you are a web developer, you should already have these installed. There are so many libraries, projects and applications built on top of node, and available through
+                  NPM. But be aware that NPM seems to download the whole Internet each time you use it.</li>
+                <li>The next step was to Install Hexo, and write some content. If you want to continue your blog, I recommend you to browse some of the <a href="https://hexo.io/themes/" target="_blank" rel="external">Hexo Themes</a>, learn more about <strong>Markdown</strong>,
+                  or read the <a href="https://hexo.io/docs/" target="_blank" rel="external">Hexo Documentation</a></li>
+                <li>Lastly, we published our blog to Github. Feel free to test it on your tablet or mobile phone too !</li>
+              </ul>
+              <p>This concludes my first post. I hope that this tutorial have taught you something, or helped you somehow, and we’ll meet again in the next post !</p>
 
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
 
-            if ($('#' + id).length) {
-                box = $('#' + id);
+            </div>
+            <footer class="article-footer">
+              <div class="share-container">
 
-                if (box.hasClass('on')){
-                    box.removeClass('on');
+
+
+              </div>
+
+              <a data-url="http://kynesilverhide.github.io/2016/11/26/Hello-World/" data-id="ciw7x12860006bm7reljg66cw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+              <script>
+                (function($) {
+                  // Prevent duplicate binding
+                  if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+                    __SHARE_BUTTON_BINDED__ = true;
+                  } else {
                     return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
+                  }
+                  $('body').on('click', function() {
+                    $('.article-share-box.on').removeClass('on');
+                  }).on('click', '.article-share-link', function(e) {
+                    e.stopPropagation();
+
+                    var $this = $(this),
+                      url = $this.attr('data-url'),
+                      encodedUrl = encodeURIComponent(url),
+                      id = 'article-share-box-' + $this.attr('data-id'),
+                      offset = $this.offset(),
+                      box;
+
+                    if ($('#' + id).length) {
+                      box = $('#' + id);
+
+                      if (box.hasClass('on')) {
+                        box.removeClass('on');
+                        return;
+                      }
+                    } else {
+                      var html = [
+                        '<div id="' + id + '" class="article-share-box">',
                         '<input class="article-share-input" value="' + url + '">',
                         '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                        '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
                         '</div>',
-                    '</div>'
-                ].join('');
+                        '</div>'
+                      ].join('');
 
-              box = $(html);
+                      box = $(html);
 
-              $('body').append(box);
-            }
+                      $('body').append(box);
+                    }
 
-            $('.article-share-box.on').hide();
+                    $('.article-share-box.on').hide();
 
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
+                    box.css({
+                      top: offset.top + 25,
+                      left: offset.left
+                    }).addClass('on');
 
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
+                  }).on('click', '.article-share-box', function(e) {
+                    e.stopPropagation();
+                  }).on('click', '.article-share-box-input', function() {
+                    $(this).select();
+                  }).on('click', '.article-share-box-link', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
 
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
+                    window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+                  });
+                })(jQuery);
+              </script>
+              <a href="http://kynesilverhide.github.io/2016/11/26/Hello-World/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kynesilverhide.github.io/2016/11/26/Hello-World/">Comments</a>
+            </footer>
+          </div>
 
-            
-    
-        <a href="http://kynesilverhide.github.io/2016/11/26/Hello-World/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kynesilverhide.github.io/2016/11/26/Hello-World/">Comments</a>
-    
+          <nav id="article-nav">
 
-        </footer>
-    </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Newer</strong>
-            <div class="article-nav-title">
-                
-                    Discovering and installing Ubuntu in VirtualBox (Part 1)
-                
-            </div>
-        </a>
-    
-    
-</nav>
+            <a href="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/" id="article-nav-newer" class="article-nav-link-wrap">
+              <strong class="article-nav-caption">Newer</strong>
+              <div class="article-nav-title">
+
+                Discovering and installing Ubuntu in VirtualBox (Part 1)
+
+              </div>
+            </a>
 
 
-    
-</article>
+          </nav>
+
+        </article>
 
 
-    
-    <section id="comments">
-    
-        
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
+        <section id="comments">
 
-    
-    </section>
+          <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          </div>
 
-</section>
-            
-                <aside id="sidebar">
-   
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">recent</h3>
-        <div class="widget">
+        </section>
+      </section>
+
+      <aside id="sidebar">
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">recent</h3>
+          <div class="widget">
             <ul id="recent-post" class="">
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/thumb_ubuntu.PNG)" alt="Discovering and installing Ubuntu in VirtualBox (Part 1)" class="thumbnail-image"></span>
-    
-</a>
 
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Operating-System/">Operating System</a></p>
-                            <p class="item-title"><a href="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/" class="title">Discovering and installing Ubuntu in VirtualBox (Part 1)</a></p>
-                            <p class="item-date"><time datetime="2016-11-30T18:41:26.000Z" itemprop="datePublished">2016-11-30</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/11/26/Hello-World/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/thumb_blog.PNG)" alt="Hello World, and building your own blog" class="thumbnail-image"></span>
-    
-</a>
+              <li>
 
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Hexo/">Hexo</a></p>
-                            <p class="item-title"><a href="/2016/11/26/Hello-World/" class="title">Hello World, and building your own blog</a></p>
-                            <p class="item-date"><time datetime="2016-11-26T13:27:16.000Z" itemprop="datePublished">2016-11-26</time></p>
-                        </div>
-                    </li>
-                
+                <div class="item-thumbnail">
+                  <a href="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_ubuntu.PNG)" alt="Discovering and installing Ubuntu in VirtualBox (Part 2)" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Operating-System/">Operating System</a></p>
+                  <p class="item-title"><a href="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/" class="title">Discovering and installing Ubuntu in VirtualBox (Part 2)</a></p>
+                  <p class="item-date"><time datetime="2016-11-30T18:41:26.000Z" itemprop="datePublished">2016-11-30</time></p>
+                </div>
+              </li>
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_ubuntu.PNG)" alt="Discovering and installing Ubuntu in VirtualBox (Part 1)" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Operating-System/">Operating System</a></p>
+                  <p class="item-title"><a href="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/" class="title">Discovering and installing Ubuntu in VirtualBox (Part 1)</a></p>
+                  <p class="item-date"><time datetime="2016-11-30T18:41:26.000Z" itemprop="datePublished">2016-11-30</time></p>
+                </div>
+              </li>
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/11/26/Hello-World/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_blog.PNG)" alt="Hello World, and building your own blog" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Hexo/">Hexo</a></p>
+                  <p class="item-title"><a href="/2016/11/26/Hello-World/" class="title">Hello World, and building your own blog</a></p>
+                  <p class="item-date"><time datetime="2016-11-26T13:27:16.000Z" itemprop="datePublished">2016-11-26</time></p>
+                </div>
+              </li>
+
             </ul>
+          </div>
         </div>
-    </div>
 
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">categories</h3>
-        <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Operating-System/">Operating System</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Hexo/">Hexo</a><span class="category-list-count">1</span></li></ul></li></ul>
+        <div class="widget-wrap">
+          <h3 class="widget-title">categories</h3>
+          <div class="widget">
+            <ul class="category-list">
+              <li class="category-list-item"><a class="category-list-link" href="/categories/Operating-System/">Operating System</a><span class="category-list-count">2</span></li>
+              <li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">1</span>
+                <ul class="category-list-child">
+                  <li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Hexo/">Hexo</a><span class="category-list-count">1</span></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </div>
-    </div>
 
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">archives</h3>
-        <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">2</span></li></ul>
+        <div class="widget-wrap">
+          <h3 class="widget-title">archives</h3>
+          <div class="widget">
+            <ul class="archive-list">
+              <li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li>
+            </ul>
+          </div>
         </div>
-    </div>
 
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">tags</h3>
-        <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/">unity</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unix/">unix</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/virtualbox/">virtualbox</a><span class="tag-list-count">1</span></li></ul>
+        <div class="widget-wrap">
+          <h3 class="widget-title">tags</h3>
+          <div class="widget">
+            <ul class="tag-list">
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">2</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/">unity</a><span class="tag-list-count">2</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/unix/">unix</a><span class="tag-list-count">2</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/virtualbox/">virtualbox</a><span class="tag-list-count">2</span></li>
+            </ul>
+          </div>
         </div>
-    </div>
 
-    
-        
-    <div class="widget-wrap">
-        <h3 class="widget-title">tag cloud</h3>
-        <div class="widget tagcloud">
-            <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/unity/" style="font-size: 10px;">unity</a> <a href="/tags/unix/" style="font-size: 10px;">unix</a> <a href="/tags/virtualbox/" style="font-size: 10px;">virtualbox</a>
+        <div class="widget-wrap">
+          <h3 class="widget-title">tag cloud</h3>
+          <div class="widget tagcloud">
+            <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/markdown/"
+              style="font-size: 10px;">markdown</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/ubuntu/" style="font-size: 20px;">ubuntu</a> <a href="/tags/unity/" style="font-size: 20px;">unity</a>            <a href="/tags/unix/" style="font-size: 20px;">unix</a> <a href="/tags/virtualbox/" style="font-size: 20px;">virtualbox</a>
+          </div>
         </div>
-    </div>
 
-    
-        
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
-        <div class="widget">
+        <div class="widget-wrap widget-list">
+          <h3 class="widget-title">links</h3>
+          <div class="widget">
             <ul>
-                
-                    <li>
-                        <a href="/atom.xml">Atom Feed</a>
-                    </li>
-                
+
+              <li>
+                <a href="/atom.xml">Atom Feed</a>
+              </li>
+
             </ul>
+          </div>
         </div>
+
+        <div id="toTop" class="fa fa-angle-up"></div>
+      </aside>
+
     </div>
-
-
-    
-    <div id="toTop" class="fa fa-angle-up"></div>
-</aside>
-            
-        </div>
-        <footer id="footer">
-    <div class="outer">
+    <footer id="footer">
+      <div class="outer">
         <div id="footer-info" class="inner">
-            &copy; 2016 KyneSilverhide<br>
-            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+          &copy; 2016 KyneSilverhide<br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
         </div>
-    </div>
-</footer>
-        
-    
+      </div>
+    </footer>
     <script>
-    var disqus_config = function () {
-        
-            this.page.url = 'http://kynesilverhide.github.io/2016/11/26/Hello-World/';
-        
+      var disqus_config = function() {
+
+        this.page.url = 'http://kynesilverhide.github.io/2016/11/26/Hello-World/';
+
         this.page.identifier = 'Hello-World';
-    };
-    (function() { 
-        var d = document, s = d.createElement('script');  
+      };
+      (function() {
+        var d = document,
+          s = d.createElement('script');
         s.src = '//' + 'kynesilverhide-blog' + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
-    })();
-</script>
+      })();
+    </script>
+    <script src="/libs/lightgallery/js/lightgallery.min.js">
+    </script>
+    <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-video.min.js"></script>
 
 
+    <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
 
-    
-        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
-        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
-    
-    
-        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
-    
-
-
-
-<!-- Custom Scripts -->
-<script src="/js/main.js"></script>
-
-    </div>
+    <!-- Custom Scripts -->
+    <script src="/js/main.js"></script>
+  </div>
 </body>
+
 </html>

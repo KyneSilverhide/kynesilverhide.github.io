@@ -4,19 +4,19 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Discovering and installing Ubuntu in VirtualBox (Part 1) | KyneSilverhide</title>
+  <title>Discovering and installing Ubuntu in VirtualBox (Part 2) | KyneSilverhide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <meta name="description" content="If you are working as a developer, if you have some technical background, or simply if you label yourself as a bit geeky, you are probably aware that Windows is not the only operating system in the wo">
+  <meta name="description" content="Welcome back to the second part of this tutorial. We’ll continue right were we left. In this second part, we’ll install Ubuntu and do some last tweaks to our installation.At the end of this post, you">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Discovering and installing Ubuntu in VirtualBox (Part 1)">
-  <meta property="og:url" content="http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/index.html">
+  <meta property="og:title" content="Discovering and installing Ubuntu in VirtualBox (Part 2)">
+  <meta property="og:url" content="http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/index.html">
   <meta property="og:site_name" content="KyneSilverhide">
-  <meta property="og:description" content="If you are working as a developer, if you have some technical background, or simply if you label yourself as a bit geeky, you are probably aware that Windows is not the only operating system in the wo">
+  <meta property="og:description" content="Welcome back to the second part of this tutorial. We’ll continue right were we left. In this second part, we’ll install Ubuntu and do some last tweaks to our installation.At the end of this post, you">
   <meta property="og:image" content="http://kynesilverhide.github.io/images/thumb_ubuntu.PNG">
-  <meta property="og:updated_time" content="2016-12-02T12:40:21.335Z">
+  <meta property="og:updated_time" content="2016-12-02T15:54:01.078Z">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Discovering and installing Ubuntu in VirtualBox (Part 1)">
-  <meta name="twitter:description" content="If you are working as a developer, if you have some technical background, or simply if you label yourself as a bit geeky, you are probably aware that Windows is not the only operating system in the wo">
+  <meta name="twitter:title" content="Discovering and installing Ubuntu in VirtualBox (Part 2)">
+  <meta name="twitter:description" content="Welcome back to the second part of this tutorial. We’ll continue right were we left. In this second part, we’ll install Ubuntu and do some last tweaks to our installation.At the end of this post, you">
   <meta name="twitter:image" content="http://kynesilverhide.github.io/images/thumb_ubuntu.PNG">
 
 
@@ -182,21 +182,21 @@
       </aside>
 
       <section id="main">
-        <article id="post-Discovering-and-installing-Ubuntu-in-VirtualBox" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Discovering-and-installing-Ubuntu-in-Virtual-Box-P2" class="article article-type-post" itemscope itemprop="blogPost">
           <div class="article-inner">
 
-            <img src="/images/banner_ubuntu.PNG" class="article-banner" />
+            <img src="/images/banner_ubuntu2.PNG" class="article-banner" />
 
 
             <header class="article-header">
               <h1 class="article-title" itemprop="name">
-                Discovering and installing Ubuntu in VirtualBox (Part 1)
+                Discovering and installing Ubuntu in VirtualBox (Part 2)
               </h1>
 
               <div class="article-meta">
                 <div class="article-date">
                   <i class="fa fa-calendar"></i>
-                  <a href="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/">
+                  <a href="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/">
                     <time datetime="2016-11-30T18:41:26.000Z" itemprop="datePublished">2016-11-30</time>
                   </a>
                 </div>
@@ -216,88 +216,67 @@
             <div class="article-entry" itemprop="articleBody">
 
 
-              <p>If you are working as a developer, if you have some technical background, or simply if you label yourself as a bit geeky, you are probably aware that Windows is not the only operating system in the world (this is especially true if you are
-                reading this blog on a Mac). Even your smartphone is probably running on Android instead of Windows (Phone).</p>
-              <p>Arguing about the best of them is pointless. Each one of them has pros and cons, from their price to their “user-friendliness”.</p>
-              <p> My goal in this post will be to show you Ubuntu, a free and open-source operating system based on Linux, and convince you that it is a very solid alternative to Windows <em>as a development environment</em>, that it’s easy to setup, easy
-                to use, and completely free. And to achieve that, I will show you how to install it without running a single command in terminal, and without any risk of losing your data.</p>
-              <p> <em>Note that this tutorial will be split into multiple posts. This one is the first part.</em></p>
-              <a id="more"></a>
-              <h1 id="What-is-Ubuntu">
-                <a href="#What-is-Ubuntu" class="headerlink" title="What is Ubuntu"></a>What is Ubuntu</h1>
-              <p>Ok, so first, you probably want to learn more about Ubuntu. Why did I choose this operating system (OS)? What does it do?<br>I’ll start by quoting <a href="https://en.wikipedia.org/wiki/Ubuntu_(operating_system" target="_blank" rel="external">Wikipedia</a>)
-                :
+              <p>Welcome back to the second part of this tutorial. We’ll continue right were we left. In this second part, we’ll install Ubuntu and do some last tweaks to our installation.<br>At the end of this post, you should have a working virtual operating
+                system.</p>
+              <p><em>Note : I’ll do a third (and final) part to help your learn and configure Ubuntu.</em></p>
+              <p>Let’s get going !<br>
+                <a id="more"></a>
               </p>
-              <blockquote>
-                <p>Ubuntu is a Debian-based Linux operating system for personal computers, tablets and smartphones where Ubuntu Touch edition is used; and also runs network servers, usually with the Ubuntu Server edition, either on physical or virtual servers
-                  (such as on mainframes) and/or with containers, that is with enterprise-class features; runs on the most popular architectures, including server-class ARM-based.</p>
-              </blockquote>
-              <p>Yes.. that seems very technical, and not useful at all. So let’s split this information.</p>
+              <h1 id="Installation">
+                <a href="#Installation" class="headerlink" title="Installation"></a>Installation</h1>
+              <p>Installing Ubuntu is very easy. It’s probably the easiest installation of all Unix systems. Everything is done using a graphical interface, were you just have to answer some questions and hit “continue” (yes, that’s very Windows-like).</p>
+              <p>To start with, select your image in Virtual box, and click start (or double-click on the image). This will ask for the start-up disk. Just click on the yellow folder (with a green arrow), and browse to the downloaded <code>.iso</code> file.
+                Then, click
+                <em>Start</em>.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install01.PNG" alt="Installation Step 1" title="Installation Step 1"></p>
+              <p>The install software will start loading by itself…<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install02.PNG" alt="Installation Step 2" title="Installation Step 2"></p>
+              <p>… until you see what looks like a basic desktop. Don’t worry too much if the resolution is small, you should be able to resize the window. You are presented with two options.</p>
               <ul>
-                <li><a href="https://en.wikipedia.org/wiki/Linux" target="_blank" rel="external">Linux</a> is a UNIX-like operating system : it shares a common base with MacOS and other operating systems, but this one is based on a free and open-source model.
-                  Also, this is actually a very basic OS on top of which other elements are built.</li>
-                <li><a href="https://en.wikipedia.org/wiki/Debian" target="_blank" rel="external">Debian</a> is what we will call a Linux distribution. Simply put, it’s a set of programs packaged together to build a fully functional OS. We could install Debian
-                  as it is, but we want something a little bit more user friendly and “cool”</li>
-                <li><a href="https://www.ubuntu.com/" target="_blank" rel="external">Ubuntu</a> is based on Debian. You could see it as some kind of an “experimental” version of Debian, with more updates and recent features. But fear not, it’s actually quite
-                  stable</li>
+                <li><strong>Try Ubuntu</strong> : This will run a live version of Ubuntu, but any changes you do will be lost on reboot. It can be used to test Ubuntu on your computer without installing anything (<em>Note : it can also be used to restore or recover files from an OS that won’t boot.. as long as your computer is running properly</em>)</li>
+                <li><strong>Install Ubuntu</strong> This is the option we will use<img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install03.PNG" alt="Installation Step 3" title="Installation Step 3">
+                </li>
               </ul>
-              <h2 id="But-what-does-it-looks-like">
-                <a href="#But-what-does-it-looks-like" class="headerlink" title="But what does it looks like?"></a>But what does it looks like?</h2><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/ubuntu-desktop.png" alt="Ubuntu desktop with Firefox, Rythmbox, a terminal and the file explorer" title="Ubuntu desktop with Firefox, Rythmbox, a terminal and the file explorer">
-              <p>As you can see, this is not an obscure <em>ASCII</em> terminal in black and white, and it’s not the Matrix either.</p>
-              <h2 id="And-why-would-I-need-it">
-                <a href="#And-why-would-I-need-it" class="headerlink" title="And why would I need it?"></a>And why would I need it?</h2>
-              <p>As I said in the introduction, the goal is to install a very powerful development environment. Because let’s face it, while Windows will get the job done, it’s not the most efficient (it could actually be the worst of all) when it comes
-                to pure development (especially coding). If you have read my first post on <a href="/2016/11/26/Hello-World/">how to install <em>Hexo</em></a>, you probably saw that installing something on Mac and Linux (I will say “Linux” when I’m referring
-                to Unix-based operating system that are not MacOS) is most of the time done by running the proper command, while windows requires a dedicated installer that won’t integrate everything as smoothly.</p>
-              <p>I will always try to add alternatives for Windows users on my next posts, but you should really give Ubuntu a try if you want to invest some time in custom projects at home.</p>
-              <h2 id="Installation">
-                <a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2>
-              <p>When installing Ubuntu, you basically have three options</p>
+              <p>Check both options to allow Ubuntu to install updates and some third-party softwares to handle proprietary formats (such as MP3 files, etc), then click on <em>Continue</em>.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install04.PNG"
+                  alt="Installation Step 4" title="Installation Step 4"></p>
+              <p>Choose the first option to use the whole disk (<em>remember, it’s a virtual file on your disk, so you can’t destroy your files outside the virtual machine</em>), and click <em>Install Now</em>.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install05.PNG"
+                  alt="Installation Step 5" title="Installation Step 5"></p>
+              <p>A popup will show you that two partitions will be created. One big partition using the <a href="https://en.wikipedia.org/wiki/Ext4" target="_blank" rel="external">ext4</a> filesystem, and one smaller <em>Swap</em> partition (<em>it may be useless now that all computers have plenty of RAM, but older computers could still need this when the amount of physical RAM is full</em>).<br>Click
+                on <em>Continue</em>.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install06.PNG" alt="Installation Step 6" title="Installation Step 6"></p>
+              <p>Next steps is easy, just select your timezone, and click on <em>Continue</em>.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install07.PNG" alt="Installation Step 7" title="Installation Step 7"></p>
+              <p>Choose your keyboard layout, and hit <em>Continue</em>.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install08.PNG" alt="Installation Step 8" title="Installation Step 8"></p>
+              <p>Now, you’ll have to choose a login and password. Ubuntu supports multiple accounts like most operating systems. Once it’s done, click <em>Continue</em>.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install09.PNG"
+                  alt="Installation Step 9" title="Installation Step 9"></p>
+              <p>This time, the real installation will start, and the files will be copied onto the virtual disk. You can read what’s on screen to learn a bit more about Ubuntu, or just grab a cup of coffee until the process is finished.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install10.PNG"
+                  alt="Installation Step 10" title="Installation Step 10"></p>
+              <p>Once the installation is complete, you’ll have to restart the virtual machine (not your computer).<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install11.PNG" alt="Installation Step 11" title="Installation Step 11"></p>
+              <p>Ubuntu will ask you to hit <em>ENTER</em> and then remove the installation disk. Fortunately, VirtualBox will do that for you, and turn off the fake CD drive that was reading the ISO file.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install12.PNG"
+                  alt="Installation Step 12" title="Installation Step 12"></p>
+              <p>Once restarted, you should see the Ubuntu login screen. If you properly setup the keyboard, you should have no problem to selected your account and type your password. Note hat the “Guest Session” is similar to the “Try Ubuntu” option we
+                saw before. Everything will be cleared out at the end of the session.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install13.PNG" alt="Installation Step 13" title="Installation Step 13"></p>
+              <p>Ok, some final tweaks before using our brand new system. First, we’ll install the <em>Guest Additions</em> by going into the VirtualBox menu, and clicking on “Insert Guest Additions CD image…”. This will allow some features between your
+                computer and the virtual machine, such as a shared clipboard, etc.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install14.PNG" alt="Installation Step 14" title="Installation Step 14"></p>
+              <p>This will once again emulates a CD drive that will be automatically discovered by Ubuntu. Just click on <em>Run</em> when this popup shows.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install15.PNG"
+                  alt="Installation Step 15" title="Installation Step 15"></p>
+              <p>A terminal will start and display some logs. Just wait for the “Press Return to close this window” to show. Hit <em>Enter</em> and the terminal will close.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install16.PNG"
+                  alt="Installation Step 16" title="Installation Step 16"></p>
+              <p>Now, go to the VirtualBox menu, click <em>Devices</em> and enable the bidirectional clipboard. Then, restart Ubuntu by going to the top right icon <em>(the “power icon that looks like a gear”)</em> and shutdown the system.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install17.PNG"
+                  alt="Installation Step 17" title="Installation Step 17"></p>
+              <p>Now, reboot your operating system. And <em>Voila</em>, you have a fully operational operating system that can be used to work on your home development projects.</p>
+              <h1 id="Conclusion">
+                <a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1>
+              <p>Using Ubuntu is not hard, but you will probably struggle a bit at the beginning. That’s why I will write a full third part to this guide to help you discover your new desktop.</p>
+              <p>But here are some hints to help you wait the next post :</p>
               <ul>
-                <li>Installing it on top of windows, losing all your files and programs (if you own an old laptop that you were planning to trash for example, it could be the easiest solution)</li>
-                <li>Installing it next to windows, by splitting your hard drive into two partitions (or more)</li>
-                <li>Installing it in a virtual environment</li>
+                <li>If you press the “Windows” key (I think it’s the “Command” key on Mac…), a global search will be triggered. Yo can search for applications, files or configurations menu. You can also just click on the top left icon in the <em>Unity</em>                  menu. (the left bar with all the big icons)</li>
+                <li><strong>Firefox</strong> : Firefox is installed by default, and is a very functional web browser. On Ubuntu, it seems to work a bit better than <a href="https://www.chromium.org/" target="_blank" rel="external">Chromium</a> <em>(it’s the open-source web browser project from which Google Chrome draws its source code)</em>.
+                  So you can start browsing the Internet as usual</li>
+                <li><strong>Terminal</strong> : This is where you can type your commands. It’s actually very powerful, and can make you save a lot of time. We’ll use it later on to install more stuff.</li>
+                <li><strong>Files</strong> : The file explorer should also be available on the left, but you won’t have access to your Windows files for now. This will be covered in the next post.</li>
+                <li><strong>System configuration</strong> : This is similar to Windows “Control Panel”. Most of the configuration can be done there, from changing the wallpaper to switching to another keyboard layout.</li>
+                <li><strong>Ubuntu-software</strong> : This application can help you install new software, simply by searching for them by names. This is one major changes from Windows : in most Unix systems (if not all…), applications are hosted on <em>repositories</em>,
+                  and you can install them without having to look them up on the Internet. Some repositories have to be added manually <em>(or enabled)</em>, and some applications are still distributed as <code>.deb</code> files (Debian packages), but
+                  they can be installed simply by double-clicking on them.</li>
               </ul>
-              <p>In this post, we’ll cover the third option and install <a href="https://www.virtualbox.org/" target="_blank" rel="external">VirtualBox</a> to host our virtual OS.<br>Just go to <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank"
-                  rel="external">https://www.virtualbox.org/wiki/Downloads</a> and choose the “Windows hosts” or “OSX (Mac) hosts” (if you are already on another Linux distribution, it’s also possible, but I think you already know all the details).</p>
-              <p>Install VirtualBox as any other software and start it.</p>
-              <h3 id="Creating-the-machine">
-                <a href="#Creating-the-machine" class="headerlink" title="Creating the machine"></a>Creating the machine</h3>
-              <p>The first step is to create a new virtual machine. Just click the “New” button in the top left corner.<br>This will start an assistant to help you setup your virtual machine. Let’s do this together</p>
-              <p>First, you’ll have to choose a name for your machine. Pick anything you want, but don’t forget to select the proper type and version (Linux and Ubuntu 64)<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/vbox_install01.PNG"
-                  alt="Installation Step 1" title="Installation Step 1"></p>
-              <p>Keep the default values for the memory, we’ll adjust it later. Click next, and choose to create a new virtual hard disk now. This will create a big file on your disk that contains the whole system.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/vbox_install02.PNG"
-                  alt="Installation Step 2" title="Installation Step 2"></p>
-              <p>For every other steps, keep the default values. If you wish, you can use a “fixed sized” disk to create one single big file <em>(I choose this option, but it may be harder to resize the disk later on)</em>. We’ll continue tweaking the machine
-                once it’s created. For the disk size, I recommend using at least <strong>10 Gb</strong> (But if you can afford the space, use 16 or even 20Gb).</p>
-              <h3 id="Tweaking-the-machine">
-                <a href="#Tweaking-the-machine" class="headerlink" title="Tweaking the machine"></a>Tweaking the machine</h3>
-              <p>Once the machine is created, select it, and click on “Settings”.</p>
-              <p>Go to <em>System</em>. For the RAM, I decided to use half my RAM (4Gb/8Gb). You shouldn’t need more than 4Gb anyway.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/vbox_config01.PNG" alt="Configuration Step 1" title="Configuration Step 1"></p>
-              <p>Go to the next tab, and try to use as many CPUs as available (don’t go into the red part of the slider)<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/vbox_config02.PNG" alt="Configuration Step 2" title="Configuration Step 2"></p>
-              <p>Next tab. Use the same settings as the one from this screenshot.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/vbox_config03.PNG" alt="Configuration Step 3" title="Configuration Step 3"></p>
-              <p>You can now open the <em>Display</em> section. Move the slider to the right until you reach 128mb.. or lower if your graphic card is old.<br>Right now, I’ve disabled 3D acceleration because it causes some problem in a virtual environment
-                (you can’t take screenshots for example).<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/vbox_config04.PNG" alt="Configuration Step 4" title="Configuration Step 4"><br>I also manually changed some configuration
-                file to use 256Mb. Without 3D acceleration, I don’t think it will matter much, but if you want, simply edit the <code>.vbox</code> file (right click on your virtual machine and select “Show in Explorer”) with any text editor, and change
-                the following row :<br>
-                <figure class="highlight xml">
-                  <table>
-                    <tr>
-                      <td class="gutter"><pre><div class="line">1</div></pre></td>
-                      <td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Display</span> <span class="attr">VRAMSize</span>=<span class="string">"256"</span> <span class="attr">monitorCount</span>=<span class="string">"1"</span> <span class="attr">accelerate3D</span>=<span class="string">"false"</span> <span class="attr">accelerate2DVideo</span>=<span class="string">"false"</span>/&gt;</span></div></pre></td>
-                    </tr>
-                  </table>
-                </figure>
-              </p>
-              <p>Lastly, I only managed to have proper audio by using <em>Intel HD Audio</em>. You can try other settings if you want.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/vbox_config05.PNG" alt="Configuration Step 5"
-                  title="Configuration Step 5"></p>
-              <h2 id="What’s-next">
-                <a href="#What’s-next" class="headerlink" title="What’s next ?"></a>What’s next ?</h2>
-              <p>I’m sorry, but we have reached the end of this first part. Don’t worry, next part will follow quickly.<br>You now have a properly setup virtual machine, but it’s still empty. In the next post, we’ll install Ubuntu together, and I will keep
-                my promise : we won’t use any terminal.</p>
-              <p>To prepare for this next post, you can start downloading Ubuntu 64 here : <a href="https://www.ubuntu.com/download/desktop" target="_blank" rel="external">https://www.ubuntu.com/download/desktop</a><br>Click on <em>Download</em>, and then,
-                decide if you want to pay or not by adjusting the sliders. Don’t feel ashamed to use it for free.<br>You won’t need any additional software to use the download <code>.iso</code> file, VirtualBox will take care of it.</p>
-
+              <p>Finally, you can switch to fullscreen mode in VirtualBox by hitting <code>HOST-KEY + F</code>. “HOST-KEY” is “Right CTRL” on Windows. Simply press the same keys to go back to windowed mode.</p>
 
             </div>
             <footer class="article-footer">
@@ -307,7 +286,7 @@
 
               </div>
 
-              <a data-url="http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/" data-id="ciw7x127n0002bm7rp7u314nb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+              <a data-url="http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/" data-id="ciw7x127d0000bm7rma62f1cz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
               <script>
                 (function($) {
                   // Prevent duplicate binding
@@ -372,25 +351,16 @@
                   });
                 })(jQuery);
               </script>
-              <a href="http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/">Comments</a>
+              <a href="http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/">Comments</a>
             </footer>
           </div>
 
           <nav id="article-nav">
 
-            <a href="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/" id="article-nav-newer" class="article-nav-link-wrap">
-              <strong class="article-nav-caption">Newer</strong>
-              <div class="article-nav-title">
 
-                Discovering and installing Ubuntu in VirtualBox (Part 2)
-
-              </div>
-            </a>
-
-
-            <a href="/2016/11/26/Hello-World/" id="article-nav-older" class="article-nav-link-wrap">
+            <a href="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/" id="article-nav-older" class="article-nav-link-wrap">
               <strong class="article-nav-caption">Older</strong>
-              <div class="article-nav-title">Hello World, and building your own blog</div>
+              <div class="article-nav-title">Discovering and installing Ubuntu in VirtualBox (Part 1)</div>
             </a>
 
           </nav>
@@ -549,9 +519,9 @@
     <script>
       var disqus_config = function() {
 
-        this.page.url = 'http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/';
+        this.page.url = 'http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/';
 
-        this.page.identifier = 'Discovering-and-installing-Ubuntu-in-VirtualBox';
+        this.page.identifier = 'Discovering-and-installing-Ubuntu-in-Virtual-Box-P2';
       };
       (function() {
         var d = document,
