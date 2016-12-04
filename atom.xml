@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kynesilverhide.github.io/"/>
-  <updated>2016-12-02T15:54:01.078Z</updated>
+  <updated>2016-12-04T15:11:44.164Z</updated>
   <id>http://kynesilverhide.github.io/</id>
   
   <author>
@@ -14,6 +14,356 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Discovering and installing Ubuntu in VirtualBox P3</title>
+    <link href="http://kynesilverhide.github.io/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/"/>
+    <id>http://kynesilverhide.github.io/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/</id>
+    <published>2016-12-03T10:58:35.000Z</published>
+    <updated>2016-12-04T15:11:44.164Z</updated>
+    
+    <content type="html"><![CDATA[<p>Here we are, at the third and last part of this guide. In this post, I’ll try to cover what programs you can use for most of your tasks, but also give you an introduction to the terminal.</p>
+<p>Please keep in mind that we didn’t install Ubuntu to replace Windows : we are working in a virtual environment, meaning we can’t expected to play games (we even disabled 3D acceleration…). Focus will be done on development : web browsing, coding, files
+  and pictures editing, etc.</p>
+<p>Let’s dive right into it !<br>
+  <a id="more"></a>
+</p>
+<h1 id="Applications">
+  <a href="#Applications" class="headerlink" title="Applications"></a>Applications</h1>
+<p>Applications on Linux systems are similar to Windows or OSX applications. But not all of them exists on Linux. I’ll split this section into themes, and show you alternatives to what you were used to.<br>Also, installing applications is very easy. Just
+  start the <strong>Ubuntu software</strong> applications (from the left menu, or by using the global search), search for what you want, and click <em>Install</em>. You can also browse by categories if you don’t know the name of your application. Lastly,
+  if you can’t find something, Google is still a valid option to find what you are looking for. Some applications are not available through the repositories, and are instead distributed as <code>.deb</code> files (Debian packages).</p>
+<h2 id="Web-browsing">
+  <a href="#Web-browsing" class="headerlink" title="Web browsing"></a>Web browsing</h2>
+<p>Unless you are coming from OSX <em>(but in that case, you should probably stick to it, it may be the best operating system for developers… if you are willing to pay the price)</em>, you shouldn’t have problems to find what you want.</p>
+<ul>
+  <li><strong>Firefox</strong> : Firefox is the default web browser in Ubuntu. It’s very fast, powerful, you can install plugins to use even more features, and its debugging tools are very powerful.</li>
+  <li><strong>Chromium</strong> : Chrome itself is not available on Ubuntu, but Chromium is. To quote their website :
+    <blockquote>
+      <p>The Chromium projects include Chromium and Chromium OS, the open-source projects behind the Google Chrome browser and Google Chrome OS.</p>
+    </blockquote>
+  </li>
+</ul>
+<p>If you were using any of these two on Windows, you can just sign in to keep your bookmarks and plugins synchronized. If you were using Internet Explorer before… you should really try any of these two alternatives. They are just better in every single
+  aspects. Even on Windows.</p>
+<h2 id="Text-Editor">
+  <a href="#Text-Editor" class="headerlink" title="Text Editor"></a>Text Editor</h2>
+<p>The basic text editor on Ubuntu is called <strong>Gedit</strong>. It’s similar to <strong>Notepad++</strong>, and support plugins to add more features. If you want something more advanced, I’ll give you some alternatives (that I’m using) in the Coding
+  section.<br><img src="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/gedit.png" alt="Gedit Text Editor" title="Gedit Text Editor"></p>
+<p>If you want to show the world how awesome you are at using very complex tools, I suggest you to try <a href="http://www.vim.org/" target="_blank" rel="external">VIM</a> or <a href="https://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a>. But if, like me, you are not ashamed of using an IDE
+  <em>(Integrated Development Environment)</em>, you should find what you are looking for in the next sections.</p>
+<h2 id="Picture-editor">
+  <a href="#Picture-editor" class="headerlink" title="Picture editor"></a>Picture editor</h2>
+<p>Well, unfortunately, Photoshop is not available on Ubuntu. Instead, you have <strong>GIMP</strong>. While not as powerful, GIMP can do lots of things, and also supports plugins to have access to more features. I may do a quick tutorial on GIMP in the
+  future, but I’m not an expert. You can find some basic and more advanced tutorials here : <a href="https://www.gimp.org/tutorials/" target="_blank" rel="external">https://www.gimp.org/tutorials/</a><br><img src="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/gimp.png" alt="GIMP" title="GIMP"></p>
+<h2 id="Music">
+  <a href="#Music" class="headerlink" title="Music"></a>Music</h2>
+<p>If you want to listen to music while coding (or not), you can use the default program called <strong>Rhythmbox</strong>. I, myself, prefer to use web players, such as <a href="https://play.google.com/music/" target="_blank" rel="external">Google Music</a>. If you are a <strong>Spotify</strong>  user, there is a version for Ubuntu (and also a web player on their website). To install it, you’ll need to type some commands in the terminal : <a href="https://www.spotify.com/be-nl/download/linux/" target="_blank" rel="external">https://www.spotify.com/be-nl/download/linux/</a>.
+  Don’t worry if you don’t understand them yet.<br><img src="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/rhythmbox.png" alt="Gedit Rhythmbox Music Player" title="Gedit Rhythmbox Music Player"></p>
+<h2 id="Videos">
+  <a href="#Videos" class="headerlink" title="Videos"></a>Videos</h2>
+<p>While there is a default applications for videos, I suggest to use <strong>VLC</strong>, because it supports nearly all existing formats by default (you don’t need codecs).<br><img src="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/vlc.png" alt="VLC Video Player" title="VLC Video Player"></p>
+<h2 id="Code-IDE">
+  <a href="#Code-IDE" class="headerlink" title="Code/IDE"></a>Code/IDE</h2>
+<p>If you have done a bit of research, you should know that one of the best IDE for Java is <a href="https://www.jetbrains.com/idea/" target="_blank" rel="external">IntelliJ</a>. It can supports a lot of other languages (HTML, CSS and Javascripts are supported by default, but you’ll also
+  get support for Kotlin, Groovy, Scala, Maven, Ant, Git, SVN, Mercurial, CVS, Typescript, Android development, and much more). It also works on Windows, OSX and Ubuntu. BUT, the Ultimate version is not cheap.<br>If you want to install it, you’ll have
+  to go to their website and download the compressed archive : <a href="https://www.jetbrains.com/idea/download/#section=linux" target="_blank" rel="external">https://www.jetbrains.com/idea/download/#section=linux</a>. Unpack it somewhere on your computer (you can right click the downloaded
+  file to extract), open a terminal, go to the extracted directory <em>(see last section)</em> and type<br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><div class="line">1</div></pre></td>
+        <td class="code"><pre><div class="line">./idea.sh</div></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
+<p>A free, and very powerful alternative (that I’m using) is <a href="https://atom.io/" target="_blank" rel="external">Atom</a>, a text editor developed by the Github team. It comes with a lot of features, supports lots of plugins, themes, and high customization.<br><img src="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/atom.png" alt="Atom Code Editor" title="Atom Code Editor"><br>I will probably do a dedicated post to show you some of the best packages you can use. For example, it can integrate the <em>Hexo</em> commands to generate and serve your blog files (see <a href="/2016/11/26/Hello-World/">my first post</a>)</p>
+<h2 id="Other-applications">
+  <a href="#Other-applications" class="headerlink" title="Other applications"></a>Other applications</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Windows</th>
+      <th>Ubuntu</th>
+      <th>Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Outlook</td>
+      <td>Thunderbird</td>
+      <td>But you should really consider creating a <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="external">Gmail</a> address from Google</td>
+    </tr>
+    <tr>
+      <td>Microsoft Office</td>
+      <td>Libre Office</td>
+      <td>This set of applications will maintain as much compatibility as possible, but they definitively lack some features</td>
+    </tr>
+    <tr>
+      <td>FileZilla, FTP Clients</td>
+      <td>FileZilla</td>
+      <td>But the default file explorer can also connects to FTP servers if you type the URL in the adress bar</td>
+    </tr>
+    <tr>
+      <td>Putty</td>
+      <td>Terminal</td>
+      <td>Just type <code>ssh username@host.com</code></td>
+    </tr>
+    <tr>
+      <td>WinSCP</td>
+      <td>File Explorer (Nautilus)</td>
+      <td>Same as the FTP client</td>
+    </tr>
+    <tr>
+      <td>Torrent clients</td>
+      <td>Transmission</td>
+      <td>Very basic, but it works</td>
+    </tr>
+    <tr>
+      <td>Skype</td>
+      <td>Skype</td>
+      <td><a href="https://www.skype.com/en/download-skype/skype-for-linux/" target="_blank" rel="external">https://www.skype.com/en/download-skype/skype-for-linux/</a></td>
+    </tr>
+  </tbody>
+</table>
+<p>You can find even more alternatives here : <a href="http://askubuntu.com/questions/389228/what-default-windows-software-alternatives-does-ubuntu-have" target="_blank" rel="external">http://askubuntu.com/questions/389228/what-default-windows-software-alternatives-does-ubuntu-have</a></p>
+<h1 id="Accessing-files-from-the-host-Windows">
+  <a href="#Accessing-files-from-the-host-Windows" class="headerlink" title="Accessing files from the host (Windows)"></a>Accessing files from the host (Windows)</h1>
+<p>Ok, so let’s get back to our virtual machine. As I said, Ubuntu is running inside a “box”. You can’t really access anything outside this box, unless you asks VirtualBox for some help.<br>To do this, simply open the VirtualBox menu, and open the Shared
+  Folders configuration<br><img src="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/shared-folders01.PNG" alt="Shared Folders Configuration 01" title="Shared Folders Configuration 01"></p>
+<p>Simply add a new shared folder, browse to the location, and don’t forget to check “automount” and “make permanent”<br><img src="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/shared-folders02.PNG" alt="Shared Folders Configuration 02" title="Shared Folders Configuration 02"></p>
+<p>If you open the file explorer in Ubuntu, you should now see a new entry on the left<br><img src="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/shared-folders03.PNG" alt="Shared Folders Configuration 03" title="Shared Folders Configuration 03"><br>Unfortunately,
+  you probably can’t access it right now, because VirtualBox only allows the <em>root</em> account to access this folder. The easiest solution I found was to open a Terminal, and add yourself in the virtualbox (vboxsf) group, to have full access to this
+  folder (replace “username” with your ubuntu login)<br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><div class="line">1</div></pre></td>
+        <td class="code"><pre><div class="line">sudo usermod -G vboxsf -a username</div></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
+<p>Reboot the machine, and you should now have access to your windows files.</p>
+<h1 id="Terminal">
+  <a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h1>
+<h2 id="What-is-it">
+  <a href="#What-is-it" class="headerlink" title="What is it?"></a>What is it?</h2>
+<blockquote>
+  <p>“Under Linux there are GUIs (graphical user interfaces), where you can point and click and drag, and hopefully get work done without first reading lots of documentation. The traditional Unix environment is a CLI (command line interface), where you type
+    commands to tell the computer what to do. That is faster and more powerful, but requires finding out what the commands are.”</p>
+</blockquote>
+<p>The terminal can be seen as a more powerful version of Windows “cmd”. More powerful also means more “dangerous”, but don’t worry, you won’t break your environment so easily.</p>
+<h2 id="What-can-I-do-with-it">
+  <a href="#What-can-I-do-with-it" class="headerlink" title="What can I do with it?"></a>What can I do with it?</h2>
+<p>Pretty much everything. Using the terminal, you can install applications, update your system, edit and search for files, automate tasks, and much more.<br>In this last section, I will show you some very basic commands (some of them may be similar or identical
+  to the Windows ones)</p>
+<h3 id="cd">
+  <a href="#cd" class="headerlink" title="cd"></a>cd</h3>
+<p><strong>cd</strong> can be used to open a directory. Let’s say you want to open your home directory (that’s basically “My documents” from Windows), you can simply type<br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><div class="line">1</div></pre></td>
+        <td class="code"><pre><div class="line">cd /home/username</div></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
+<p>or use this shortcut<br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><div class="line">1</div></pre></td>
+        <td class="code"><pre><div class="line">cd ~</div></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
+<p>If you want to go “up” a directory, use <code>..</code>. If you want to reference the current directory, use <code>.</code><br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><div class="line">1</div></pre></td>
+        <td class="code"><pre><div class="line">cd ../../Dev/java/</div></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
+<h3 id="pwd">
+  <a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3>
+<p><strong>pwd</strong> is not related to the password (that’s actually <strong>passwd</strong>), but instead, it will print the current directory<br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td>
+        <td class="code"><pre><div class="line">kyne@kyne-VirtualBox:~$ pwd</div><div class="line">/home/kyne</div></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
+<h3 id="ls">
+  <a href="#ls" class="headerlink" title="ls"></a>ls</h3>
+<p><strong>ls</strong> prints the content of a directory. Options <code>-la</code> will print more details.<br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td>
+        <td class="code"><pre><div class="line">kyne@kyne-VirtualBox:~$ ls -la</div><div class="line">total 244</div><div class="line">drwxr-xr-x  36 kyne kyne  4096 déc  4 15:17 .</div><div class="line">drwxr-xr-x   3 root root  4096 nov 12 20:03 ..</div><div class="line">drwx------   3 kyne kyne  4096 nov 27 12:05 .adobe</div><div class="line">drwxr-xr-x   2 kyne kyne  4096 nov 12 20:35 .android</div><div class="line">drwxr-xr-x   9 kyne kyne  4096 nov 27 16:02 .atom</div><div class="line">drwxr-xr-x   2 kyne kyne  4096 nov 12 20:24 .babel-cache</div><div class="line">-rw-------   1 kyne kyne  7152 déc  4 15:16 .bash_history</div><div class="line">-rw-r--r--   1 kyne kyne   220 nov 12 20:03 .bash_logout</div><div class="line">-rw-r--r--   1 kyne kyne  3754 nov 27 19:38 .bashrc</div></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
+<p>You can filter the results using <em>pipes</em>. Pipes can be very complex, so I won’t cover that in this post. Basically, pipes sends the result of a command to the next command <em>(if you have worked with <a href="https://angularjs.org/" target="_blank" rel="external">Angular</a>) before, it’s basically the same as the Angular pipes. Well, technically, it’s the other way around)</em>.<br>The
+  pipe we will use here is <strong>grep</strong>. It can be used to filter texts, even by using regular expression. If you want to list all <em>PNG</em> files inside a folder :<br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><div class="line">1</div></pre></td>
+        <td class="code"><pre><div class="line">ls /home/kyne/Images | grep &quot;.png&quot;</div></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
+<h3 id="rm">
+  <a href="#rm" class="headerlink" title="rm"></a>rm</h3>
+<p><strong>rm</strong> will remove a file or directory. Be careful with the “recursive” <code>-R</code> version, as it will remove everything inside the target. The most dangerous option is the combination of “recursive” <em>and</em> “force” <code>-f</code>.
+  If you run it on the root folder, using the administrator account, you can simply destroy your entire system. So always check twice the command you will run.<br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><div class="line">1</div></pre></td>
+        <td class="code"><pre><div class="line">rm /home/kyne/tmp/file.txt</div></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
+<h3 id="sudo">
+  <a href="#sudo" class="headerlink" title="sudo"></a>sudo</h3>
+<p>Ubuntu use accounts to login into the system. But there is one account that acts as the administrator. This account is always called <strong>root</strong>, and can be required to perform some tasks, such as installing applications of updating the system.
+  To switch to the root account, you can type<br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><div class="line">1</div></pre></td>
+        <td class="code"><pre><div class="line">sudo su</div></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
+<p>This will prompt you for your password. That means users can become administrator using their own password (this can be disabled on servers to increase the security).<br>If you want to run a command as root, simply prefix it with “sudo”<br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td>
+        <td class="code"><pre><div class="line">kyne@kyne-VirtualBox:~$ ls /root -la</div><div class="line">ls: cannot read directory &apos;/root&apos;: Permission denied</div><div class="line">kyne@kyne-VirtualBox:~$ sudo ls /root -la</div><div class="line">total 48</div><div class="line">drwx------ 10 root root 4096 déc  1 19:25 .</div><div class="line">drwxr-xr-x 24 root root 4096 nov 30 19:41 ..</div><div class="line">-rw-r--r--  1 root root 3106 oct 22  2015 .bashrc</div><div class="line">drwx------  4 root root 4096 déc  2 17:04 .cache</div><div class="line">drwxr-xr-x  6 root root 4096 déc  1 19:23 .config</div></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
+<h3 id="Update-the-system">
+  <a href="#Update-the-system" class="headerlink" title="Update the system"></a>Update the system</h3>
+<p>Updating your applications is very easy, and takes only two steps.<br>The first one will update all repositories, to ensure they are using the last version of all packages.<br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><div class="line">1</div></pre></td>
+        <td class="code"><pre><div class="line">sudo apt-get update</div></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
+<p>Then, you can start the upgrade by running<br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><div class="line">1</div></pre></td>
+        <td class="code"><pre><div class="line">sudo apt-get upgrade</div></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
+<h3 id="Installing-an-application">
+  <a href="#Installing-an-application" class="headerlink" title="Installing an application"></a>Installing an application</h3>
+<p>Installing an application only requires you to know its package name.<br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><div class="line">1</div></pre></td>
+        <td class="code"><pre><div class="line">sudo apt-get install firefox</div></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
+<p>To search for a package, you can use this command<br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><div class="line">1</div></pre></td>
+        <td class="code"><pre><div class="line">apt-cache search keyword</div></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
+<p>To remove an application, simply type<br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><div class="line">1</div></pre></td>
+        <td class="code"><pre><div class="line">sudo apt-get remove firefox</div></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
+<h3 id="Starting-an-application">
+  <a href="#Starting-an-application" class="headerlink" title="Starting an application"></a>Starting an application</h3>
+<p>Usually, you can start an application from the terminal. For example, if you want to quickly edit a file with <em>Gedit</em><br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><div class="line">1</div></pre></td>
+        <td class="code"><pre><div class="line">gedit /home/kyne/Dev/web/blog/_config.yml</div></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
+<p>Or you can open <em>Atom</em> and set your workspace as the current directory<br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td>
+        <td class="code"><pre><div class="line">cd /home/kyne/web/blog</div><div class="line">atom .</div></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
+<h1 id="Conclusion">
+  <a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1>
+<p>I think we have covered a lot of stuff today. There is still much to cover, but I think you now have enough basic knowledge to continue on your own.<br>You will find plenty of tutorials and forums around the web to help you use Ubuntu, such as <a href="http://www.makeuseof.com/tag/ubuntu-an-absolute-beginners-guide/" target="_blank" rel="external">http://www.makeuseof.com/tag/ubuntu-an-absolute-beginners-guide/</a><br>In
+  the next tutorials, we will probably learn more about <em>Atom</em>, and I may also do a quick tutorial on GIMP.<br>So stay tuned !</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Here we are, at the third and last part of this guide. In this post, I’ll try to cover what programs you can use for most of your tasks, but also give you an introduction to the terminal.&lt;/p&gt;
+&lt;p&gt;Please keep in mind that we didn’t install Ubuntu to replace Windows : we are working in a virtual environment, meaning we can’t expected to play games (we even disabled 3D acceleration…). Focus will be done on development : web browsing, coding, files
+  and pictures editing, etc.&lt;/p&gt;
+&lt;p&gt;Let’s dive right into it !&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Operating System" scheme="http://kynesilverhide.github.io/categories/Operating-System/"/>
+    
+    
+      <category term="ubuntu" scheme="http://kynesilverhide.github.io/tags/ubuntu/"/>
+    
+      <category term="virtualbox" scheme="http://kynesilverhide.github.io/tags/virtualbox/"/>
+    
+      <category term="unity" scheme="http://kynesilverhide.github.io/tags/unity/"/>
+    
+      <category term="unix" scheme="http://kynesilverhide.github.io/tags/unix/"/>
+    
+  </entry>
   
   <entry>
     <title>Discovering and installing Ubuntu in VirtualBox (Part 2)</title>

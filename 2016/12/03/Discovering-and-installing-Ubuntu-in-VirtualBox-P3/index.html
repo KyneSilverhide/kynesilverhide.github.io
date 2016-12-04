@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Discovering and installing Ubuntu in VirtualBox P3 | KyneSilverhide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="description" content="Here we are, at the third and last part of this guide. In this post, I’ll try to cover what programs you can use for most of your tasks, but also give you an introduction to the terminal.
+Please keep">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Discovering and installing Ubuntu in VirtualBox P3">
+  <meta property="og:url" content="http://kynesilverhide.github.io/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/index.html">
+  <meta property="og:site_name" content="KyneSilverhide">
+  <meta property="og:description" content="Here we are, at the third and last part of this guide. In this post, I’ll try to cover what programs you can use for most of your tasks, but also give you an introduction to the terminal.
+Please keep">
+  <meta property="og:image" content="http://kynesilverhide.github.io/images/thumb_ubuntu.PNG">
+  <meta property="og:updated_time" content="2016-12-04T15:11:44.164Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Discovering and installing Ubuntu in VirtualBox P3">
+  <meta name="twitter:description" content="Here we are, at the third and last part of this guide. In this post, I’ll try to cover what programs you can use for most of your tasks, but also give you an introduction to the terminal.
+Please keep">
+  <meta name="twitter:image" content="http://kynesilverhide.github.io/images/thumb_ubuntu.PNG">
+
+
+
+
+
+
+  <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/libs/open-sans/styles.css">
+  <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+
+
+  <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+
+  <script type="text/javascript">
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-88360865-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+      <div id="header-main" class="header-inner">
+        <div class="outer">
+          <a href="/" id="logo">
+            <i class="logo"></i>
+            <span class="site-title">KyneSilverhide</span>
+          </a>
+          <nav id="main-nav">
+
+            <a class="main-nav-link" href="/.">Home</a>
+
+            <a class="main-nav-link" href="/archives">Archives</a>
+
+            <a class="main-nav-link" href="/categories">Categories</a>
+
+            <a class="main-nav-link" href="/tags">Tags</a>
+
+          </nav>
+
+
+          <nav id="sub-nav">
+            <div class="profile" id="profile-nav">
+              <a id="profile-anchor" href="javascript:;">
+                <img class="avatar" src="https://www.gravatar.com/avatar/7eb59f97f7c777721a1d5385474c0e04" />
+                <i class="fa fa-caret-down"></i>
+              </a>
+            </div>
+          </nav>
+
+          <div id="search-form-wrap">
+
+            <form class="search-form">
+              <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+              <button type="submit" class="search-form-submit"></button>
+            </form>
+            <div class="ins-search">
+              <div class="ins-search-mask"></div>
+              <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                  <input type="text" class="ins-search-input" placeholder="Type something..." />
+                  <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+                </div>
+                <div class="ins-section-wrapper">
+                  <div class="ins-section-container"></div>
+                </div>
+              </div>
+            </div>
+            <script>
+              (function(window) {
+                var INSIGHT_CONFIG = {
+                  TRANSLATION: {
+                    POSTS: 'Posts',
+                    PAGES: 'Pages',
+                    CATEGORIES: 'Categories',
+                    TAGS: 'Tags',
+                    UNTITLED: '(Untitled)',
+                  },
+                  ROOT_URL: '/',
+                  CONTENT_URL: '/content.json',
+                };
+                window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+              })(window);
+            </script>
+            <script src="/js/insight.js"></script>
+
+          </div>
+        </div>
+      </div>
+      <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+          <tr>
+
+            <td><a class="main-nav-link" href="/.">Home</a></td>
+
+            <td><a class="main-nav-link" href="/archives">Archives</a></td>
+
+            <td><a class="main-nav-link" href="/categories">Categories</a></td>
+
+            <td><a class="main-nav-link" href="/tags">Tags</a></td>
+
+            <td>
+              <div class="search-form">
+                <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </header>
+    <div class="outer">
+
+      <aside id="profile">
+        <div class="inner profile-inner">
+          <div class="base-info profile-block">
+            <img id="avatar" src="https://www.gravatar.com/avatar/7eb59f97f7c777721a1d5385474c0e04?s=128" />
+            <h2 id="name">KyneSilverhide</h2>
+            <h3 id="title">Java and Javascript software developper</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Mons, Belgium</span>
+            <a id="follow" target="_blank" href="https://github.com/kynesilverhide/">FOLLOW</a>
+          </div>
+          <div class="article-info profile-block">
+            <div class="article-info-block">
+              4
+              <span>posts</span>
+            </div>
+            <div class="article-info-block">
+              11
+              <span>tags</span>
+            </div>
+          </div>
+
+          <div class="profile-block social-links">
+            <table>
+              <tr>
+
+
+                <td>
+                  <a href="https://github.com/kynesilverhide/" target="_blank" title="github" class=tooltip>
+                    <i class="fa fa-github"></i>
+                  </a>
+                </td>
+
+                <td>
+                  <a href="https://twitter.com/ALansmanne" target="_blank" title="twitter" class=tooltip>
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </td>
+
+                <td>
+                  <a href="https://www.youtube.com/user/SilverhideKyne" target="_blank" title="youtube" class=tooltip>
+                    <i class="fa fa-youtube"></i>
+                  </a>
+                </td>
+
+              </tr>
+            </table>
+          </div>
+
+        </div>
+      </aside>
+
+      <section id="main">
+        <article id="post-Discovering-and-installing-Ubuntu-in-VirtualBox-P3" class="article article-type-post" itemscope itemprop="blogPost">
+          <div class="article-inner">
+
+            <img src="/images/banner_ubuntu3.PNG" class="article-banner" />
+
+
+            <header class="article-header">
+              <h1 class="article-title" itemprop="name">
+                Discovering and installing Ubuntu in VirtualBox P3
+              </h1>
+
+              <div class="article-meta">
+                <div class="article-date">
+                  <i class="fa fa-calendar"></i>
+                  <a href="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/">
+                    <time datetime="2016-12-03T10:58:35.000Z" itemprop="datePublished">2016-12-03</time>
+                  </a>
+                </div>
+                <div class="article-category">
+                  <i class="fa fa-folder"></i>
+                  <a class="article-category-link" href="/categories/Operating-System/">Operating System</a>
+                </div>
+                <div class="article-tag">
+                  <i class="fa fa-tag"></i>
+                  <a class="tag-link" href="/tags/ubuntu/">ubuntu</a>, <a class="tag-link" href="/tags/unity/">unity</a>, <a class="tag-link" href="/tags/unix/">unix</a>, <a class="tag-link" href="/tags/virtualbox/">virtualbox</a>
+                </div>
+              </div>
+
+            </header>
+
+
+            <div class="article-entry" itemprop="articleBody">
+
+
+              <p>Here we are, at the third and last part of this guide. In this post, I’ll try to cover what programs you can use for most of your tasks, but also give you an introduction to the terminal.</p>
+              <p>Please keep in mind that we didn’t install Ubuntu to replace Windows : we are working in a virtual environment, meaning we can’t expected to play games (we even disabled 3D acceleration…). Focus will be done on development : web browsing,
+                coding, files and pictures editing, etc.</p>
+              <p>Let’s dive right into it !<br>
+                <a id="more"></a>
+              </p>
+              <h1 id="Applications">
+                <a href="#Applications" class="headerlink" title="Applications"></a>Applications</h1>
+              <p>Applications on Linux systems are similar to Windows or OSX applications. But not all of them exists on Linux. I’ll split this section into themes, and show you alternatives to what you were used to.<br>Also, installing applications is very
+                easy. Just start the <strong>Ubuntu software</strong> applications (from the left menu, or by using the global search), search for what you want, and click <em>Install</em>. You can also browse by categories if you don’t know the name
+                of your application. Lastly, if you can’t find something, Google is still a valid option to find what you are looking for. Some applications are not available through the repositories, and are instead distributed as <code>.deb</code> files
+                (Debian packages).</p>
+              <h2 id="Web-browsing">
+                <a href="#Web-browsing" class="headerlink" title="Web browsing"></a>Web browsing</h2>
+              <p>Unless you are coming from OSX <em>(but in that case, you should probably stick to it, it may be the best operating system for developers… if you are willing to pay the price)</em>, you shouldn’t have problems to find what you want.</p>
+              <ul>
+                <li><strong>Firefox</strong> : Firefox is the default web browser in Ubuntu. It’s very fast, powerful, you can install plugins to use even more features, and its debugging tools are very powerful.</li>
+                <li><strong>Chromium</strong> : Chrome itself is not available on Ubuntu, but Chromium is. To quote their website :
+                  <blockquote>
+                    <p>The Chromium projects include Chromium and Chromium OS, the open-source projects behind the Google Chrome browser and Google Chrome OS.</p>
+                  </blockquote>
+                </li>
+              </ul>
+              <p>If you were using any of these two on Windows, you can just sign in to keep your bookmarks and plugins synchronized. If you were using Internet Explorer before… you should really try any of these two alternatives. They are just better in
+                every single aspects. Even on Windows.</p>
+              <h2 id="Text-Editor">
+                <a href="#Text-Editor" class="headerlink" title="Text Editor"></a>Text Editor</h2>
+              <p>The basic text editor on Ubuntu is called <strong>Gedit</strong>. It’s similar to <strong>Notepad++</strong>, and support plugins to add more features. If you want something more advanced, I’ll give you some alternatives (that I’m using)
+                in the Coding section.
+                <br><img src="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/gedit.png" alt="Gedit Text Editor" title="Gedit Text Editor"></p>
+              <p>If you want to show the world how awesome you are at using very complex tools, I suggest you to try <a href="http://www.vim.org/" target="_blank" rel="external">VIM</a> or <a href="https://www.gnu.org/software/emacs/" target="_blank" rel="external">Emacs</a>.
+                But if, like me, you are not ashamed of using an IDE
+                <em>(Integrated Development Environment)</em>, you should find what you are looking for in the next sections.</p>
+              <h2 id="Picture-editor">
+                <a href="#Picture-editor" class="headerlink" title="Picture editor"></a>Picture editor</h2>
+              <p>Well, unfortunately, Photoshop is not available on Ubuntu. Instead, you have <strong>GIMP</strong>. While not as powerful, GIMP can do lots of things, and also supports plugins to have access to more features. I may do a quick tutorial on
+                GIMP in the future, but I’m not an expert. You can find some basic and more advanced tutorials here : <a href="https://www.gimp.org/tutorials/" target="_blank" rel="external">https://www.gimp.org/tutorials/</a><br><img src="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/gimp.png"
+                  alt="GIMP" title="GIMP"></p>
+              <h2 id="Music">
+                <a href="#Music" class="headerlink" title="Music"></a>Music</h2>
+              <p>If you want to listen to music while coding (or not), you can use the default program called <strong>Rhythmbox</strong>. I, myself, prefer to use web players, such as <a href="https://play.google.com/music/" target="_blank" rel="external">Google Music</a>.
+                If you are a <strong>Spotify</strong> user, there is a version for Ubuntu (and also a web player on their website). To install it, you’ll need to type some commands in the terminal : <a href="https://www.spotify.com/be-nl/download/linux/"
+                  target="_blank" rel="external">https://www.spotify.com/be-nl/download/linux/</a>. Don’t worry if you don’t understand them yet.<br><img src="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/rhythmbox.png" alt="Gedit Rhythmbox Music Player"
+                  title="Gedit Rhythmbox Music Player"></p>
+              <h2 id="Videos">
+                <a href="#Videos" class="headerlink" title="Videos"></a>Videos</h2>
+              <p>While there is a default applications for videos, I suggest to use <strong>VLC</strong>, because it supports nearly all existing formats by default (you don’t need codecs).<br><img src="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/vlc.png"
+                  alt="VLC Video Player" title="VLC Video Player"></p>
+              <h2 id="Code-IDE">
+                <a href="#Code-IDE" class="headerlink" title="Code/IDE"></a>Code/IDE</h2>
+              <p>If you have done a bit of research, you should know that one of the best IDE for Java is <a href="https://www.jetbrains.com/idea/" target="_blank" rel="external">IntelliJ</a>. It can supports a lot of other languages (HTML, CSS and Javascripts
+                are supported by default, but you’ll also get support for Kotlin, Groovy, Scala, Maven, Ant, Git, SVN, Mercurial, CVS, Typescript, Android development, and much more). It also works on Windows, OSX and Ubuntu. BUT, the Ultimate version
+                is not cheap.<br>If you want to install it, you’ll have to go to their website and download the compressed archive : <a href="https://www.jetbrains.com/idea/download/#section=linux" target="_blank" rel="external">https://www.jetbrains.com/idea/download/#section=linux</a>.
+                Unpack it somewhere on your computer (you can right click the downloaded file to extract), open a terminal, go to the extracted directory <em>(see last section)</em> and type<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div></pre></td>
+                      <td class="code"><pre><div class="line">./idea.sh</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <p>A free, and very powerful alternative (that I’m using) is <a href="https://atom.io/" target="_blank" rel="external">Atom</a>, a text editor developed by the Github team. It comes with a lot of features, supports lots of plugins, themes,
+                and high customization.
+                <br><img src="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/atom.png" alt="Atom Code Editor" title="Atom Code Editor"><br>I will probably do a dedicated post to show you some of the best packages you can use. For example,
+                it can integrate the <em>Hexo</em> commands to generate and serve your blog files (see <a href="/2016/11/26/Hello-World/">my first post</a>)</p>
+              <h2 id="Other-applications">
+                <a href="#Other-applications" class="headerlink" title="Other applications"></a>Other applications</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Windows</th>
+                    <th>Ubuntu</th>
+                    <th>Comment</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Outlook</td>
+                    <td>Thunderbird</td>
+                    <td>But you should really consider creating a <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="external">Gmail</a> address from Google</td>
+                  </tr>
+                  <tr>
+                    <td>Microsoft Office</td>
+                    <td>Libre Office</td>
+                    <td>This set of applications will maintain as much compatibility as possible, but they definitively lack some features</td>
+                  </tr>
+                  <tr>
+                    <td>FileZilla, FTP Clients</td>
+                    <td>FileZilla</td>
+                    <td>But the default file explorer can also connects to FTP servers if you type the URL in the adress bar</td>
+                  </tr>
+                  <tr>
+                    <td>Putty</td>
+                    <td>Terminal</td>
+                    <td>Just type <code>ssh username@host.com</code></td>
+                  </tr>
+                  <tr>
+                    <td>WinSCP</td>
+                    <td>File Explorer (Nautilus)</td>
+                    <td>Same as the FTP client</td>
+                  </tr>
+                  <tr>
+                    <td>Torrent clients</td>
+                    <td>Transmission</td>
+                    <td>Very basic, but it works</td>
+                  </tr>
+                  <tr>
+                    <td>Skype</td>
+                    <td>Skype</td>
+                    <td><a href="https://www.skype.com/en/download-skype/skype-for-linux/" target="_blank" rel="external">https://www.skype.com/en/download-skype/skype-for-linux/</a></td>
+                  </tr>
+                </tbody>
+              </table>
+              <p>You can find even more alternatives here : <a href="http://askubuntu.com/questions/389228/what-default-windows-software-alternatives-does-ubuntu-have" target="_blank" rel="external">http://askubuntu.com/questions/389228/what-default-windows-software-alternatives-does-ubuntu-have</a></p>
+              <h1 id="Accessing-files-from-the-host-Windows">
+                <a href="#Accessing-files-from-the-host-Windows" class="headerlink" title="Accessing files from the host (Windows)"></a>Accessing files from the host (Windows)</h1>
+              <p>Ok, so let’s get back to our virtual machine. As I said, Ubuntu is running inside a “box”. You can’t really access anything outside this box, unless you asks VirtualBox for some help.<br>To do this, simply open the VirtualBox menu, and open
+                the Shared Folders configuration<br><img src="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/shared-folders01.PNG" alt="Shared Folders Configuration 01" title="Shared Folders Configuration 01"></p>
+              <p>Simply add a new shared folder, browse to the location, and don’t forget to check “automount” and “make permanent”<br><img src="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/shared-folders02.PNG" alt="Shared Folders Configuration 02"
+                  title="Shared Folders Configuration 02"></p>
+              <p>If you open the file explorer in Ubuntu, you should now see a new entry on the left<br><img src="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/shared-folders03.PNG" alt="Shared Folders Configuration 03" title="Shared Folders Configuration 03"><br>Unfortunately,
+                you probably can’t access it right now, because VirtualBox only allows the <em>root</em> account to access this folder. The easiest solution I found was to open a Terminal, and add yourself in the virtualbox (vboxsf) group, to have full
+                access to this folder (replace “username” with your ubuntu login)<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div></pre></td>
+                      <td class="code"><pre><div class="line">sudo usermod -G vboxsf -a username</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <p>Reboot the machine, and you should now have access to your windows files.</p>
+              <h1 id="Terminal">
+                <a href="#Terminal" class="headerlink" title="Terminal"></a>Terminal</h1>
+              <h2 id="What-is-it">
+                <a href="#What-is-it" class="headerlink" title="What is it?"></a>What is it?</h2>
+              <blockquote>
+                <p>“Under Linux there are GUIs (graphical user interfaces), where you can point and click and drag, and hopefully get work done without first reading lots of documentation. The traditional Unix environment is a CLI (command line interface),
+                  where you type commands to tell the computer what to do. That is faster and more powerful, but requires finding out what the commands are.”</p>
+              </blockquote>
+              <p>The terminal can be seen as a more powerful version of Windows “cmd”. More powerful also means more “dangerous”, but don’t worry, you won’t break your environment so easily.</p>
+              <h2 id="What-can-I-do-with-it">
+                <a href="#What-can-I-do-with-it" class="headerlink" title="What can I do with it?"></a>What can I do with it?</h2>
+              <p>Pretty much everything. Using the terminal, you can install applications, update your system, edit and search for files, automate tasks, and much more.<br>In this last section, I will show you some very basic commands (some of them may be
+                similar or identical to the Windows ones)</p>
+              <h3 id="cd">
+                <a href="#cd" class="headerlink" title="cd"></a>cd</h3>
+              <p><strong>cd</strong> can be used to open a directory. Let’s say you want to open your home directory (that’s basically “My documents” from Windows), you can simply type<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div></pre></td>
+                      <td class="code"><pre><div class="line">cd /home/username</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <p>or use this shortcut<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div></pre></td>
+                      <td class="code"><pre><div class="line">cd ~</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <p>If you want to go “up” a directory, use <code>..</code>. If you want to reference the current directory, use <code>.</code><br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div></pre></td>
+                      <td class="code"><pre><div class="line">cd ../../Dev/java/</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <h3 id="pwd">
+                <a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3>
+              <p><strong>pwd</strong> is not related to the password (that’s actually <strong>passwd</strong>), but instead, it will print the current directory<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td>
+                      <td class="code"><pre><div class="line">kyne@kyne-VirtualBox:~$ pwd</div><div class="line">/home/kyne</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <h3 id="ls">
+                <a href="#ls" class="headerlink" title="ls"></a>ls</h3>
+              <p><strong>ls</strong> prints the content of a directory. Options <code>-la</code> will print more details.<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td>
+                      <td class="code"><pre><div class="line">kyne@kyne-VirtualBox:~$ ls -la</div><div class="line">total 244</div><div class="line">drwxr-xr-x  36 kyne kyne  4096 déc  4 15:17 .</div><div class="line">drwxr-xr-x   3 root root  4096 nov 12 20:03 ..</div><div class="line">drwx------   3 kyne kyne  4096 nov 27 12:05 .adobe</div><div class="line">drwxr-xr-x   2 kyne kyne  4096 nov 12 20:35 .android</div><div class="line">drwxr-xr-x   9 kyne kyne  4096 nov 27 16:02 .atom</div><div class="line">drwxr-xr-x   2 kyne kyne  4096 nov 12 20:24 .babel-cache</div><div class="line">-rw-------   1 kyne kyne  7152 déc  4 15:16 .bash_history</div><div class="line">-rw-r--r--   1 kyne kyne   220 nov 12 20:03 .bash_logout</div><div class="line">-rw-r--r--   1 kyne kyne  3754 nov 27 19:38 .bashrc</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <p>You can filter the results using <em>pipes</em>. Pipes can be very complex, so I won’t cover that in this post. Basically, pipes sends the result of a command to the next command <em>(if you have worked with <a href="https://angularjs.org/" target="_blank" rel="external">Angular</a>) before, it’s basically the same as the Angular pipes. Well, technically, it’s the other way around)</em>.<br>The
+                pipe we will use here is <strong>grep</strong>. It can be used to filter texts, even by using regular expression. If you want to list all <em>PNG</em> files inside a folder :<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div></pre></td>
+                      <td class="code"><pre><div class="line">ls /home/kyne/Images | grep &quot;.png&quot;</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <h3 id="rm">
+                <a href="#rm" class="headerlink" title="rm"></a>rm</h3>
+              <p><strong>rm</strong> will remove a file or directory. Be careful with the “recursive” <code>-R</code> version, as it will remove everything inside the target. The most dangerous option is the combination of “recursive” <em>and</em> “force”
+                <code>-f</code>. If you run it on the root folder, using the administrator account, you can simply destroy your entire system. So always check twice the command you will run.<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div></pre></td>
+                      <td class="code"><pre><div class="line">rm /home/kyne/tmp/file.txt</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <h3 id="sudo">
+                <a href="#sudo" class="headerlink" title="sudo"></a>sudo</h3>
+              <p>Ubuntu use accounts to login into the system. But there is one account that acts as the administrator. This account is always called <strong>root</strong>, and can be required to perform some tasks, such as installing applications of updating
+                the system. To switch to the root account, you can type<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div></pre></td>
+                      <td class="code"><pre><div class="line">sudo su</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <p>This will prompt you for your password. That means users can become administrator using their own password (this can be disabled on servers to increase the security).<br>If you want to run a command as root, simply prefix it with “sudo”<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td>
+                      <td class="code"><pre><div class="line">kyne@kyne-VirtualBox:~$ ls /root -la</div><div class="line">ls: cannot read directory &apos;/root&apos;: Permission denied</div><div class="line">kyne@kyne-VirtualBox:~$ sudo ls /root -la</div><div class="line">total 48</div><div class="line">drwx------ 10 root root 4096 déc  1 19:25 .</div><div class="line">drwxr-xr-x 24 root root 4096 nov 30 19:41 ..</div><div class="line">-rw-r--r--  1 root root 3106 oct 22  2015 .bashrc</div><div class="line">drwx------  4 root root 4096 déc  2 17:04 .cache</div><div class="line">drwxr-xr-x  6 root root 4096 déc  1 19:23 .config</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <h3 id="Update-the-system">
+                <a href="#Update-the-system" class="headerlink" title="Update the system"></a>Update the system</h3>
+              <p>Updating your applications is very easy, and takes only two steps.<br>The first one will update all repositories, to ensure they are using the last version of all packages.<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div></pre></td>
+                      <td class="code"><pre><div class="line">sudo apt-get update</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <p>Then, you can start the upgrade by running<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div></pre></td>
+                      <td class="code"><pre><div class="line">sudo apt-get upgrade</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <h3 id="Installing-an-application">
+                <a href="#Installing-an-application" class="headerlink" title="Installing an application"></a>Installing an application</h3>
+              <p>Installing an application only requires you to know its package name.<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div></pre></td>
+                      <td class="code"><pre><div class="line">sudo apt-get install firefox</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <p>To search for a package, you can use this command<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div></pre></td>
+                      <td class="code"><pre><div class="line">apt-cache search keyword</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <p>To remove an application, simply type<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div></pre></td>
+                      <td class="code"><pre><div class="line">sudo apt-get remove firefox</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <h3 id="Starting-an-application">
+                <a href="#Starting-an-application" class="headerlink" title="Starting an application"></a>Starting an application</h3>
+              <p>Usually, you can start an application from the terminal. For example, if you want to quickly edit a file with <em>Gedit</em><br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div></pre></td>
+                      <td class="code"><pre><div class="line">gedit /home/kyne/Dev/web/blog/_config.yml</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <p>Or you can open <em>Atom</em> and set your workspace as the current directory<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td>
+                      <td class="code"><pre><div class="line">cd /home/kyne/web/blog</div><div class="line">atom .</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <h1 id="Conclusion">
+                <a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1>
+              <p>I think we have covered a lot of stuff today. There is still much to cover, but I think you now have enough basic knowledge to continue on your own.<br>You will find plenty of tutorials and forums around the web to help you use Ubuntu, such
+                as
+                <a href="http://www.makeuseof.com/tag/ubuntu-an-absolute-beginners-guide/" target="_blank" rel="external">http://www.makeuseof.com/tag/ubuntu-an-absolute-beginners-guide/</a><br>In the next tutorials, we will probably learn more about
+                <em>Atom</em>, and I may also do a quick tutorial on GIMP.<br>So stay tuned !</p>
+
+            </div>
+            <footer class="article-footer">
+              <div class="share-container">
+
+
+
+              </div>
+
+              <a data-url="http://kynesilverhide.github.io/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/" data-id="ciwarsqgg0002je7r23ud79t6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+              <script>
+                (function($) {
+                  // Prevent duplicate binding
+                  if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+                    __SHARE_BUTTON_BINDED__ = true;
+                  } else {
+                    return;
+                  }
+                  $('body').on('click', function() {
+                    $('.article-share-box.on').removeClass('on');
+                  }).on('click', '.article-share-link', function(e) {
+                    e.stopPropagation();
+
+                    var $this = $(this),
+                      url = $this.attr('data-url'),
+                      encodedUrl = encodeURIComponent(url),
+                      id = 'article-share-box-' + $this.attr('data-id'),
+                      offset = $this.offset(),
+                      box;
+
+                    if ($('#' + id).length) {
+                      box = $('#' + id);
+
+                      if (box.hasClass('on')) {
+                        box.removeClass('on');
+                        return;
+                      }
+                    } else {
+                      var html = [
+                        '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                        '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                        '</div>'
+                      ].join('');
+
+                      box = $(html);
+
+                      $('body').append(box);
+                    }
+
+                    $('.article-share-box.on').hide();
+
+                    box.css({
+                      top: offset.top + 25,
+                      left: offset.left
+                    }).addClass('on');
+
+                  }).on('click', '.article-share-box', function(e) {
+                    e.stopPropagation();
+                  }).on('click', '.article-share-box-input', function() {
+                    $(this).select();
+                  }).on('click', '.article-share-box-link', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+                  });
+                })(jQuery);
+              </script>
+              <a href="http://kynesilverhide.github.io/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kynesilverhide.github.io/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/">Comments</a>
+            </footer>
+          </div>
+
+          <nav id="article-nav">
+
+
+            <a href="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/" id="article-nav-older" class="article-nav-link-wrap">
+              <strong class="article-nav-caption">Older</strong>
+              <div class="article-nav-title">Discovering and installing Ubuntu in VirtualBox (Part 2)</div>
+            </a>
+
+          </nav>
+
+        </article>
+
+
+        <section id="comments">
+
+          <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          </div>
+
+        </section>
+      </section>
+
+      <aside id="sidebar">
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">recent</h3>
+          <div class="widget">
+            <ul id="recent-post" class="">
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_ubuntu.PNG)" alt="Discovering and installing Ubuntu in VirtualBox P3" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Operating-System/">Operating System</a></p>
+                  <p class="item-title"><a href="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/" class="title">Discovering and installing Ubuntu in VirtualBox P3</a></p>
+                  <p class="item-date"><time datetime="2016-12-03T10:58:35.000Z" itemprop="datePublished">2016-12-03</time></p>
+                </div>
+              </li>
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_ubuntu.PNG)" alt="Discovering and installing Ubuntu in VirtualBox (Part 2)" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Operating-System/">Operating System</a></p>
+                  <p class="item-title"><a href="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/" class="title">Discovering and installing Ubuntu in VirtualBox (Part 2)</a></p>
+                  <p class="item-date"><time datetime="2016-11-30T18:41:26.000Z" itemprop="datePublished">2016-11-30</time></p>
+                </div>
+              </li>
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_ubuntu.PNG)" alt="Discovering and installing Ubuntu in VirtualBox (Part 1)" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Operating-System/">Operating System</a></p>
+                  <p class="item-title"><a href="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/" class="title">Discovering and installing Ubuntu in VirtualBox (Part 1)</a></p>
+                  <p class="item-date"><time datetime="2016-11-30T18:41:26.000Z" itemprop="datePublished">2016-11-30</time></p>
+                </div>
+              </li>
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/11/26/Hello-World/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_blog.PNG)" alt="Hello World, and building your own blog" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Hexo/">Hexo</a></p>
+                  <p class="item-title"><a href="/2016/11/26/Hello-World/" class="title">Hello World, and building your own blog</a></p>
+                  <p class="item-date"><time datetime="2016-11-26T13:27:16.000Z" itemprop="datePublished">2016-11-26</time></p>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">categories</h3>
+          <div class="widget">
+            <ul class="category-list">
+              <li class="category-list-item"><a class="category-list-link" href="/categories/Operating-System/">Operating System</a><span class="category-list-count">3</span></li>
+              <li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">1</span>
+                <ul class="category-list-child">
+                  <li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Hexo/">Hexo</a><span class="category-list-count">1</span></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">archives</h3>
+          <div class="widget">
+            <ul class="archive-list">
+              <li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">1</span></li>
+              <li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">tags</h3>
+          <div class="widget">
+            <ul class="tag-list">
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">3</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/">unity</a><span class="tag-list-count">3</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/unix/">unix</a><span class="tag-list-count">3</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/virtualbox/">virtualbox</a><span class="tag-list-count">3</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">tag cloud</h3>
+          <div class="widget tagcloud">
+            <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/markdown/"
+              style="font-size: 10px;">markdown</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/ubuntu/" style="font-size: 20px;">ubuntu</a> <a href="/tags/unity/" style="font-size: 20px;">unity</a>            <a href="/tags/unix/" style="font-size: 20px;">unix</a> <a href="/tags/virtualbox/" style="font-size: 20px;">virtualbox</a>
+          </div>
+        </div>
+
+        <div class="widget-wrap widget-list">
+          <h3 class="widget-title">links</h3>
+          <div class="widget">
+            <ul>
+
+              <li>
+                <a href="/atom.xml">Atom Feed</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div id="toTop" class="fa fa-angle-up"></div>
+      </aside>
+
+    </div>
+    <footer id="footer">
+      <div class="outer">
+        <div id="footer-info" class="inner">
+          &copy; 2016 KyneSilverhide<br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      var disqus_config = function() {
+
+        this.page.url = 'http://kynesilverhide.github.io/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/';
+
+        this.page.identifier = 'Discovering-and-installing-Ubuntu-in-VirtualBox-P3';
+      };
+      (function() {
+        var d = document,
+          s = d.createElement('script');
+        s.src = '//' + 'kynesilverhide-blog' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <script src="/libs/lightgallery/js/lightgallery.min.js">
+    </script>
+    <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+
+    <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="/js/main.js"></script>
+  </div>
+</body>
+
+</html>
