@@ -157,11 +157,11 @@
           </div>
           <div class="article-info profile-block">
             <div class="article-info-block">
-              4
+              5
               <span>posts</span>
             </div>
             <div class="article-info-block">
-              11
+              15
               <span>tags</span>
             </div>
           </div>
@@ -197,6 +197,133 @@
       </aside>
 
       <section id="main">
+        <article id="post-Recommended-packages-for-Atom" class="article article-type-post" itemscope itemprop="blogPost">
+          <div class="article-inner">
+
+            <a href="/2016/12/06/Recommended-packages-for-Atom/" itemprop="url">
+              <img src="/images/banner_atom.png" class="article-banner" />
+            </a>
+
+
+            <header class="article-header">
+              <h1 itemprop="name">
+                <a class="article-title" href="/2016/12/06/Recommended-packages-for-Atom/">Recommended packages for Atom</a>
+              </h1>
+
+              <div class="article-meta">
+                <div class="article-date">
+                  <i class="fa fa-calendar"></i>
+                  <a href="/2016/12/06/Recommended-packages-for-Atom/">
+                    <time datetime="2016-12-06T19:09:32.000Z" itemprop="datePublished">2016-12-06</time>
+                  </a>
+                </div>
+                <div class="article-category">
+                  <i class="fa fa-folder"></i>
+                  <a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Atom/">Atom</a>
+                </div>
+                <div class="article-tag">
+                  <i class="fa fa-tag"></i>
+                  <a class="tag-link" href="/tags/atom/">atom</a>, <a class="tag-link" href="/tags/code/">code</a>, <a class="tag-link" href="/tags/development/">development</a>, <a class="tag-link" href="/tags/packages/">packages</a>
+                </div>
+              </div>
+
+            </header>
+
+
+            <div class="article-entry" itemprop="articleBody">
+
+              <p>
+                <p>If you have read my <a href="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/">previous article</a>, you may have chosen to give <strong>Atom</strong> a try.<br>The best way to describe what Atom is, is to quote its website
+                  (
+                  <a href="https://atom.io/">https://atom.io/</a>):</p>
+                <blockquote>
+                  <p>Atom is a text editor that’s modern, approachable, yet hackable to the core—a tool you can customize to do anything but also use productively without ever touching a config file.</p>
+                </blockquote>
+                <p>Atom works. It’s simple, yet very powerful. It relies on community plugins to extend its base features. Ah, and it’s available on Windows, Mac and Linux <em>(meaning you don’t have to follow all three previous tutorials on Ubuntu to test it)</em>.</p>
+                <p>In this article, I’ll show you some of the best plugins (called <em>packages</em>) that you definitively should check out.<br></p>
+                <p class="article-more-link">
+                  <a href="/2016/12/06/Recommended-packages-for-Atom/#more">Read More</a>
+                </p>
+
+            </div>
+            <footer class="article-footer">
+              <div class="share-container">
+
+
+
+              </div>
+
+              <a data-url="http://kynesilverhide.github.io/2016/12/06/Recommended-packages-for-Atom/" data-id="ciwgqearb0008277rjvfn2wlw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+              <script>
+                (function($) {
+                  // Prevent duplicate binding
+                  if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+                    __SHARE_BUTTON_BINDED__ = true;
+                  } else {
+                    return;
+                  }
+                  $('body').on('click', function() {
+                    $('.article-share-box.on').removeClass('on');
+                  }).on('click', '.article-share-link', function(e) {
+                    e.stopPropagation();
+
+                    var $this = $(this),
+                      url = $this.attr('data-url'),
+                      encodedUrl = encodeURIComponent(url),
+                      id = 'article-share-box-' + $this.attr('data-id'),
+                      offset = $this.offset(),
+                      box;
+
+                    if ($('#' + id).length) {
+                      box = $('#' + id);
+
+                      if (box.hasClass('on')) {
+                        box.removeClass('on');
+                        return;
+                      }
+                    } else {
+                      var html = [
+                        '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                        '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                        '</div>'
+                      ].join('');
+
+                      box = $(html);
+
+                      $('body').append(box);
+                    }
+
+                    $('.article-share-box.on').hide();
+
+                    box.css({
+                      top: offset.top + 25,
+                      left: offset.left
+                    }).addClass('on');
+
+                  }).on('click', '.article-share-box', function(e) {
+                    e.stopPropagation();
+                  }).on('click', '.article-share-box-input', function() {
+                    $(this).select();
+                  }).on('click', '.article-share-box-link', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+                  });
+                })(jQuery);
+              </script>
+              <a href="http://kynesilverhide.github.io/2016/12/06/Recommended-packages-for-Atom/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kynesilverhide.github.io/2016/12/06/Recommended-packages-for-Atom/">Comments</a>
+            </footer>
+          </div>
+
+        </article>
+
         <article id="post-Discovering-and-installing-Ubuntu-in-VirtualBox-P3" class="article article-type-post" itemscope itemprop="blogPost">
           <div class="article-inner">
 
@@ -249,7 +376,7 @@
 
               </div>
 
-              <a data-url="http://kynesilverhide.github.io/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/" data-id="ciwdvla6a0006017r6khr3i10" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+              <a data-url="http://kynesilverhide.github.io/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/" data-id="ciwgqear10002277r2f43jwzm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
               <script>
                 (function($) {
                   // Prevent duplicate binding
@@ -373,7 +500,7 @@
 
               </div>
 
-              <a data-url="http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/" data-id="ciwdvla5z0000017rvajtqdq2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+              <a data-url="http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/" data-id="ciwgqeaqv0000277ra4s3iqc1" class="article-share-link"><i class="fa fa-share"></i>Share</a>
               <script>
                 (function($) {
                   // Prevent duplicate binding
@@ -499,7 +626,7 @@
 
               </div>
 
-              <a data-url="http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/" data-id="ciwdvla640002017r5mwed0g0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+              <a data-url="http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/" data-id="ciwgqear70006277r6zh5mpb5" class="article-share-link"><i class="fa fa-share"></i>Share</a>
               <script>
                 (function($) {
                   // Prevent duplicate binding
@@ -625,7 +752,7 @@
 
               </div>
 
-              <a data-url="http://kynesilverhide.github.io/2016/11/26/Hello-World/" data-id="ciwdvla6e0007017r4ooktawm" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+              <a data-url="http://kynesilverhide.github.io/2016/11/26/Hello-World/" data-id="ciwgqear90007277rzlqgs6sv" class="article-share-link"><i class="fa fa-share"></i>Share</a>
               <script>
                 (function($) {
                   // Prevent duplicate binding
@@ -703,6 +830,24 @@
           <h3 class="widget-title">recent</h3>
           <div class="widget">
             <ul id="recent-post" class="">
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/12/06/Recommended-packages-for-Atom/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_atom.PNG)" alt="Recommended packages for Atom" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Atom/">Atom</a></p>
+                  <p class="item-title"><a href="/2016/12/06/Recommended-packages-for-Atom/" class="title">Recommended packages for Atom</a></p>
+                  <p class="item-date"><time datetime="2016-12-06T19:09:32.000Z" itemprop="datePublished">2016-12-06</time></p>
+                </div>
+              </li>
 
               <li>
 
@@ -785,8 +930,9 @@
           <div class="widget">
             <ul class="category-list">
               <li class="category-list-item"><a class="category-list-link" href="/categories/Operating-System/">Operating System</a><span class="category-list-count">3</span></li>
-              <li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">1</span>
+              <li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">2</span>
                 <ul class="category-list-child">
+                  <li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Atom/">Atom</a><span class="category-list-count">1</span></li>
                   <li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Hexo/">Hexo</a><span class="category-list-count">1</span></li>
                 </ul>
               </li>
@@ -798,7 +944,7 @@
           <h3 class="widget-title">archives</h3>
           <div class="widget">
             <ul class="archive-list">
-              <li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">1</span></li>
+              <li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">2</span></li>
               <li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li>
             </ul>
           </div>
@@ -808,13 +954,17 @@
           <h3 class="widget-title">tags</h3>
           <div class="widget">
             <ul class="tag-list">
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a><span class="tag-list-count">1</span></li>
               <li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/code/">code</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/development/">development</a><span class="tag-list-count">1</span></li>
               <li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li>
               <li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li>
               <li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li>
               <li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li>
               <li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li>
               <li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/packages/">packages</a><span class="tag-list-count">1</span></li>
               <li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">3</span></li>
               <li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/">unity</a><span class="tag-list-count">3</span></li>
               <li class="tag-list-item"><a class="tag-list-link" href="/tags/unix/">unix</a><span class="tag-list-count">3</span></li>
@@ -826,8 +976,11 @@
         <div class="widget-wrap">
           <h3 class="widget-title">tag cloud</h3>
           <div class="widget tagcloud">
-            <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/markdown/"
-              style="font-size: 10px;">markdown</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/ubuntu/" style="font-size: 20px;">ubuntu</a> <a href="/tags/unity/" style="font-size: 20px;">unity</a>            <a href="/tags/unix/" style="font-size: 20px;">unix</a> <a href="/tags/virtualbox/" style="font-size: 20px;">virtualbox</a>
+            <a href="/tags/atom/" style="font-size: 10px;">atom</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/code/" style="font-size: 10px;">code</a> <a href="/tags/development/" style="font-size: 10px;">development</a>
+            <a
+              href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/node/" style="font-size: 10px;">node</a>              <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/packages/" style="font-size: 10px;">packages</a> <a href="/tags/ubuntu/" style="font-size: 20px;">ubuntu</a> <a href="/tags/unity/" style="font-size: 20px;">unity</a>
+              <a
+                href="/tags/unix/" style="font-size: 20px;">unix</a> <a href="/tags/virtualbox/" style="font-size: 20px;">virtualbox</a>
           </div>
         </div>
 

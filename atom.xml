@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kynesilverhide.github.io/"/>
-  <updated>2016-12-04T15:11:44.164Z</updated>
+  <updated>2016-12-08T19:21:42.722Z</updated>
   <id>http://kynesilverhide.github.io/</id>
   
   <author>
@@ -16,11 +16,135 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Recommended packages for Atom</title>
+    <link href="http://kynesilverhide.github.io/2016/12/06/Recommended-packages-for-Atom/"/>
+    <id>http://kynesilverhide.github.io/2016/12/06/Recommended-packages-for-Atom/</id>
+    <published>2016-12-06T19:09:32.000Z</published>
+    <updated>2016-12-08T19:21:42.722Z</updated>
+    
+    <content type="html"><![CDATA[<p>If you have read my <a href="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/">previous article</a>, you may have chosen to give <strong>Atom</strong> a try.<br>The best way to describe what Atom is, is to quote its website (<a href="https://atom.io/" target="_blank" rel="external">https://atom.io/</a>):</p>
+<blockquote>
+  <p>Atom is a text editor that’s modern, approachable, yet hackable to the core—a tool you can customize to do anything but also use productively without ever touching a config file.</p>
+</blockquote>
+<p>Atom works. It’s simple, yet very powerful. It relies on community plugins to extend its base features. Ah, and it’s available on Windows, Mac and Linux <em>(meaning you don’t have to follow all three previous tutorials on Ubuntu to test it)</em>.</p>
+<p>In this article, I’ll show you some of the best plugins (called <em>packages</em>) that you definitively should check out.<br>
+  <a id="more"></a>
+</p>
+<p>If you are starting Atom for the first time, you’ll probably see this welcome screen.<br><img src="/2016/12/06/Recommended-packages-for-Atom/atom01.png" alt="Atom Welcome Screen" title="Atom Welcome Screen"></p>
+<p>It will basically summarize the first steps you can take in Atom :</p>
+<ul>
+  <li><strong>Open a Project</strong> : This will open the project tree on the left, and set it as your workspace</li>
+  <li><strong>Install a Package</strong> : This is the main topic we will discuss later on. Packages are extensions that can add features, shortcuts, etc. Even the core features of Atom are bundled as packages, making it very modular and hackable.</li>
+  <li><strong>Choose a Theme</strong> : Themes will allow you to customize Atom, from the editor colors to the button skins. In the previous screenshots, I was using the default <em>One Dark</em> theme.</li>
+  <li><strong>Customize the sytling</strong> : If you want very deep customization of the interface, you can even add your own CSS.</li>
+  <li><strong>Hack on the Init Script</strong> : You can use it to change the behavior of Atom by editing the startup script</li>
+  <li><strong>Add a Snipper</strong> : Create you own code snippets to generate code from a predefined prefix.</li>
+  <li><strong>Learn Keyboard shortcuts</strong> : This should be self-explanatory. All IDE comes with lots of key-bindings, and learning them is often a good idea.</li>
+</ul>
+<h1 id="Themes">
+  <a href="#Themes" class="headerlink" title="Themes"></a>Themes</h1>
+<p>Themes can be install by opening the <strong>Edit &gt; Preferences</strong> Menu, and then going into the <strong>Install</strong> section. Don’t forget to click on <em>“Themes”</em> when searching by names.<br><img src="/2016/12/06/Recommended-packages-for-Atom/atomtheme01.png" alt="Installing new themes in Atom" title="Installing new themes in Atom"></p>
+<h2 id="One-Light">
+  <a href="#One-Light" class="headerlink" title="One-Light"></a>One-Light</h2>
+<p>For those that don’t like dark themes, here is the default One-Light theme. I was a big fan of light themes when I started coding. Then I discovered IntelliJ and its <strong>Darkula Theme</strong>, and it was love at first sight. This is a <strong>major</strong>  improvement from <a href="https://eclipse.org/downloads/" target="_blank" rel="external">Eclipse</a>‘s dark themes <em>(they just don’t work… too much contrast maybe)</em><br><img src="/2016/12/06/Recommended-packages-for-Atom/atom03.png" alt="Atom One Light Theme" title="Atom One Light Theme"></p>
+<h2 id="Atom-Material">
+  <a href="#Atom-Material" class="headerlink" title="Atom-Material"></a>Atom-Material</h2>
+<p>After some customization (no custom CSS, I only used the configuration screen installed with the theme), this is what I came up with using the “Atom-Material-UI” theme. If you are not familiar with <strong>Material Design</strong> (by Google), I recommend
+  you to read this article : <a href="http://design.google.com/resources" target="_blank" rel="external">http://design.google.com/resources</a><br><img src="/2016/12/06/Recommended-packages-for-Atom/atom02.png" alt="Atom Material UI Theme" title="Atom Material UI Theme"></p>
+<h1 id="Packages">
+  <a href="#Packages" class="headerlink" title="Packages"></a>Packages</h1>
+<p>Based on what you will mostly use Atom for, you may need very different packages. I’ll try to cover a bit of everything by showing you what packages I’ve installed. Installation is done similarly to Themes, by switching to <strong>Packages</strong> before
+  searching.</p>
+<h2 id="Markdown-Writer">
+  <a href="#Markdown-Writer" class="headerlink" title="Markdown Writer"></a>Markdown Writer</h2>
+<p>As I’m using Markdown syntax to write this blog, this package was one of my top priority. It allows to automatically insert elements, tables, etc by using the packages menu. Note that by default, Atom includes a markdown preview package that will show
+  you a live preview of what you are typing.<br><img src="/2016/12/06/Recommended-packages-for-Atom/atom04.png" alt="Atom Markdown Writer" title="Atom Markdown Writer"></p>
+<h2 id="Atom-Hexo">
+  <a href="#Atom-Hexo" class="headerlink" title="Atom Hexo"></a>Atom Hexo</h2>
+<p>Sometimes, I feel lazy and I don’t want to switch to the terminal. This package will allow me to trigger some of the Hexo commands within Atom. If you want more integration, you’ll find another alternative below.<br><img src="/2016/12/06/Recommended-packages-for-Atom/atom05.png" alt="Atom Hexo" title="Atom Hexo"></p>
+<h2 id="File-Icons">
+  <a href="#File-Icons" class="headerlink" title="File Icons"></a>File Icons</h2>
+<p>File-icons gives more “life” to you project files by using improved and colored icons. Here is a comparison with and without the plugin.</p>
+<div class="justified-gallery"><br><img src="/2016/12/06/Recommended-packages-for-Atom/atom06.png" alt="Atom File Icons enabled" title="Atom File Icons enabled"><br><img src="/2016/12/06/Recommended-packages-for-Atom/atom07.png" alt="Atom File Icons disabled" title="Atom File Icons disabled"><br></div>
+
+<h2 id="Minimap">
+  <a href="#Minimap" class="headerlink" title="Minimap"></a>Minimap</h2>
+<p>I’m not personaly using it, but some people likes to have a small scrollable view of their code. That’s exactly what this package does.<br><img src="/2016/12/06/Recommended-packages-for-Atom/atom08.png" alt="Atom Minimap" title="Atom Minimap"></p>
+<h2 id="Pigments">
+  <a href="#Pigments" class="headerlink" title="Pigments"></a>Pigments</h2>
+<p>Pigment is very useful for CSS developers. It will actually show the color behind each color codes. By default, It will look like the left picture.<br>But I like it a bit more subtle, so I’ve changed the configuration to use the <em>gutter</em> mode instead.</p>
+<div class="justified-gallery"><br><img src="/2016/12/06/Recommended-packages-for-Atom/atom09.png" alt="Atom Pigments" title="Atom Pigments"><br><img src="/2016/12/06/Recommended-packages-for-Atom/atom10.png" alt="Atom Pigments" title="Atom Pigments"><br></div>
+
+<h2 id="Terminal-plus">
+  <a href="#Terminal-plus" class="headerlink" title="Terminal plus"></a>Terminal plus</h2>
+<p>Terminal-Plus will embed your Ubuntu terminal inside Atom. This means you’ll have access to the same commands in your editor. Unfortunately, the last version is bugged, so you’ll need to follow these instructions once the package has been installed</p>
+<ul>
+  <li>First, we’ll need to edit <code>~/.atom/packages/terminal-plus/package.json</code></li>
+  <li>Then, replace <code>&quot;pty.js&quot;: &quot;git+https://github.com/jeremyramin/pty.js.git#28f2667&quot;</code>With <code>&quot;pty.js&quot;: &quot;git+https://github.com/jeremyramin/pty.js.git&quot;</code></li>
+  <li>Now, you just have to type in these commands :
+    <figure class="highlight plain">
+      <table>
+        <tr>
+          <td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td>
+          <td class="code"><pre><div class="line">cd ~/.atom/packages/terminal-plus/</div><div class="line">npm install</div><div class="line">apm rebuild</div></pre></td>
+        </tr>
+      </table>
+    </figure>
+  </li>
+</ul>
+<p>Restart Atom, and it should work as below.<br><img src="/2016/12/06/Recommended-packages-for-Atom/atom11.png" alt="Atom Pigments" title="Atom Pigments"></p>
+<p><strong>Note</strong> : the installation guide tells you to install <em>node-gyp</em> first (it’s a dependency). Simply open a terminal and type<br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><div class="line">1</div></pre></td>
+        <td class="code"><pre><div class="line">npm install -g node-gyp</div></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
+<p>Complete instructions are available here : <a href="https://github.com/nodejs/node-gyp#installation" target="_blank" rel="external">https://github.com/nodejs/node-gyp#installation</a> <em>(I didn’t need to install the other dependencies though…)</em></p>
+<h1 id="BONUS-Active-Power-Mode">
+  <a href="#BONUS-Active-Power-Mode" class="headerlink" title="BONUS : Active Power Mode"></a>BONUS : Active Power Mode</h1>
+<p>This very important packages will bring more satisfaction to every letters you type in your code. I recommend to have 3D acceleration for a more smooth experience.</p>
+<p><img src="https://i.github-camo.com/b1d03b9b7a9d7dc9a32d1eab307b5378f8c59a7b/68747470733a2f2f636c6f75642e67697468756275736572636f6e74656e742e636f6d2f6173736574732f3638383431352f31313631353536352f31306631363435362d396336352d313165352d386166342d3236356630316663383361302e676966" alt=""><br><img src="https://i.github-camo.com/ca572e22e64a42c44f59e1ebb40d4a1e1b748761/68747470733a2f2f636c6f75642e67697468756275736572636f6e74656e742e636f6d2f6173736574732f31303539303739392f31383831373233372f38373663326438342d383332312d313165362d383332342d6631353430363034633062642e676966" alt=""></p>
+<h1 id="Conclusion">
+  <a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1>
+<p>I hope that you liked this post, and that I gave you some motivation to test Atom.<br>For now, this is my favorite editor at home, for my personal projects <em>(at work, I’m using <em>IntelliJ Ultimate</em>, but I don’t have to pay it myself. At home,
+  a free alternative is more than welcome)</em>.<br>We will probably meet again soon in the next post, where I will show you some tricks with <a href="https://www.gimp.org/" target="_blank" rel="external">Gimp</a> !</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;If you have read my &lt;a href=&quot;/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/&quot;&gt;previous article&lt;/a&gt;, you may have chosen to give &lt;strong&gt;Atom&lt;/strong&gt; a try.&lt;br&gt;The best way to describe what Atom is, is to quote its website (&lt;a href=&quot;https://atom.io/&quot;&gt;https://atom.io/&lt;/a&gt;):&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;Atom is a text editor that’s modern, approachable, yet hackable to the core—a tool you can customize to do anything but also use productively without ever touching a config file.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Atom works. It’s simple, yet very powerful. It relies on community plugins to extend its base features. Ah, and it’s available on Windows, Mac and Linux &lt;em&gt;(meaning you don’t have to follow all three previous tutorials on Ubuntu to test it)&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;In this article, I’ll show you some of the best plugins (called &lt;em&gt;packages&lt;/em&gt;) that you definitively should check out.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Programming" scheme="http://kynesilverhide.github.io/categories/Programming/"/>
+    
+      <category term="Atom" scheme="http://kynesilverhide.github.io/categories/Programming/Atom/"/>
+    
+    
+      <category term="atom" scheme="http://kynesilverhide.github.io/tags/atom/"/>
+    
+      <category term="packages" scheme="http://kynesilverhide.github.io/tags/packages/"/>
+    
+      <category term="development" scheme="http://kynesilverhide.github.io/tags/development/"/>
+    
+      <category term="code" scheme="http://kynesilverhide.github.io/tags/code/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Discovering and installing Ubuntu in VirtualBox P3</title>
     <link href="http://kynesilverhide.github.io/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/"/>
     <id>http://kynesilverhide.github.io/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/</id>
     <published>2016-12-03T10:58:35.000Z</published>
-    <updated>2016-12-04T15:11:44.164Z</updated>
+    <updated>2016-12-08T17:56:06.427Z</updated>
     
     <content type="html"><![CDATA[<p>Here we are, at the third and last part of this guide. In this post, I’ll try to cover what programs you can use for most of your tasks, but also give you an introduction to the terminal.</p>
 <p>Please keep in mind that we didn’t install Ubuntu to replace Windows : we are working in a virtual environment, meaning we can’t expected to play games (we even disabled 3D acceleration…). Focus will be done on development : web browsing, coding, files
@@ -340,8 +464,8 @@
 </p>
 <h1 id="Conclusion">
   <a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1>
-<p>I think we have covered a lot of stuff today. There is still much to cover, but I think you now have enough basic knowledge to continue on your own.<br>You will find plenty of tutorials and forums around the web to help you use Ubuntu, such as <a href="http://www.makeuseof.com/tag/ubuntu-an-absolute-beginners-guide/" target="_blank" rel="external">http://www.makeuseof.com/tag/ubuntu-an-absolute-beginners-guide/</a><br>In
-  the next tutorials, we will probably learn more about <em>Atom</em>, and I may also do a quick tutorial on GIMP.<br>So stay tuned !</p>]]></content>
+<p>I think we have covered a lot of stuff today. There is still much to cover, but I think you now have enough basic knowledge to continue on your own.<br>You will find plenty of tutorials and forums around the web to help you use Ubuntu.<br>In the next
+  tutorials, we will probably learn more about <em>Atom</em>, and I may also do a quick tutorial on GIMP.</p>]]></content>
     
     <summary type="html">
     
