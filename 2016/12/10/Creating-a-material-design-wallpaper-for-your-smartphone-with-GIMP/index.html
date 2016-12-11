@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Creating a material design wallpaper for your smartphone with GIMP | KyneSilverhide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="description" content="Material Design is a set of rules defined by Google to build a graphical interface. It was first introduce in June 25, 2014, at the Google I/O conference,
+  and is used since Android 5.0.
+The goal of">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Creating a material design wallpaper for your smartphone with GIMP">
+  <meta property="og:url" content="http://kynesilverhide.github.io/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/index.html">
+  <meta property="og:site_name" content="KyneSilverhide">
+  <meta property="og:description" content="Material Design is a set of rules defined by Google to build a graphical interface. It was first introduce in June 25, 2014, at the Google I/O conference,
+  and is used since Android 5.0.
+The goal of">
+  <meta property="og:image" content="http://kynesilverhide.github.io/images/thumb_gimp.PNG">
+  <meta property="og:updated_time" content="2016-12-11T20:29:40.759Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Creating a material design wallpaper for your smartphone with GIMP">
+  <meta name="twitter:description" content="Material Design is a set of rules defined by Google to build a graphical interface. It was first introduce in June 25, 2014, at the Google I/O conference,
+  and is used since Android 5.0.
+The goal of">
+  <meta name="twitter:image" content="http://kynesilverhide.github.io/images/thumb_gimp.PNG">
+
+
+
+
+
+
+  <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/libs/open-sans/styles.css">
+  <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+
+
+  <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+
+  <script type="text/javascript">
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-88360865-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+      <div id="header-main" class="header-inner">
+        <div class="outer">
+          <a href="/" id="logo">
+            <i class="logo"></i>
+            <span class="site-title">KyneSilverhide</span>
+          </a>
+          <nav id="main-nav">
+
+            <a class="main-nav-link" href="/.">Home</a>
+
+            <a class="main-nav-link" href="/archives">Archives</a>
+
+            <a class="main-nav-link" href="/categories">Categories</a>
+
+            <a class="main-nav-link" href="/tags">Tags</a>
+
+          </nav>
+
+
+          <nav id="sub-nav">
+            <div class="profile" id="profile-nav">
+              <a id="profile-anchor" href="javascript:;">
+                <img class="avatar" src="https://www.gravatar.com/avatar/7eb59f97f7c777721a1d5385474c0e04" />
+                <i class="fa fa-caret-down"></i>
+              </a>
+            </div>
+          </nav>
+
+          <div id="search-form-wrap">
+
+            <form class="search-form">
+              <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+              <button type="submit" class="search-form-submit"></button>
+            </form>
+            <div class="ins-search">
+              <div class="ins-search-mask"></div>
+              <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                  <input type="text" class="ins-search-input" placeholder="Type something..." />
+                  <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+                </div>
+                <div class="ins-section-wrapper">
+                  <div class="ins-section-container"></div>
+                </div>
+              </div>
+            </div>
+            <script>
+              (function(window) {
+                var INSIGHT_CONFIG = {
+                  TRANSLATION: {
+                    POSTS: 'Posts',
+                    PAGES: 'Pages',
+                    CATEGORIES: 'Categories',
+                    TAGS: 'Tags',
+                    UNTITLED: '(Untitled)',
+                  },
+                  ROOT_URL: '/',
+                  CONTENT_URL: '/content.json',
+                };
+                window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+              })(window);
+            </script>
+            <script src="/js/insight.js"></script>
+
+          </div>
+        </div>
+      </div>
+      <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+          <tr>
+
+            <td><a class="main-nav-link" href="/.">Home</a></td>
+
+            <td><a class="main-nav-link" href="/archives">Archives</a></td>
+
+            <td><a class="main-nav-link" href="/categories">Categories</a></td>
+
+            <td><a class="main-nav-link" href="/tags">Tags</a></td>
+
+            <td>
+              <div class="search-form">
+                <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </header>
+    <div class="outer">
+
+      <aside id="profile">
+        <div class="inner profile-inner">
+          <div class="base-info profile-block">
+            <img id="avatar" src="https://www.gravatar.com/avatar/7eb59f97f7c777721a1d5385474c0e04?s=128" />
+            <h2 id="name">KyneSilverhide</h2>
+            <h3 id="title">Java and Javascript software developper</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Mons, Belgium</span>
+            <a id="follow" target="_blank" href="https://github.com/kynesilverhide/">FOLLOW</a>
+          </div>
+          <div class="article-info profile-block">
+            <div class="article-info-block">
+              6
+              <span>posts</span>
+            </div>
+            <div class="article-info-block">
+              20
+              <span>tags</span>
+            </div>
+          </div>
+
+          <div class="profile-block social-links">
+            <table>
+              <tr>
+
+
+                <td>
+                  <a href="https://github.com/kynesilverhide/" target="_blank" title="github" class=tooltip>
+                    <i class="fa fa-github"></i>
+                  </a>
+                </td>
+
+                <td>
+                  <a href="https://twitter.com/ALansmanne" target="_blank" title="twitter" class=tooltip>
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </td>
+
+                <td>
+                  <a href="https://www.youtube.com/user/SilverhideKyne" target="_blank" title="youtube" class=tooltip>
+                    <i class="fa fa-youtube"></i>
+                  </a>
+                </td>
+
+              </tr>
+            </table>
+          </div>
+
+        </div>
+      </aside>
+
+      <section id="main">
+        <article id="post-Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP" class="article article-type-post" itemscope itemprop="blogPost">
+          <div class="article-inner">
+
+            <img src="/images/banner_materialdesign.PNG" class="article-banner" />
+
+
+            <header class="article-header">
+              <h1 class="article-title" itemprop="name">
+                Creating a material design wallpaper for your smartphone with GIMP
+              </h1>
+
+              <div class="article-meta">
+                <div class="article-date">
+                  <i class="fa fa-calendar"></i>
+                  <a href="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/">
+                    <time datetime="2016-12-10T17:30:55.000Z" itemprop="datePublished">2016-12-10</time>
+                  </a>
+                </div>
+                <div class="article-category">
+                  <i class="fa fa-folder"></i>
+                  <a class="article-category-link" href="/categories/Design/">Design</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Design/Gimp/">Gimp</a>
+                </div>
+                <div class="article-tag">
+                  <i class="fa fa-tag"></i>
+                  <a class="tag-link" href="/tags/design/">design</a>, <a class="tag-link" href="/tags/gimp/">gimp</a>, <a class="tag-link" href="/tags/material/">material</a>, <a class="tag-link" href="/tags/tutorial/">tutorial</a>, <a class="tag-link"
+                    href="/tags/wallpaper/">wallpaper</a>
+                </div>
+              </div>
+
+            </header>
+
+
+            <div class="article-entry" itemprop="articleBody">
+
+
+              <p><a href="https://material.google.com/" target="_blank" rel="external">Material Design</a> is a set of rules defined by Google to build a graphical interface. It was first introduce in June 25, 2014, at the <a href="https://en.wikipedia.org/wiki/Google_I/O"
+                  target="_blank" rel="external">Google I/O</a> conference, and is used since <a href="https://www.android.com/" target="_blank" rel="external">Android</a> 5.0.</p>
+              <p>The goal of Material Design was to build a unified interface and experience across platforms and device sizes. It was built upon a list of principles that I won’t detail here (because that’s not the point of this post), but I can a least
+                give you a summary :
+              </p>
+              <ul>
+                <li><strong>Material is the metaphor</strong> : each element exists in space, and follow the rules of physics. The background of your application is one giant big sheet of paper, with components lying on top of each other that can rearranged.</li>
+                <li><strong>Bold, graphic, intentional</strong> : typography, grids, space, scale and colors create a hierarchy of elements with meaning, and focus</li>
+                <li><strong>Motion provides meaning</strong> : motions must be used to focus attention on elements, without breaking the continuity. Transitions are efficient, coherent, and feedback is subtle, yet clear.</li>
+              </ul>
+              <p>Using these guidelines, Material Design applications tend to be somehow minimalistic. This is a good opportunity for us to build a wallpaper, as we won’t need much knowledge of the advanced features of <strong>Gimp</strong>.</p>
+              <p>So let’s dive right into it !</p>
+              <a id="more"></a>
+              <p>But what does Material Design wallpapers looks like? Well, you’ve seen one as the banner of this post, and if you are using an Android device, you’ve probably seen some too.<br>I’m not a very advanced Gimp user, nor am I very talented with
+                design or artistic creations. But anyway, this is my very first wallpaper I made for this blog.<br><img src="material-bg01.png#PNG400" alt=""></p>
+              <p>The goal is of course to use it on your smartphone, not as a desktop wallpaper.<br>Here are some other samples from the web</p>
+              <div class="justified-gallery"><br><img src="http://www.topofandroid.com/wp-content/uploads/2015/05/Android-L-Material-Design-Wallpapers-5.png" alt=""><br><img src="http://www.topofandroid.com/wp-content/uploads/2015/05/Android-L-Material-Design-Wallpapers-4.png" alt=""><br>
+                <img src="http://www.topofandroid.com/wp-content/uploads/2015/05/Android-L-Material-Design-Wallpapers-3.png" alt=""><br></div>
+
+              <p><strong>I do not own any of these pictures</strong>, I just found them on <a href="http://www.topofandroid.com/" target="_blank" rel="external">http://www.topofandroid.com/</a></p>
+              <p>Let’s now learn how we can achieve something similar.</p>
+              <h1 id="Starting-with-GIMP">
+                <a href="#Starting-with-GIMP" class="headerlink" title="Starting with GIMP"></a>Starting with GIMP</h1>
+              <p>On Ubuntu, GIMP should be installed by default, but if that’s not the case, let’s do it now :<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div></pre></td>
+                      <td class="code"><pre><div class="line">sudo apt-get install gimp</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <p>On Windows and OSX, you can download GIMP here : <a href="https://www.gimp.org/downloads/" target="_blank" rel="external">https://www.gimp.org/downloads/</a></p>
+              <p>Once started, the very first configuration you should do is switch to the “Single Window” mode (at least on Ubuntu, otherwise GIMP will use separate windows for all elements, and that’s definitively not user friendly at all).<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-setup01.PNG"
+                  alt="Switching to single window" title="Switching to single window"></p>
+              <p>The next step will be to rearrange the menus a bit. You can drag and drop any tabs from a menu to move it somewhere else. This is the layout I’m using right now :<br></p>
+              <ul>
+                <li>On the top left, all the tools are listed. This is similar to Photoshop (even if the tools are different)</li>
+                <li>On the bottom left, the selected tool options are listed</li>
+                <li>On the top right, I kept the default layout, but I decided to move the “Layers” tab in the bottom right corner.</li>
+              </ul>
+              <h1 id="Installing-the-Material-Palette">
+                <a href="#Installing-the-Material-Palette" class="headerlink" title="Installing the Material Palette"></a>Installing the Material Palette</h1>
+              <p>A palette is simply a predefined set of colors. In this case, someone was kind enough to create one with all the recommended colors when working with Material Design. Simply head to <a href="https://github.com/KiSSFLOW/gimp-material-design-color-palette"
+                  target="_blank" rel="external">https://github.com/KiSSFLOW/gimp-material-design-color-palette</a> and download <code>Material-Design.gpl</code> somewhere on your computer.<br>Then in Gimp :</p>
+              <ul>
+                <li>Go to <em>Windows &gt; Dockable Dialogs &gt; Palettes</em>.</li>
+                <li>Once opened, click on configure this tab on the top right corner of the new window, and select <em>Palettes Menu &gt; Import Palette</em></li>
+                <li>Select the option “Palette file” and browse to the downloaded file</li>
+                <li>The palette should now be listed in the window. Double click on it to open the list of colors
+                </li>
+              </ul>
+              <h1 id="Creating-a-new-file">
+                <a href="#Creating-a-new-file" class="headerlink" title="Creating a new file"></a>Creating a new file</h1>
+              <p>To open a new file, simply go to <em>File &gt; New</em>. In this case, I decided to create a <code>1080</code> x <code>1920</code> (portrait) picture. There are a lot of mobile resolutions, so I decided to take something big enough to support
+                all devices. This won’t matter much in our case, as our wallpaper is mostly made of resizable shapes.<br>Leave everything else to the default value (ensure <code>px</code> is the default unit) and click <em>Ok</em>.</p>
+              <p>Before actually working on the wallpaper, let’s think a bit about what we want. If you have read the Material Design article, you may have found some parts explaining the similitude with paper sheets. This is exactly what we want to do.
+                Put abstract shapes on top of each others, add some shadows, and finally some texture to the shape.</p>
+              <h1 id="Creating-a-base">
+                <a href="#Creating-a-base" class="headerlink" title="Creating a base"></a>Creating a base</h1>
+              <p>The very first step will be to choose a background color. In this case, I’m trying to create a green background, so I’ll pick the darkest green from the palette.<br>Use the <em>Bucket Fill Tool</em> (shortcut <code>SHIFT + B</code>) to fill
+                the whole background.
+                <br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-bucket.png" alt="Bucket tool" title="Bucket tool"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial01.png"
+                  alt="Painting the background in dark green" title="Painting the background in dark green"></p>
+              <p>Now, one <strong>very important step</strong>. Each time we want to add a new shape, we first need to create a new layer. Just think of sheet of papers. Each sheet is a new layer. So let’s create a new layer (you can name it if you want,
+                it will be easier to keep all layers organized if they have a proper name)<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-newlayer.png" alt="Adding a layer" title="Adding a layer"></p>
+              <p>Next we will add our first shape on top. So let’s start with the <em>Rectangle Tool</em> (shortcut : <code>R</code>)<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-rectangle.png" alt="Rectangle tool"
+                  title="Rectangle tool"><br>Draw any shape you want, then, pick a color from the palette, and click in your shape using the <em>Bucket Fill Tool</em> again. In this case, I choose a lighter green.<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial02.png"
+                  alt="Adding another shape" title="Adding another shape"></p>
+              <p>Now, using the <em>Scale</em> (<code>SHIFT + T</code>) And <em>Rotate</em> (<code>SHIFT + R</code>) tools <img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-scale-rotate.png" alt="Scale and Rotate tools"
+                  title="Scale and Rotate tools">, let’s rotate our shape by <code>45°</code> and scale it (if needed).<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial03.png" alt="Scaling and Rotating the shape"
+                  title="Scaling and Rotating the shape"></p>
+              <p>Finally, you can move the shape using the <em>Move Tool</em> (<code>M</code>)<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-move.png" alt="Move tool" title="Move tool"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial04.png"
+                  alt="Positioning the shape" title="Positioning the shape"></p>
+              <p>Click on the anchor to merge this floating selection with the previously created layer.<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-floatinganchor.png" alt="Anchoring the floating layer"
+                  title="Anchoring the floating layer"></p>
+              <p>Now, let’s add some shadow to this first shape. <strong>Ensure the shape layer is selected</strong>. Go to <em>Filters &gt; Light and Shadow &gt; Drop Shadow</em>. Keep the default settings <strong>but deselect “Allow resizing”</strong>                (offset X and Y = <code>4</code>, blur = <code>15</code>, color = <code>black</code>, opacity = <code>60</code>).<br>Once this is done, <em>Right Click</em> on the first layer (either your shape or the drop shadow), and select <em>merge down</em>.
+                This will ensure both the shape and the shadows are one element (both will move together, etc.)<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial05.png" alt="Our first shadow and shape"
+                  title="Our first shadow and shape"></p>
+              <p>Let’s repeat the same operation with two new shapes. Start with a new layer (each time), then reuse the sames tools as before : <em>Rectangle Tool</em>, <em>Scaling</em> and <em>Resizing</em> tools, <em>Moving Tool</em>, and then anchor
+                the floating selection to the layer.<br>Then, apply the <em>Drop Shadow</em> (note that a shortcut will be added in the <em>Filters</em> menu, so you can reapply the previous effect with the same settings). Don’t forget to also <em>Merge Down</em>                the shape and its shadow.<br>
+                <img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial06.png" alt="Adding two other shapes to the wallpaper" title="Adding two other shapes to the wallpaper"></p>
+              <h1 id="Adding-complexity">
+                <a href="#Adding-complexity" class="headerlink" title="Adding complexity"></a>Adding complexity</h1>
+              <p>To improve our wallpaper, let’s add more shapes and some new colors. Let’s pick the left shape layer, and duplicate it.<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-duplicate.png" alt="Anchoring the floating layer"
+                  title="Anchoring the floating layer"></p>
+              <p>Using the <em>Bucket Fill Tool</em>, pick a lighter green, and click on your shape. Then, move it to the left.<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial07.png" alt="Adding more complexity. Step 1"
+                  title="Adding more complexity. Step 1"></p>
+              <p>Repeat the operating and duplicate the shape, using a different shade of green each time. Try to add some contrast too.</p>
+              <div class="justified-gallery"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial08.png" alt="Adding more complexity. Step 2" title="Adding more complexity. Step 2"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial09.png"
+                  alt="Adding more complexity. Step 3" title="Adding more complexity. Step 3"><br></div><br><strong>If the shadow is too dark</strong>, because two layers are overlapping, simply use the <em>Eraser Tool*</em> (<code>SHIFT + E</code>), select
+              the lower layer that overlaps, and erase the shadow with the eraser.<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-eraser.png" alt="Eraser Tool" title="Eraser Tool"><br><br># Adding more
+              complexity…<br>By varying the shapes and colors, you should really start to have something nice. Here are the steps I did. Feel free to copy them, or do something very different.<br>Randomness is also very important.<br>
+              <div class="justified-gallery"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial10.png" alt="Adding more elements. Step 1" title="Adding more elements. Step 1"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial11.png"
+                  alt="Adding more elements. Step 2" title="Adding more elements. Step 2"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial12.png" alt="Adding more elements. Step 3" title="Adding more elements. Step 3"><br></div>
+
+              <p>I wanted to add some triangles too. So, using the <em>Free Select Tool</em>, I created a triangle (click once for each vertex), and filled it with another shade of green. Then I duplicated the shape (and its shadow), and picked once again
+                another green.
+                <br>
+                <img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-lasso.png" alt="Free Select Tool" title="Free Select Tool"></p>
+              <div class="justified-gallery"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial13.png" alt="Adding a triangle" title="Adding a triangle"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial14.png"
+                  alt="Adding another triangle" title="Adding another triangle"><br></div>
+
+              <p>I didn’t really liked the green I choose as contrast, so I went for yellow instead by simply selecting the <em>Bucket Fill Tool</em>, then each layer, and clicking on the surface to repaint.</p>
+              <div class="justified-gallery"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial15.png" alt="Switching to yellow" title="Switching to yellow"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial16.png"
+                  alt="Adding more shapes" title="Adding more shapes"><br></div>
+
+              <h1 id="Final-adjustments">
+                <a href="#Final-adjustments" class="headerlink" title="Final adjustments"></a>Final adjustments</h1>
+              <p>To experiment a bit more, I decided to add a gray circle to the wallpaper. First, let’s create another new layer. Then, using the <em>Ellipse Select Tool</em>, draw a perfect circle by holding the <code>SHIFT</code> key to keep the 1:1 ratio
+                and fill it with gray.<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-ellipse.png" alt="Ellipse Select Tool" title="Ellipse Select Tool"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial17.png"
+                  alt="Adding a circle" title="Adding a circle"></p>
+              <p>Just above the layers, adjust the opacity to <code>50</code>, and switch the (blending) mode to <code>Hard Light</code><br>Create once again a new layer, a new circle, but this time, fill it with white.<br>Set the opacity to <code>25</code>                and the mode to <code>Overlay</code><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial18.png" alt="Adding another circle" title="Adding another circle"></p>
+              <p>I like what we have so far, but I want to give it a more “physical” feel, by adding some texture to the shapes (to mimic real paper).<br>To do that, select a layer and simply go to <em>Filters &gt; Noise &gt; RGB Noise</em> and use these
+                settings<br>
+                <img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial19.png" alt="Adding some texture" title="Adding some texture"><br>I reapplied the same operation (you can hit <code>CTRL + F</code> to
+                reapply the last filter on the select layer) on all green shapes (not the yellow ones).<br>The change is very subtle though.<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial20.png"
+                  alt="Adding more texture" title="Adding more texture"></p>
+              <p>Saving your creation is easy (<em>File &gt; Save As…</em>), but if you want to save it as a <code>.png</code> file, just go to <em>File &gt; Export As…</em> instead.<br>The final result can be seen here (feel free to use it !) : <a href="material-bg02.png">Download</a></p>
+              <h1 id="Tips-and-tricks">
+                <a href="#Tips-and-tricks" class="headerlink" title="Tips and tricks"></a>Tips and tricks</h1>
+              <p>If you want to easily change all colors, follow these steps :</p>
+              <ul>
+                <li>Hit <code>CTRL + A</code> to select the whole canvas</li>
+                <li>Hit <code>CTRL + SHIFT + C</code> to copy all layers as one single merged layer</li>
+                <li>Hit <code>CTRL + SHIFT + V</code> to copy into a new composition/tab</li>
+              </ul>
+              <p>Go to <em>Colors &gt; Colorize</em>, and play with the <code>Hue</code>. You can use another color for your lock screen, or simply lower the <code>Saturation</code></p>
+              <div class="justified-gallery"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/material-bg02.png" alt="Original wallpaper" title="Original wallpaper"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/material-bg03.png"
+                  alt="Variant 1" title="Variant 1"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/material-bg04.png" alt="Variant 2" title="Variant 2"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/material-bg05.png"
+                  alt="Variant 3" title="Variant 3"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/material-bg06.png" alt="Variant 4" title="Variant 4"><br></div>
+
+              <h1 id="Conclusion">
+                <a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1>
+              <p>This was a big post, and I hope you were able to follow along. If not, don’t hesitate to ask questions in the comments below (you need a (Disqus)[<a href="https://disqus.com/" target="_blank" rel="external">https://disqus.com/</a>] account,
+                but you can create one directly by using your <strong>Google</strong>, <strong>Twitter</strong> of <strong>Facebook</strong> account).<br>I also hope that you have learned a bit more how to use Gimp. Feel free to try the same things in
+                any other software of your choice (Photoshop for example). You can also share your own creations if you want.<br><strong>Note</strong> : You can use the final wallpapers whenever and wherever you want.</p>
+              <div class="justified-gallery"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/smartphone01.png" alt="My smartphone" title="My smartphone"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/smartphone02.png"
+                  alt="Lock screen" title="Lock screen"><br></div>
+
+            </div>
+            <footer class="article-footer">
+              <div class="share-container">
+
+
+
+              </div>
+
+              <a data-url="http://kynesilverhide.github.io/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/" data-id="ciwl3tbhm0000wm7rxd7elnm2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+              <script>
+                (function($) {
+                  // Prevent duplicate binding
+                  if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+                    __SHARE_BUTTON_BINDED__ = true;
+                  } else {
+                    return;
+                  }
+                  $('body').on('click', function() {
+                    $('.article-share-box.on').removeClass('on');
+                  }).on('click', '.article-share-link', function(e) {
+                    e.stopPropagation();
+
+                    var $this = $(this),
+                      url = $this.attr('data-url'),
+                      encodedUrl = encodeURIComponent(url),
+                      id = 'article-share-box-' + $this.attr('data-id'),
+                      offset = $this.offset(),
+                      box;
+
+                    if ($('#' + id).length) {
+                      box = $('#' + id);
+
+                      if (box.hasClass('on')) {
+                        box.removeClass('on');
+                        return;
+                      }
+                    } else {
+                      var html = [
+                        '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                        '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                        '</div>'
+                      ].join('');
+
+                      box = $(html);
+
+                      $('body').append(box);
+                    }
+
+                    $('.article-share-box.on').hide();
+
+                    box.css({
+                      top: offset.top + 25,
+                      left: offset.left
+                    }).addClass('on');
+
+                  }).on('click', '.article-share-box', function(e) {
+                    e.stopPropagation();
+                  }).on('click', '.article-share-box-input', function() {
+                    $(this).select();
+                  }).on('click', '.article-share-box-link', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+                  });
+                })(jQuery);
+              </script>
+              <a href="http://kynesilverhide.github.io/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kynesilverhide.github.io/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/">Comments</a>
+            </footer>
+          </div>
+
+          <nav id="article-nav">
+
+
+            <a href="/2016/12/06/Recommended-packages-for-Atom/" id="article-nav-older" class="article-nav-link-wrap">
+              <strong class="article-nav-caption">Older</strong>
+              <div class="article-nav-title">Recommended packages for Atom</div>
+            </a>
+
+          </nav>
+
+        </article>
+
+
+        <section id="comments">
+
+          <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          </div>
+
+        </section>
+      </section>
+
+      <aside id="sidebar">
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">recent</h3>
+          <div class="widget">
+            <ul id="recent-post" class="">
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_gimp.PNG)" alt="Creating a material design wallpaper for your smartphone with GIMP" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Design/">Design</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Design/Gimp/">Gimp</a></p>
+                  <p class="item-title"><a href="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/" class="title">Creating a material design wallpaper for your smartphone with GIMP</a></p>
+                  <p class="item-date"><time datetime="2016-12-10T17:30:55.000Z" itemprop="datePublished">2016-12-10</time></p>
+                </div>
+              </li>
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/12/06/Recommended-packages-for-Atom/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_atom.PNG)" alt="Recommended packages for Atom" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Atom/">Atom</a></p>
+                  <p class="item-title"><a href="/2016/12/06/Recommended-packages-for-Atom/" class="title">Recommended packages for Atom</a></p>
+                  <p class="item-date"><time datetime="2016-12-06T19:09:32.000Z" itemprop="datePublished">2016-12-06</time></p>
+                </div>
+              </li>
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_ubuntu.PNG)" alt="Discovering and installing Ubuntu in VirtualBox P3" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Operating-System/">Operating System</a></p>
+                  <p class="item-title"><a href="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/" class="title">Discovering and installing Ubuntu in VirtualBox P3</a></p>
+                  <p class="item-date"><time datetime="2016-12-03T10:58:35.000Z" itemprop="datePublished">2016-12-03</time></p>
+                </div>
+              </li>
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_ubuntu.PNG)" alt="Discovering and installing Ubuntu in VirtualBox (Part 2)" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Operating-System/">Operating System</a></p>
+                  <p class="item-title"><a href="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/" class="title">Discovering and installing Ubuntu in VirtualBox (Part 2)</a></p>
+                  <p class="item-date"><time datetime="2016-11-30T18:41:26.000Z" itemprop="datePublished">2016-11-30</time></p>
+                </div>
+              </li>
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_ubuntu.PNG)" alt="Discovering and installing Ubuntu in VirtualBox (Part 1)" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Operating-System/">Operating System</a></p>
+                  <p class="item-title"><a href="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/" class="title">Discovering and installing Ubuntu in VirtualBox (Part 1)</a></p>
+                  <p class="item-date"><time datetime="2016-11-30T18:41:26.000Z" itemprop="datePublished">2016-11-30</time></p>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">categories</h3>
+          <div class="widget">
+            <ul class="category-list">
+              <li class="category-list-item"><a class="category-list-link" href="/categories/Design/">Design</a><span class="category-list-count">1</span>
+                <ul class="category-list-child">
+                  <li class="category-list-item"><a class="category-list-link" href="/categories/Design/Gimp/">Gimp</a><span class="category-list-count">1</span></li>
+                </ul>
+              </li>
+              <li class="category-list-item"><a class="category-list-link" href="/categories/Operating-System/">Operating System</a><span class="category-list-count">3</span></li>
+              <li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">2</span>
+                <ul class="category-list-child">
+                  <li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Atom/">Atom</a><span class="category-list-count">1</span></li>
+                  <li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Hexo/">Hexo</a><span class="category-list-count">1</span></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">archives</h3>
+          <div class="widget">
+            <ul class="archive-list">
+              <li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">3</span></li>
+              <li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">tags</h3>
+          <div class="widget">
+            <ul class="tag-list">
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/code/">code</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/design/">design</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/development/">development</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/gimp/">gimp</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/material/">material</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/packages/">packages</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/tutorial/">tutorial</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">3</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/">unity</a><span class="tag-list-count">3</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/unix/">unix</a><span class="tag-list-count">3</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/virtualbox/">virtualbox</a><span class="tag-list-count">3</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/wallpaper/">wallpaper</a><span class="tag-list-count">1</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">tag cloud</h3>
+          <div class="widget tagcloud">
+            <a href="/tags/atom/" style="font-size: 10px;">atom</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/code/" style="font-size: 10px;">code</a> <a href="/tags/design/" style="font-size: 10px;">design</a> <a href="/tags/development/"
+              style="font-size: 10px;">development</a> <a href="/tags/gimp/" style="font-size: 10px;">gimp</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>            <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/material/" style="font-size: 10px;">material</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a>
+            <a
+              href="/tags/packages/" style="font-size: 10px;">packages</a> <a href="/tags/tutorial/" style="font-size: 10px;">tutorial</a> <a href="/tags/ubuntu/" style="font-size: 20px;">ubuntu</a> <a href="/tags/unity/" style="font-size: 20px;">unity</a> <a href="/tags/unix/" style="font-size: 20px;">unix</a>              <a href="/tags/virtualbox/" style="font-size: 20px;">virtualbox</a> <a href="/tags/wallpaper/" style="font-size: 10px;">wallpaper</a>
+          </div>
+        </div>
+
+        <div class="widget-wrap widget-list">
+          <h3 class="widget-title">links</h3>
+          <div class="widget">
+            <ul>
+
+              <li>
+                <a href="/atom.xml">Atom Feed</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div id="toTop" class="fa fa-angle-up"></div>
+      </aside>
+
+    </div>
+    <footer id="footer">
+      <div class="outer">
+        <div id="footer-info" class="inner">
+          &copy; 2016 KyneSilverhide<br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      var disqus_config = function() {
+
+        this.page.url = 'http://kynesilverhide.github.io/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/';
+
+        this.page.identifier = 'Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP';
+      };
+      (function() {
+        var d = document,
+          s = d.createElement('script');
+        s.src = '//' + 'kynesilverhide-blog' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <script src="/libs/lightgallery/js/lightgallery.min.js">
+    </script>
+    <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+
+    <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="/js/main.js"></script>
+  </div>
+</body>
+
+</html>

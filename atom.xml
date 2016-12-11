@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kynesilverhide.github.io/"/>
-  <updated>2016-12-08T19:21:42.722Z</updated>
+  <updated>2016-12-11T20:29:40.759Z</updated>
   <id>http://kynesilverhide.github.io/</id>
   
   <author>
@@ -14,6 +14,163 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Creating a material design wallpaper for your smartphone with GIMP</title>
+    <link href="http://kynesilverhide.github.io/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/"/>
+    <id>http://kynesilverhide.github.io/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/</id>
+    <published>2016-12-10T17:30:55.000Z</published>
+    <updated>2016-12-11T20:29:40.759Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://material.google.com/" target="_blank" rel="external">Material Design</a> is a set of rules defined by Google to build a graphical interface. It was first introduce in June 25, 2014, at the <a href="https://en.wikipedia.org/wiki/Google_I/O" target="_blank" rel="external">Google I/O</a> conference,
+  and is used since <a href="https://www.android.com/" target="_blank" rel="external">Android</a> 5.0.</p>
+<p>The goal of Material Design was to build a unified interface and experience across platforms and device sizes. It was built upon a list of principles that I won’t detail here (because that’s not the point of this post), but I can a least give you a summary
+  :</p>
+<ul>
+  <li><strong>Material is the metaphor</strong> : each element exists in space, and follow the rules of physics. The background of your application is one giant big sheet of paper, with components lying on top of each other that can rearranged.</li>
+  <li><strong>Bold, graphic, intentional</strong> : typography, grids, space, scale and colors create a hierarchy of elements with meaning, and focus</li>
+  <li><strong>Motion provides meaning</strong> : motions must be used to focus attention on elements, without breaking the continuity. Transitions are efficient, coherent, and feedback is subtle, yet clear.</li>
+</ul>
+<p>Using these guidelines, Material Design applications tend to be somehow minimalistic. This is a good opportunity for us to build a wallpaper, as we won’t need much knowledge of the advanced features of <strong>Gimp</strong>.</p>
+<p>So let’s dive right into it !</p>
+<a id="more"></a>
+<p>But what does Material Design wallpapers looks like? Well, you’ve seen one as the banner of this post, and if you are using an Android device, you’ve probably seen some too.<br>I’m not a very advanced Gimp user, nor am I very talented with design or artistic
+  creations. But anyway, this is my very first wallpaper I made for this blog.<br><img src="material-bg01.png#PNG400" alt=""></p>
+<p>The goal is of course to use it on your smartphone, not as a desktop wallpaper.<br>Here are some other samples from the web</p>
+<div class="justified-gallery"><br><img src="http://www.topofandroid.com/wp-content/uploads/2015/05/Android-L-Material-Design-Wallpapers-5.png" alt=""><br><img src="http://www.topofandroid.com/wp-content/uploads/2015/05/Android-L-Material-Design-Wallpapers-4.png" alt=""><br><img src="http://www.topofandroid.com/wp-content/uploads/2015/05/Android-L-Material-Design-Wallpapers-3.png" alt=""><br></div>
+
+<p><strong>I do not own any of these pictures</strong>, I just found them on <a href="http://www.topofandroid.com/" target="_blank" rel="external">http://www.topofandroid.com/</a></p>
+<p>Let’s now learn how we can achieve something similar.</p>
+<h1 id="Starting-with-GIMP">
+  <a href="#Starting-with-GIMP" class="headerlink" title="Starting with GIMP"></a>Starting with GIMP</h1>
+<p>On Ubuntu, GIMP should be installed by default, but if that’s not the case, let’s do it now :<br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><div class="line">1</div></pre></td>
+        <td class="code"><pre><div class="line">sudo apt-get install gimp</div></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
+<p>On Windows and OSX, you can download GIMP here : <a href="https://www.gimp.org/downloads/" target="_blank" rel="external">https://www.gimp.org/downloads/</a></p>
+<p>Once started, the very first configuration you should do is switch to the “Single Window” mode (at least on Ubuntu, otherwise GIMP will use separate windows for all elements, and that’s definitively not user friendly at all).<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-setup01.PNG" alt="Switching to single window" title="Switching to single window"></p>
+<p>The next step will be to rearrange the menus a bit. You can drag and drop any tabs from a menu to move it somewhere else. This is the layout I’m using right now :<br></p>
+<ul>
+  <li>On the top left, all the tools are listed. This is similar to Photoshop (even if the tools are different)</li>
+  <li>On the bottom left, the selected tool options are listed</li>
+  <li>On the top right, I kept the default layout, but I decided to move the “Layers” tab in the bottom right corner.</li>
+</ul>
+<h1 id="Installing-the-Material-Palette">
+  <a href="#Installing-the-Material-Palette" class="headerlink" title="Installing the Material Palette"></a>Installing the Material Palette</h1>
+<p>A palette is simply a predefined set of colors. In this case, someone was kind enough to create one with all the recommended colors when working with Material Design. Simply head to <a href="https://github.com/KiSSFLOW/gimp-material-design-color-palette" target="_blank" rel="external">https://github.com/KiSSFLOW/gimp-material-design-color-palette</a>  and download <code>Material-Design.gpl</code> somewhere on your computer.<br>Then in Gimp :</p>
+<ul>
+  <li>Go to <em>Windows &gt; Dockable Dialogs &gt; Palettes</em>.</li>
+  <li>Once opened, click on configure this tab on the top right corner of the new window, and select <em>Palettes Menu &gt; Import Palette</em></li>
+  <li>Select the option “Palette file” and browse to the downloaded file</li>
+  <li>The palette should now be listed in the window. Double click on it to open the list of colors
+  </li>
+</ul>
+<h1 id="Creating-a-new-file">
+  <a href="#Creating-a-new-file" class="headerlink" title="Creating a new file"></a>Creating a new file</h1>
+<p>To open a new file, simply go to <em>File &gt; New</em>. In this case, I decided to create a <code>1080</code> x <code>1920</code> (portrait) picture. There are a lot of mobile resolutions, so I decided to take something big enough to support all devices.
+  This won’t matter much in our case, as our wallpaper is mostly made of resizable shapes.<br>Leave everything else to the default value (ensure <code>px</code> is the default unit) and click <em>Ok</em>.</p>
+<p>Before actually working on the wallpaper, let’s think a bit about what we want. If you have read the Material Design article, you may have found some parts explaining the similitude with paper sheets. This is exactly what we want to do. Put abstract shapes
+  on top of each others, add some shadows, and finally some texture to the shape.</p>
+<h1 id="Creating-a-base">
+  <a href="#Creating-a-base" class="headerlink" title="Creating a base"></a>Creating a base</h1>
+<p>The very first step will be to choose a background color. In this case, I’m trying to create a green background, so I’ll pick the darkest green from the palette.<br>Use the <em>Bucket Fill Tool</em> (shortcut <code>SHIFT + B</code>) to fill the whole
+  background.<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-bucket.png" alt="Bucket tool" title="Bucket tool"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial01.png" alt="Painting the background in dark green" title="Painting the background in dark green"></p>
+<p>Now, one <strong>very important step</strong>. Each time we want to add a new shape, we first need to create a new layer. Just think of sheet of papers. Each sheet is a new layer. So let’s create a new layer (you can name it if you want, it will be easier
+  to keep all layers organized if they have a proper name)<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-newlayer.png" alt="Adding a layer" title="Adding a layer"></p>
+<p>Next we will add our first shape on top. So let’s start with the <em>Rectangle Tool</em> (shortcut : <code>R</code>)<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-rectangle.png" alt="Rectangle tool" title="Rectangle tool"><br>Draw
+  any shape you want, then, pick a color from the palette, and click in your shape using the <em>Bucket Fill Tool</em> again. In this case, I choose a lighter green.<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial02.png" alt="Adding another shape" title="Adding another shape"></p>
+<p>Now, using the <em>Scale</em> (<code>SHIFT + T</code>) And <em>Rotate</em> (<code>SHIFT + R</code>) tools <img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-scale-rotate.png" alt="Scale and Rotate tools" title="Scale and Rotate tools">,
+  let’s rotate our shape by <code>45°</code> and scale it (if needed).<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial03.png" alt="Scaling and Rotating the shape" title="Scaling and Rotating the shape"></p>
+<p>Finally, you can move the shape using the <em>Move Tool</em> (<code>M</code>)<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-move.png" alt="Move tool" title="Move tool"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial04.png" alt="Positioning the shape" title="Positioning the shape"></p>
+<p>Click on the anchor to merge this floating selection with the previously created layer.<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-floatinganchor.png" alt="Anchoring the floating layer" title="Anchoring the floating layer"></p>
+<p>Now, let’s add some shadow to this first shape. <strong>Ensure the shape layer is selected</strong>. Go to <em>Filters &gt; Light and Shadow &gt; Drop Shadow</em>. Keep the default settings <strong>but deselect “Allow resizing”</strong> (offset X and
+  Y = <code>4</code>, blur = <code>15</code>, color = <code>black</code>, opacity = <code>60</code>).<br>Once this is done, <em>Right Click</em> on the first layer (either your shape or the drop shadow), and select <em>merge down</em>. This will ensure
+  both the shape and the shadows are one element (both will move together, etc.)<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial05.png" alt="Our first shadow and shape" title="Our first shadow and shape"></p>
+<p>Let’s repeat the same operation with two new shapes. Start with a new layer (each time), then reuse the sames tools as before : <em>Rectangle Tool</em>, <em>Scaling</em> and <em>Resizing</em> tools, <em>Moving Tool</em>, and then anchor the floating selection
+  to the layer.<br>Then, apply the <em>Drop Shadow</em> (note that a shortcut will be added in the <em>Filters</em> menu, so you can reapply the previous effect with the same settings). Don’t forget to also <em>Merge Down</em> the shape and its shadow.<br>
+  <img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial06.png" alt="Adding two other shapes to the wallpaper" title="Adding two other shapes to the wallpaper"></p>
+<h1 id="Adding-complexity">
+  <a href="#Adding-complexity" class="headerlink" title="Adding complexity"></a>Adding complexity</h1>
+<p>To improve our wallpaper, let’s add more shapes and some new colors. Let’s pick the left shape layer, and duplicate it.<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-duplicate.png" alt="Anchoring the floating layer" title="Anchoring the floating layer"></p>
+<p>Using the <em>Bucket Fill Tool</em>, pick a lighter green, and click on your shape. Then, move it to the left.<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial07.png" alt="Adding more complexity. Step 1" title="Adding more complexity. Step 1"></p>
+<p>Repeat the operating and duplicate the shape, using a different shade of green each time. Try to add some contrast too.</p>
+<div class="justified-gallery"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial08.png" alt="Adding more complexity. Step 2" title="Adding more complexity. Step 2"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial09.png" alt="Adding more complexity. Step 3" title="Adding more complexity. Step 3"><br></div><br><strong>If the shadow is too dark</strong>, because two layers are overlapping, simply use the <em>Eraser Tool*</em> (<code>SHIFT + E</code>), select the lower
+layer that overlaps, and erase the shadow with the eraser.<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-eraser.png" alt="Eraser Tool" title="Eraser Tool"><br><br># Adding more complexity…<br>By varying
+the shapes and colors, you should really start to have something nice. Here are the steps I did. Feel free to copy them, or do something very different.<br>Randomness is also very important.<br>
+<div class="justified-gallery"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial10.png" alt="Adding more elements. Step 1" title="Adding more elements. Step 1"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial11.png" alt="Adding more elements. Step 2" title="Adding more elements. Step 2"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial12.png" alt="Adding more elements. Step 3" title="Adding more elements. Step 3"><br></div>
+
+<p>I wanted to add some triangles too. So, using the <em>Free Select Tool</em>, I created a triangle (click once for each vertex), and filled it with another shade of green. Then I duplicated the shape (and its shadow), and picked once again another green.<br>
+  <img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-lasso.png" alt="Free Select Tool" title="Free Select Tool"></p>
+<div class="justified-gallery"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial13.png" alt="Adding a triangle" title="Adding a triangle"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial14.png" alt="Adding another triangle" title="Adding another triangle"><br></div>
+
+<p>I didn’t really liked the green I choose as contrast, so I went for yellow instead by simply selecting the <em>Bucket Fill Tool</em>, then each layer, and clicking on the surface to repaint.</p>
+<div class="justified-gallery"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial15.png" alt="Switching to yellow" title="Switching to yellow"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial16.png" alt="Adding more shapes" title="Adding more shapes"><br></div>
+
+<h1 id="Final-adjustments">
+  <a href="#Final-adjustments" class="headerlink" title="Final adjustments"></a>Final adjustments</h1>
+<p>To experiment a bit more, I decided to add a gray circle to the wallpaper. First, let’s create another new layer. Then, using the <em>Ellipse Select Tool</em>, draw a perfect circle by holding the <code>SHIFT</code> key to keep the 1:1 ratio and fill
+  it with gray.<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-ellipse.png" alt="Ellipse Select Tool" title="Ellipse Select Tool"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial17.png" alt="Adding a circle" title="Adding a circle"></p>
+<p>Just above the layers, adjust the opacity to <code>50</code>, and switch the (blending) mode to <code>Hard Light</code><br>Create once again a new layer, a new circle, but this time, fill it with white.<br>Set the opacity to <code>25</code> and the mode
+  to <code>Overlay</code><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial18.png" alt="Adding another circle" title="Adding another circle"></p>
+<p>I like what we have so far, but I want to give it a more “physical” feel, by adding some texture to the shapes (to mimic real paper).<br>To do that, select a layer and simply go to <em>Filters &gt; Noise &gt; RGB Noise</em> and use these settings<br>
+  <img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial19.png" alt="Adding some texture" title="Adding some texture"><br>I reapplied the same operation (you can hit <code>CTRL + F</code> to reapply the last filter on the select layer) on all green shapes (not the yellow ones).<br>The change is very subtle though.<br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/gimp-tutorial20.png" alt="Adding more texture" title="Adding more texture"></p>
+<p>Saving your creation is easy (<em>File &gt; Save As…</em>), but if you want to save it as a <code>.png</code> file, just go to <em>File &gt; Export As…</em> instead.<br>The final result can be seen here (feel free to use it !) : <a href="material-bg02.png">Download</a></p>
+<h1 id="Tips-and-tricks">
+  <a href="#Tips-and-tricks" class="headerlink" title="Tips and tricks"></a>Tips and tricks</h1>
+<p>If you want to easily change all colors, follow these steps :</p>
+<ul>
+  <li>Hit <code>CTRL + A</code> to select the whole canvas</li>
+  <li>Hit <code>CTRL + SHIFT + C</code> to copy all layers as one single merged layer</li>
+  <li>Hit <code>CTRL + SHIFT + V</code> to copy into a new composition/tab</li>
+</ul>
+<p>Go to <em>Colors &gt; Colorize</em>, and play with the <code>Hue</code>. You can use another color for your lock screen, or simply lower the <code>Saturation</code></p>
+<div class="justified-gallery"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/material-bg02.png" alt="Original wallpaper" title="Original wallpaper"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/material-bg03.png" alt="Variant 1" title="Variant 1"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/material-bg04.png" alt="Variant 2" title="Variant 2"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/material-bg05.png" alt="Variant 3" title="Variant 3"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/material-bg06.png" alt="Variant 4" title="Variant 4"><br></div>
+
+<h1 id="Conclusion">
+  <a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1>
+<p>This was a big post, and I hope you were able to follow along. If not, don’t hesitate to ask questions in the comments below (you need a (Disqus)[<a href="https://disqus.com/" target="_blank" rel="external">https://disqus.com/</a>] account, but you can create one directly by using
+  your <strong>Google</strong>, <strong>Twitter</strong> of <strong>Facebook</strong> account).<br>I also hope that you have learned a bit more how to use Gimp. Feel free to try the same things in any other software of your choice (Photoshop for example).
+  You can also share your own creations if you want.<br><strong>Note</strong> : You can use the final wallpapers whenever and wherever you want.</p>
+<div class="justified-gallery"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/smartphone01.png" alt="My smartphone" title="My smartphone"><br><img src="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/smartphone02.png" alt="Lock screen" title="Lock screen"><br></div>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://material.google.com/&quot;&gt;Material Design&lt;/a&gt; is a set of rules defined by Google to build a graphical interface. It was first introduce in June 25, 2014, at the &lt;a href=&quot;https://en.wikipedia.org/wiki/Google_I/O&quot;&gt;Google I/O&lt;/a&gt; conference,
+  and is used since &lt;a href=&quot;https://www.android.com/&quot;&gt;Android&lt;/a&gt; 5.0.&lt;/p&gt;
+&lt;p&gt;The goal of Material Design was to build a unified interface and experience across platforms and device sizes. It was built upon a list of principles that I won’t detail here (because that’s not the point of this post), but I can a least give you a summary
+  :&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Material is the metaphor&lt;/strong&gt; : each element exists in space, and follow the rules of physics. The background of your application is one giant big sheet of paper, with components lying on top of each other that can rearranged.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Bold, graphic, intentional&lt;/strong&gt; : typography, grids, space, scale and colors create a hierarchy of elements with meaning, and focus&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Motion provides meaning&lt;/strong&gt; : motions must be used to focus attention on elements, without breaking the continuity. Transitions are efficient, coherent, and feedback is subtle, yet clear.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Using these guidelines, Material Design applications tend to be somehow minimalistic. This is a good opportunity for us to build a wallpaper, as we won’t need much knowledge of the advanced features of &lt;strong&gt;Gimp&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;So let’s dive right into it !&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Design" scheme="http://kynesilverhide.github.io/categories/Design/"/>
+    
+      <category term="Gimp" scheme="http://kynesilverhide.github.io/categories/Design/Gimp/"/>
+    
+    
+      <category term="gimp" scheme="http://kynesilverhide.github.io/tags/gimp/"/>
+    
+      <category term="material" scheme="http://kynesilverhide.github.io/tags/material/"/>
+    
+      <category term="design" scheme="http://kynesilverhide.github.io/tags/design/"/>
+    
+      <category term="tutorial" scheme="http://kynesilverhide.github.io/tags/tutorial/"/>
+    
+      <category term="wallpaper" scheme="http://kynesilverhide.github.io/tags/wallpaper/"/>
+    
+  </entry>
   
   <entry>
     <title>Recommended packages for Atom</title>

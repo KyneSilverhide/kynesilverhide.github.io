@@ -153,6 +153,10 @@ code {
   background-color: #f8f8f8;
 }
 
+.article-entry img[src$='#PNG400'] {
+  height: 400px;
+}
+
 .outer {
   max-width: 1320px;
   margin: 0 auto;
