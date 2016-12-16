@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kynesilverhide.github.io/"/>
-  <updated>2016-12-11T20:29:40.759Z</updated>
+  <updated>2016-12-16T13:21:23.211Z</updated>
   <id>http://kynesilverhide.github.io/</id>
   
   <author>
@@ -14,6 +14,125 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>A cheap retro-gaming solution : the Raspberry PI (Part 1)</title>
+    <link href="http://kynesilverhide.github.io/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/"/>
+    <id>http://kynesilverhide.github.io/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/</id>
+    <published>2016-12-14T18:51:07.000Z</published>
+    <updated>2016-12-16T13:21:23.211Z</updated>
+    
+    <content type="html"><![CDATA[<p>You may already know that Nintendo recently released the <a href="https://www.nintendo.co.uk/Misc-/Nintendo-Classic-Mini-Nintendo-Entertainment-System/Nintendo-Classic-Mini-Nintendo-Entertainment-System-1124287.html" target="_blank" rel="external">Nintendo Classic Mini</a>, a smaller
+  re-edition of the original NES, but with a limited set of pre-installed games.</p>
+<blockquote>
+  <p>The Nintendo Classic Mini: Nintendo Entertainment System is a miniaturised version of the groundbreaking NES, originally released in Europe in 1986.<br>Just plug the Nintendo Classic Mini: Nintendo Entertainment System into your TV, pick up that grey
+    controller, and rediscover the joy of NES games – in high definition at 60 Hz!</p>
+</blockquote>
+<p>Now, what if I told you that there are other reliable, <em>(cheaper?)</em>, easy to setup, alternatives? Yes, that’s right, and it’s called the <a href="https://www.raspberrypi.org/" target="_blank" rel="external">Raspberry Pi</a>. But instead of letting you play some <strong>NES</strong>  games, this will actually allow you to play any NES, Super NES, Gameboy, GBA, NeoGeo, .. and even Playstation games. And this will only cost you around <strong>70$</strong> (unfortunately, it will also cost <strong>70€</strong> if you are from Europe
+  like me, so it’s a bit more expensive).<br>You will even be able to use the Raspberry Pi as a media center, if you are tired of playing games.</p>
+<p>As you have probably seen, this tutorial will also be split into multiple parts. The first one will teach you a bit more about the raspberry and how you can set it up. The second part will teach you how to install the proper softwares to dive into the
+  retro-gaming madness.<br>
+  <a id="more"></a>
+</p>
+<h1 id="Introduction">
+  <a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1>
+<p>So, before starting any further, I want to assure you that you don’t need <em>any</em> special knowledge for this tutorial. While it may look a bit scary, the Raspberry Pi is just a small computer. It actually looks like this (with no case) :<br>
+  <img src="/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/raspberrypi.jpg" alt="The raspberry Pi with no case" title="The raspberry Pi with no case"></p>
+<p>For this tutorial, I will recommend the last edition of the Raspberry Pi, called the <strong>Pi 3 Model B</strong>.<br>Here are the specifications :</p>
+<ul>
+  <li>A 1.2GHz 64-bit quad-core ARMv8 CPU</li>
+  <li>802.11n Wireless LAN</li>
+  <li>Bluetooth 4.1</li>
+  <li>1GB RAM</li>
+  <li>4 USB ports</li>
+  <li>Full HDMI port</li>
+  <li>Ethernet port</li>
+  <li>Combined 3.5mm audio jack and composite video</li>
+  <li>Micro SD card slot</li>
+</ul>
+<p>If you own a <strong>Raspberry Pi 2 Model B</strong>, this tutorial still works but the Model 3 has built-in WiFi, and is a bit more powerful.</p>
+<h1 id="What-do-I-need">
+  <a href="#What-do-I-need" class="headerlink" title="What do I need?"></a>What do I need?</h1>
+<p>Of course, you’ll need a Raspberry Pi. But you’ll also need some other stuff :</p>
+<ul>
+  <li>An <strong>HDMI</strong> cable to connect your Raspberry Pi to your TV</li>
+  <li>A <strong>power plug</strong>, because it doesn’t run on awesomeness alone</li>
+  <li>A <strong>Micro SD Card</strong> (8Gb or more)</li>
+  <li>An <strong>USB Gamepad</strong> (wireless gamepads may not work)</li>
+  <li>(optional) a Raspberry Pi <strong>case</strong></li>
+  <li>(optional) An <strong>USB Keyboard</strong> (just once, to setup the WiFi)</li>
+  <li>(optional) An <strong>USB mouse</strong> (the gamepad should be enough in all situations)</li>
+  <li>(optional) An ethernet cable (if you don’t have WiFi, or don’t want to use it)</li>
+</ul>
+<p>Here is a schema that will show you how the Raspberry will be connected<br><img src="/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/raspb-schema01.png" alt="Raspberry and connections" title="Raspberry and connections"></p>
+<h1 id="Where-can-I-get-this">
+  <a href="#Where-can-I-get-this" class="headerlink" title="Where can I get this?"></a>Where can I get this?</h1>
+<p>You can buy these one by one, or just buy a pack from Amazon. This will ensure you buy the proper power plug and case format.</p>
+<ul>
+  <li>Amazon.fr : <a href="https://www.amazon.fr/Vilros-Raspberry-Pi-Complete-Starter/dp/B01DC6MKAQ/ref=sr_1_2?ie=UTF8&amp;qid=1481889791&amp;sr=8-2&amp;keywords=raspberry+pi+3" target="_blank" rel="external">https://www.amazon.fr/Vilros-Raspberry-Pi-Complete-Starter/dp/B01DC6MKAQ/ref=sr_1_2?ie=UTF8&amp;qid=1481889791&amp;sr=8-2&amp;keywords=raspberry+pi+3</a></li>
+  <li>Amazon.uk : <a href="https://www.amazon.co.uk/Vilros-Raspberry-Pi-Complete-Starter/dp/B01D0BKLZY/ref=sr_1_7?ie=UTF8&amp;qid=1481889825&amp;sr=8-7&amp;keywords=raspberry+pi+3" target="_blank" rel="external">https://www.amazon.co.uk/Vilros-Raspberry-Pi-Complete-Starter/dp/B01D0BKLZY/ref=sr_1_7?ie=UTF8&amp;qid=1481889825&amp;sr=8-7&amp;keywords=raspberry+pi+3</a></li>
+  <li>Amazon.com : <a href="https://www.amazon.com/Vilros-Raspberry-Media-Center-Kit/dp/B01CYX4HRM/ref=sr_1_1?s=pc&amp;ie=UTF8&amp;qid=1481889863&amp;sr=1-1-spons&amp;keywords=raspberry+pi&amp;psc=1" target="_blank" rel="external">https://www.amazon.com/Vilros-Raspberry-Media-Center-Kit/dp/B01CYX4HRM/ref=sr_1_1?s=pc&amp;ie=UTF8&amp;qid=1481889863&amp;sr=1-1-spons&amp;keywords=raspberry+pi&amp;psc=1</a></li>
+</ul>
+<p>There are a lot of other packs and websites, but these few should help you find exactly what you need.</p>
+<h1 id="But-I-need-to-build-it">
+  <a href="#But-I-need-to-build-it" class="headerlink" title="But.. I need to build it?"></a>But.. I need to build it?</h1>
+<p>Not really. Installing the Raspberry Pi only requires you to plug the cables. I recommend to use a case <em>(the transparent one from the pack for example)</em> to protect the components <em>(even from dust)</em>. Some packs will pack a pre-installed
+  Micro SD Card, but we will format it anyway in the next part. So feel free to use it for now, or wait a bit more.</p>
+<ul>
+  <li>The first step is to put the Raspberry into the case. I also recommend to screw it to the lower part.</li>
+  <li>Then, if you have some, you can put the small heatsinks on the top chips. It won’t do much, but it was probably in the pack, so why not. (You don’t need thermal paste)</li>
+  <li>Close the case, and put the SD card in the bottom slot (depending on the case you may want to do it before for easier access)</li>
+  <li>Plug the HDMI Cable to your TV or monitor <em>(If you are not using HDMI, you can also plug in your analogue TV or display, but you’ll need to use the <strong>audio jack</strong> for sound)</em></li>
+  <li>Plug you USB Gamepad to any of the <strong>USB</strong> slots</li>
+  <li>Plug the power supply. The Raspberry Pi will starts automatically <em>(there are no ON/OFF buttons, so you’ll need to unplug it to shut it down. You can also use some kind of multi sockets with an ON/OFF button on it)</em></li>
+  <li>If needed, plug an USB keyboard into any of the available USB slots.</li>
+  <li>If you don’t want to <em>(or simply can’t)</em> use WiFi, plug the ethernet cable to your router <em>(probably next to where your computer is plugged)</em>. If this is too far, you can <a href="https://www.amazon.com/dp/B00A128S24/ref=twister_B00PTUGAL4?_encoding=UTF8&amp;psc=1" target="_blank" rel="external">buy a gigabit switch</a>    and one more ethernet cable <em>(I had to do the same, not for the Raspberry, but for my Android TV, because my computer is at one end of a room, my TV on the opposite side, and the router is simply on another floor)</em>.<br>Simply plug the switch
+    to the power supply, and run a cable from your modem/router to your switch. Then, plug two cables, one from the switch to your computer, and the second cable from the switch to your Raspberry pi. Use straight <em>“cat6”</em> cables <em>(well, it seems that modern switches and router can use both straight and crossover cable)</em>,
+    or <em>“cat5”</em> for longer cables.<img src="/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/raspb-schema02.png" alt="Raspberry network" title="Raspberry network"> You can find them on <a href="https://www.amazon.com/AmazonBasics-RJ45-Cat-6-Ethernet-Patch-Cable-5-Feet-1-5-Meters/dp/B00N2VILDM/ref=sr_1_5?s=pc&amp;ie=UTF8&amp;qid=1481893629&amp;sr=1-5&amp;keywords=rj45" target="_blank" rel="external">Amazon.com (RJ45)</a>,
+    simply pick the proper cable length. <em>(Amazon “basics” cables should be available on every other Amazon websites)</em>.</li>
+</ul>
+<h1 id="What’s-next">
+  <a href="#What’s-next" class="headerlink" title="What’s next?"></a>What’s next?</h1>
+<p>Next, I will show you how to install <a href="https://www.recalbox.com/" target="_blank" rel="external">RecalBox</a> onto your SD Card, and configure it to play some good old games.<br>Here are some screenshots from Recalbox :</p>
+<div class="justified-gallery"><br><img src="https://www.recalbox.com/assets/images/medias/emulationstation2fr-4-1024x575.jpg" alt="Recalbox"><br><img src="/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/recalbox01.jpg" alt="Recalbox" title="Recalbox"><br><img src="/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/recalbox02.png" alt="Recalbox" title="Recalbox"><br></div>
+
+<p>Don’t worry, the installation is fully automated. The only steps you’ll have to do yourself are</p>
+<ul>
+  <li>copying Recalbox on the SD Card (you will need a card reader, but you’ll only need it once, so you should be able to borrow one)</li>
+  <li>configuring your gamepad(s)<br>We will cover all the details in the next post.</li>
+</ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;You may already know that Nintendo recently released the &lt;a href=&quot;https://www.nintendo.co.uk/Misc-/Nintendo-Classic-Mini-Nintendo-Entertainment-System/Nintendo-Classic-Mini-Nintendo-Entertainment-System-1124287.html&quot;&gt;Nintendo Classic Mini&lt;/a&gt;, a smaller
+  re-edition of the original NES, but with a limited set of pre-installed games.&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;The Nintendo Classic Mini: Nintendo Entertainment System is a miniaturised version of the groundbreaking NES, originally released in Europe in 1986.&lt;br&gt;Just plug the Nintendo Classic Mini: Nintendo Entertainment System into your TV, pick up that grey
+    controller, and rediscover the joy of NES games – in high definition at 60 Hz!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Now, what if I told you that there are other reliable, &lt;em&gt;(cheaper?)&lt;/em&gt;, easy to setup, alternatives? Yes, that’s right, and it’s called the &lt;a href=&quot;https://www.raspberrypi.org/&quot;&gt;Raspberry Pi&lt;/a&gt;. But instead of letting you play some &lt;strong&gt;NES&lt;/strong&gt;  games, this will actually allow you to play any NES, Super NES, Gameboy, GBA, NeoGeo, .. and even Playstation games. And this will only cost you around &lt;strong&gt;70$&lt;/strong&gt; (unfortunately, it will also cost &lt;strong&gt;70€&lt;/strong&gt; if you are from Europe
+  like me, so it’s a bit more expensive).&lt;br&gt;You will even be able to use the Raspberry Pi as a media center, if you are tired of playing games.&lt;/p&gt;
+&lt;p&gt;As you have probably seen, this tutorial will also be split into multiple parts. The first one will teach you a bit more about the raspberry and how you can set it up. The second part will teach you how to install the proper softwares to dive into the
+  retro-gaming madness.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Gaming" scheme="http://kynesilverhide.github.io/categories/Gaming/"/>
+    
+      <category term="Raspberry Pi" scheme="http://kynesilverhide.github.io/categories/Gaming/Raspberry-Pi/"/>
+    
+    
+      <category term="Raspberry" scheme="http://kynesilverhide.github.io/tags/Raspberry/"/>
+    
+      <category term="recalbox" scheme="http://kynesilverhide.github.io/tags/recalbox/"/>
+    
+      <category term="retrogaming" scheme="http://kynesilverhide.github.io/tags/retrogaming/"/>
+    
+      <category term="pi" scheme="http://kynesilverhide.github.io/tags/pi/"/>
+    
+      <category term="gaming" scheme="http://kynesilverhide.github.io/tags/gaming/"/>
+    
+  </entry>
   
   <entry>
     <title>Creating a material design wallpaper for your smartphone with GIMP</title>

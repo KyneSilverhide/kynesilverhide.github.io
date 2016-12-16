@@ -157,11 +157,11 @@
           </div>
           <div class="article-info profile-block">
             <div class="article-info-block">
-              6
+              7
               <span>posts</span>
             </div>
             <div class="article-info-block">
-              20
+              25
               <span>tags</span>
             </div>
           </div>
@@ -197,6 +197,136 @@
       </aside>
 
       <section id="main">
+        <article id="post-A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1" class="article article-type-post" itemscope itemprop="blogPost">
+          <div class="article-inner">
+
+            <a href="/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/" itemprop="url">
+              <img src="/images/banner_raspberry1.PNG" class="article-banner" />
+            </a>
+
+
+            <header class="article-header">
+              <h1 itemprop="name">
+                <a class="article-title" href="/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/">A cheap retro-gaming solution : the Raspberry PI (Part 1)</a>
+              </h1>
+
+              <div class="article-meta">
+                <div class="article-date">
+                  <i class="fa fa-calendar"></i>
+                  <a href="/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/">
+                    <time datetime="2016-12-14T18:51:07.000Z" itemprop="datePublished">2016-12-14</time>
+                  </a>
+                </div>
+                <div class="article-category">
+                  <i class="fa fa-folder"></i>
+                  <a class="article-category-link" href="/categories/Gaming/">Gaming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Gaming/Raspberry-Pi/">Raspberry Pi</a>
+                </div>
+                <div class="article-tag">
+                  <i class="fa fa-tag"></i>
+                  <a class="tag-link" href="/tags/Raspberry/">Raspberry</a>, <a class="tag-link" href="/tags/gaming/">gaming</a>, <a class="tag-link" href="/tags/pi/">pi</a>, <a class="tag-link" href="/tags/recalbox/">recalbox</a>, <a class="tag-link"
+                    href="/tags/retrogaming/">retrogaming</a>
+                </div>
+              </div>
+
+            </header>
+
+
+            <div class="article-entry" itemprop="articleBody">
+
+              <p>
+                <p>You may already know that Nintendo recently released the <a href="https://www.nintendo.co.uk/Misc-/Nintendo-Classic-Mini-Nintendo-Entertainment-System/Nintendo-Classic-Mini-Nintendo-Entertainment-System-1124287.html">Nintendo Classic Mini</a>,
+                  a smaller re-edition of the original NES, but with a limited set of pre-installed games.</p>
+                <blockquote>
+                  <p>The Nintendo Classic Mini: Nintendo Entertainment System is a miniaturised version of the groundbreaking NES, originally released in Europe in 1986.<br>Just plug the Nintendo Classic Mini: Nintendo Entertainment System into your TV,
+                    pick up that grey controller, and rediscover the joy of NES games – in high definition at 60 Hz!</p>
+                </blockquote>
+                <p>Now, what if I told you that there are other reliable, <em>(cheaper?)</em>, easy to setup, alternatives? Yes, that’s right, and it’s called the <a href="https://www.raspberrypi.org/">Raspberry Pi</a>. But instead of letting you play some
+                  <strong>NES</strong> games, this will actually allow you to play any NES, Super NES, Gameboy, GBA, NeoGeo, .. and even Playstation games. And this will only cost you around <strong>70$</strong> (unfortunately, it will also cost <strong>70€</strong>                  if you are from Europe like me, so it’s a bit more expensive).<br>You will even be able to use the Raspberry Pi as a media center, if you are tired of playing games.</p>
+                <p>As you have probably seen, this tutorial will also be split into multiple parts. The first one will teach you a bit more about the raspberry and how you can set it up. The second part will teach you how to install the proper softwares
+                  to dive into the retro-gaming madness.<br></p>
+                <p class="article-more-link">
+                  <a href="/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/#more">Read More</a>
+                </p>
+
+            </div>
+            <footer class="article-footer">
+              <div class="share-container">
+
+
+
+              </div>
+
+              <a data-url="http://kynesilverhide.github.io/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/" data-id="ciwrtq27z0000ib7r3ikb6s6l" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+              <script>
+                (function($) {
+                  // Prevent duplicate binding
+                  if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+                    __SHARE_BUTTON_BINDED__ = true;
+                  } else {
+                    return;
+                  }
+                  $('body').on('click', function() {
+                    $('.article-share-box.on').removeClass('on');
+                  }).on('click', '.article-share-link', function(e) {
+                    e.stopPropagation();
+
+                    var $this = $(this),
+                      url = $this.attr('data-url'),
+                      encodedUrl = encodeURIComponent(url),
+                      id = 'article-share-box-' + $this.attr('data-id'),
+                      offset = $this.offset(),
+                      box;
+
+                    if ($('#' + id).length) {
+                      box = $('#' + id);
+
+                      if (box.hasClass('on')) {
+                        box.removeClass('on');
+                        return;
+                      }
+                    } else {
+                      var html = [
+                        '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                        '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                        '</div>'
+                      ].join('');
+
+                      box = $(html);
+
+                      $('body').append(box);
+                    }
+
+                    $('.article-share-box.on').hide();
+
+                    box.css({
+                      top: offset.top + 25,
+                      left: offset.left
+                    }).addClass('on');
+
+                  }).on('click', '.article-share-box', function(e) {
+                    e.stopPropagation();
+                  }).on('click', '.article-share-box-input', function() {
+                    $(this).select();
+                  }).on('click', '.article-share-box-link', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+                  });
+                })(jQuery);
+              </script>
+              <a href="http://kynesilverhide.github.io/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kynesilverhide.github.io/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/">Comments</a>
+            </footer>
+          </div>
+
+        </article>
+
         <article id="post-Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP" class="article article-type-post" itemscope itemprop="blogPost">
           <div class="article-inner">
 
@@ -258,7 +388,7 @@
 
               </div>
 
-              <a data-url="http://kynesilverhide.github.io/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/" data-id="ciwl3tbhm0000wm7rxd7elnm2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+              <a data-url="http://kynesilverhide.github.io/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/" data-id="ciwrtq2840002ib7rxgw0ora4" class="article-share-link"><i class="fa fa-share"></i>Share</a>
               <script>
                 (function($) {
                   // Prevent duplicate binding
@@ -385,7 +515,7 @@
 
               </div>
 
-              <a data-url="http://kynesilverhide.github.io/2016/12/06/Recommended-packages-for-Atom/" data-id="ciwl3tbi90009wm7r4s7300ce" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+              <a data-url="http://kynesilverhide.github.io/2016/12/06/Recommended-packages-for-Atom/" data-id="ciwrtq28t000cib7rhy3sjp0f" class="article-share-link"><i class="fa fa-share"></i>Share</a>
               <script>
                 (function($) {
                   // Prevent duplicate binding
@@ -508,7 +638,7 @@
 
               </div>
 
-              <a data-url="http://kynesilverhide.github.io/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/" data-id="ciwl3tbhv0004wm7r9goyddpc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+              <a data-url="http://kynesilverhide.github.io/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/" data-id="ciwrtq28e0007ib7ra5d8s6ie" class="article-share-link"><i class="fa fa-share"></i>Share</a>
               <script>
                 (function($) {
                   // Prevent duplicate binding
@@ -632,7 +762,7 @@
 
               </div>
 
-              <a data-url="http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/" data-id="ciwl3tbhq0001wm7reosehoqb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+              <a data-url="http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/" data-id="ciwrtq28a0006ib7r1stbdz9e" class="article-share-link"><i class="fa fa-share"></i>Share</a>
               <script>
                 (function($) {
                   // Prevent duplicate binding
@@ -758,7 +888,7 @@
 
               </div>
 
-              <a data-url="http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/" data-id="ciwl3tbhx0005wm7rciq3tvyb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+              <a data-url="http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/" data-id="ciwrtq28g0008ib7rize7sn19" class="article-share-link"><i class="fa fa-share"></i>Share</a>
               <script>
                 (function($) {
                   // Prevent duplicate binding
@@ -884,7 +1014,7 @@
 
               </div>
 
-              <a data-url="http://kynesilverhide.github.io/2016/11/26/Hello-World/" data-id="ciwl3tbi50006wm7r38lad0cu" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+              <a data-url="http://kynesilverhide.github.io/2016/11/26/Hello-World/" data-id="ciwrtq28n000bib7roxmm0q9h" class="article-share-link"><i class="fa fa-share"></i>Share</a>
               <script>
                 (function($) {
                   // Prevent duplicate binding
@@ -966,6 +1096,24 @@
               <li>
 
                 <div class="item-thumbnail">
+                  <a href="/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_raspberry.PNG)" alt="A cheap retro-gaming solution : the Raspberry PI (Part 1)" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Gaming/">Gaming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Gaming/Raspberry-Pi/">Raspberry Pi</a></p>
+                  <p class="item-title"><a href="/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/" class="title">A cheap retro-gaming solution : the Raspberry PI (Part 1)</a></p>
+                  <p class="item-date"><time datetime="2016-12-14T18:51:07.000Z" itemprop="datePublished">2016-12-14</time></p>
+                </div>
+              </li>
+
+              <li>
+
+                <div class="item-thumbnail">
                   <a href="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/" class="thumbnail">
 
 
@@ -1035,24 +1183,6 @@
                 </div>
               </li>
 
-              <li>
-
-                <div class="item-thumbnail">
-                  <a href="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/" class="thumbnail">
-
-
-                    <span style="background-image:url(/images/thumb_ubuntu.PNG)" alt="Discovering and installing Ubuntu in VirtualBox (Part 1)" class="thumbnail-image"></span>
-
-                  </a>
-                </div>
-
-                <div class="item-inner">
-                  <p class="item-category"><a class="article-category-link" href="/categories/Operating-System/">Operating System</a></p>
-                  <p class="item-title"><a href="/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/" class="title">Discovering and installing Ubuntu in VirtualBox (Part 1)</a></p>
-                  <p class="item-date"><time datetime="2016-11-30T18:41:26.000Z" itemprop="datePublished">2016-11-30</time></p>
-                </div>
-              </li>
-
             </ul>
           </div>
         </div>
@@ -1064,6 +1194,11 @@
               <li class="category-list-item"><a class="category-list-link" href="/categories/Design/">Design</a><span class="category-list-count">1</span>
                 <ul class="category-list-child">
                   <li class="category-list-item"><a class="category-list-link" href="/categories/Design/Gimp/">Gimp</a><span class="category-list-count">1</span></li>
+                </ul>
+              </li>
+              <li class="category-list-item"><a class="category-list-link" href="/categories/Gaming/">Gaming</a><span class="category-list-count">1</span>
+                <ul class="category-list-child">
+                  <li class="category-list-item"><a class="category-list-link" href="/categories/Gaming/Raspberry-Pi/">Raspberry Pi</a><span class="category-list-count">1</span></li>
                 </ul>
               </li>
               <li class="category-list-item"><a class="category-list-link" href="/categories/Operating-System/">Operating System</a><span class="category-list-count">3</span></li>
@@ -1081,7 +1216,7 @@
           <h3 class="widget-title">archives</h3>
           <div class="widget">
             <ul class="archive-list">
-              <li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">3</span></li>
+              <li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">4</span></li>
               <li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li>
             </ul>
           </div>
@@ -1091,11 +1226,13 @@
           <h3 class="widget-title">tags</h3>
           <div class="widget">
             <ul class="tag-list">
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/Raspberry/">Raspberry</a><span class="tag-list-count">1</span></li>
               <li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a><span class="tag-list-count">1</span></li>
               <li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li>
               <li class="tag-list-item"><a class="tag-list-link" href="/tags/code/">code</a><span class="tag-list-count">1</span></li>
               <li class="tag-list-item"><a class="tag-list-link" href="/tags/design/">design</a><span class="tag-list-count">1</span></li>
               <li class="tag-list-item"><a class="tag-list-link" href="/tags/development/">development</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/gaming/">gaming</a><span class="tag-list-count">1</span></li>
               <li class="tag-list-item"><a class="tag-list-link" href="/tags/gimp/">gimp</a><span class="tag-list-count">1</span></li>
               <li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li>
               <li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li>
@@ -1105,6 +1242,9 @@
               <li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li>
               <li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a><span class="tag-list-count">1</span></li>
               <li class="tag-list-item"><a class="tag-list-link" href="/tags/packages/">packages</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/pi/">pi</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/recalbox/">recalbox</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/retrogaming/">retrogaming</a><span class="tag-list-count">1</span></li>
               <li class="tag-list-item"><a class="tag-list-link" href="/tags/tutorial/">tutorial</a><span class="tag-list-count">1</span></li>
               <li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">3</span></li>
               <li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/">unity</a><span class="tag-list-count">3</span></li>
@@ -1118,10 +1258,13 @@
         <div class="widget-wrap">
           <h3 class="widget-title">tag cloud</h3>
           <div class="widget tagcloud">
-            <a href="/tags/atom/" style="font-size: 10px;">atom</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/code/" style="font-size: 10px;">code</a> <a href="/tags/design/" style="font-size: 10px;">design</a> <a href="/tags/development/"
-              style="font-size: 10px;">development</a> <a href="/tags/gimp/" style="font-size: 10px;">gimp</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>            <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/material/" style="font-size: 10px;">material</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a>
-            <a
-              href="/tags/packages/" style="font-size: 10px;">packages</a> <a href="/tags/tutorial/" style="font-size: 10px;">tutorial</a> <a href="/tags/ubuntu/" style="font-size: 20px;">ubuntu</a> <a href="/tags/unity/" style="font-size: 20px;">unity</a> <a href="/tags/unix/" style="font-size: 20px;">unix</a>              <a href="/tags/virtualbox/" style="font-size: 20px;">virtualbox</a> <a href="/tags/wallpaper/" style="font-size: 10px;">wallpaper</a>
+            <a href="/tags/Raspberry/" style="font-size: 10px;">Raspberry</a> <a href="/tags/atom/" style="font-size: 10px;">atom</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/code/" style="font-size: 10px;">code</a> <a href="/tags/design/"
+              style="font-size: 10px;">design</a> <a href="/tags/development/" style="font-size: 10px;">development</a> <a href="/tags/gaming/" style="font-size: 10px;">gaming</a> <a href="/tags/gimp/" style="font-size: 10px;">gimp</a> <a href="/tags/git/"
+              style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/material/"
+              style="font-size: 10px;">material</a>
+            <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/packages/" style="font-size: 10px;">packages</a> <a href="/tags/pi/" style="font-size: 10px;">pi</a> <a href="/tags/recalbox/"
+              style="font-size: 10px;">recalbox</a> <a href="/tags/retrogaming/" style="font-size: 10px;">retrogaming</a> <a href="/tags/tutorial/" style="font-size: 10px;">tutorial</a> <a href="/tags/ubuntu/" style="font-size: 20px;">ubuntu</a> <a href="/tags/unity/"
+              style="font-size: 20px;">unity</a> <a href="/tags/unix/" style="font-size: 20px;">unix</a> <a href="/tags/virtualbox/" style="font-size: 20px;">virtualbox</a> <a href="/tags/wallpaper/" style="font-size: 10px;">wallpaper</a>
           </div>
         </div>
 
