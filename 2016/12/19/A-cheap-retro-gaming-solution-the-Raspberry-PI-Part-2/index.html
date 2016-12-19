@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>A cheap retro-gaming solution : the Raspberry PI (Part 2) | KyneSilverhide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="description" content="Welcome back to this second part of the retro-gaming tutorial. Now that we have a working Raspberry, let’s install RecalBox. Recalbox (or RecalBoxOS should I say) is a free, open source
+  operating sy">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="A cheap retro-gaming solution : the Raspberry PI (Part 2)">
+  <meta property="og:url" content="http://kynesilverhide.github.io/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/index.html">
+  <meta property="og:site_name" content="KyneSilverhide">
+  <meta property="og:description" content="Welcome back to this second part of the retro-gaming tutorial. Now that we have a working Raspberry, let’s install RecalBox. Recalbox (or RecalBoxOS should I say) is a free, open source
+  operating sy">
+  <meta property="og:image" content="http://kynesilverhide.github.io/images/thumb_raspberry.PNG">
+  <meta property="og:updated_time" content="2016-12-19T18:36:35.603Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="A cheap retro-gaming solution : the Raspberry PI (Part 2)">
+  <meta name="twitter:description" content="Welcome back to this second part of the retro-gaming tutorial. Now that we have a working Raspberry, let’s install RecalBox. Recalbox (or RecalBoxOS should I say) is a free, open source
+  operating sy">
+  <meta name="twitter:image" content="http://kynesilverhide.github.io/images/thumb_raspberry.PNG">
+
+
+
+
+
+
+  <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/libs/open-sans/styles.css">
+  <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+
+
+  <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+
+  <script type="text/javascript">
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-88360865-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+      <div id="header-main" class="header-inner">
+        <div class="outer">
+          <a href="/" id="logo">
+            <i class="logo"></i>
+            <span class="site-title">KyneSilverhide</span>
+          </a>
+          <nav id="main-nav">
+
+            <a class="main-nav-link" href="/.">Home</a>
+
+            <a class="main-nav-link" href="/archives">Archives</a>
+
+            <a class="main-nav-link" href="/categories">Categories</a>
+
+            <a class="main-nav-link" href="/tags">Tags</a>
+
+            <td><a class="main-nav-link" href="CV.png">My CV (fr)</a></td>
+          </nav>
+
+
+          <nav id="sub-nav">
+            <div class="profile" id="profile-nav">
+              <a id="profile-anchor" href="javascript:;">
+                <img class="avatar" src="https://www.gravatar.com/avatar/7eb59f97f7c777721a1d5385474c0e04" />
+                <i class="fa fa-caret-down"></i>
+              </a>
+            </div>
+          </nav>
+
+          <div id="search-form-wrap">
+
+            <form class="search-form">
+              <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+              <button type="submit" class="search-form-submit"></button>
+            </form>
+            <div class="ins-search">
+              <div class="ins-search-mask"></div>
+              <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                  <input type="text" class="ins-search-input" placeholder="Type something..." />
+                  <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+                </div>
+                <div class="ins-section-wrapper">
+                  <div class="ins-section-container"></div>
+                </div>
+              </div>
+            </div>
+            <script>
+              (function(window) {
+                var INSIGHT_CONFIG = {
+                  TRANSLATION: {
+                    POSTS: 'Posts',
+                    PAGES: 'Pages',
+                    CATEGORIES: 'Categories',
+                    TAGS: 'Tags',
+                    UNTITLED: '(Untitled)',
+                  },
+                  ROOT_URL: '/',
+                  CONTENT_URL: '/content.json',
+                };
+                window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+              })(window);
+            </script>
+            <script src="/js/insight.js"></script>
+
+          </div>
+        </div>
+      </div>
+      <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+          <tr>
+
+            <td><a class="main-nav-link" href="/.">Home</a></td>
+
+            <td><a class="main-nav-link" href="/archives">Archives</a></td>
+
+            <td><a class="main-nav-link" href="/categories">Categories</a></td>
+
+            <td><a class="main-nav-link" href="/tags">Tags</a></td>
+
+            <td>
+              <div class="search-form">
+                <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </header>
+    <div class="outer">
+
+      <aside id="profile">
+        <div class="inner profile-inner">
+          <div class="base-info profile-block">
+            <img id="avatar" src="https://www.gravatar.com/avatar/7eb59f97f7c777721a1d5385474c0e04?s=128" />
+            <h2 id="name">KyneSilverhide</h2>
+            <h3 id="title">Java and Javascript software developper</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Mons, Belgium</span>
+            <a id="follow" target="_blank" href="https://github.com/kynesilverhide/">FOLLOW</a>
+          </div>
+          <div class="article-info profile-block">
+            <div class="article-info-block">
+              8
+              <span>posts</span>
+            </div>
+            <div class="article-info-block">
+              25
+              <span>tags</span>
+            </div>
+          </div>
+
+          <div class="profile-block social-links">
+            <table>
+              <tr>
+
+
+                <td>
+                  <a href="https://github.com/kynesilverhide/" target="_blank" title="github" class=tooltip>
+                    <i class="fa fa-github"></i>
+                  </a>
+                </td>
+
+                <td>
+                  <a href="https://twitter.com/ALansmanne" target="_blank" title="twitter" class=tooltip>
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </td>
+
+                <td>
+                  <a href="https://www.youtube.com/user/SilverhideKyne" target="_blank" title="youtube" class=tooltip>
+                    <i class="fa fa-youtube"></i>
+                  </a>
+                </td>
+
+              </tr>
+            </table>
+          </div>
+
+        </div>
+      </aside>
+
+      <section id="main">
+        <article id="post-A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2" class="article article-type-post" itemscope itemprop="blogPost">
+          <div class="article-inner">
+
+            <img src="/images/banner_raspberry2.PNG" class="article-banner" />
+
+
+            <header class="article-header">
+              <h1 class="article-title" itemprop="name">
+                A cheap retro-gaming solution : the Raspberry PI (Part 2)
+              </h1>
+
+              <div class="article-meta">
+                <div class="article-date">
+                  <i class="fa fa-calendar"></i>
+                  <a href="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/">
+                    <time datetime="2016-12-19T16:59:57.000Z" itemprop="datePublished">2016-12-19</time>
+                  </a>
+                </div>
+                <div class="article-category">
+                  <i class="fa fa-folder"></i>
+                  <a class="article-category-link" href="/categories/Gaming/">Gaming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Gaming/Raspberry-Pi/">Raspberry Pi</a>
+                </div>
+                <div class="article-tag">
+                  <i class="fa fa-tag"></i>
+                  <a class="tag-link" href="/tags/Raspberry/">Raspberry</a>, <a class="tag-link" href="/tags/gaming/">gaming</a>, <a class="tag-link" href="/tags/pi/">pi</a>, <a class="tag-link" href="/tags/recalbox/">recalbox</a>, <a class="tag-link"
+                    href="/tags/retrogaming/">retrogaming</a>
+                </div>
+              </div>
+
+            </header>
+
+
+            <div class="article-entry" itemprop="articleBody">
+
+
+              <p>Welcome back to this second part of the retro-gaming tutorial. Now that we have a working Raspberry, let’s install <a href="https://www.recalbox.com/" target="_blank" rel="external">RecalBox</a>. Recalbox <em>(or <strong>RecalBoxOS</strong> should I say)</em>                is a free, open source operating system designed to work on Raspberry machines (and equivalent). Basically, it’s a bundle of emulators to play almost any old games, with a very user friendly interface on top of it, designed to be used
+                on a TV.</p>
+              <a id="more"></a>
+              <h1 id="Getting-RecalBox">
+                <a href="#Getting-RecalBox" class="headerlink" title="Getting RecalBox"></a>Getting RecalBox</h1>
+              <p>First, you’ll have to download RecalBox from here : <a href="https://github.com/recalbox/recalbox-os/releases" target="_blank" rel="external">https://github.com/recalbox/recalbox-os/releases</a>. Simply pick the last <code>.zip</code> file
+                and download it somewhere on your computer.<br>Next, you’ll need to plug your micro SD card in a card slot, or some kind of card reader. In my case, I have this small USB device that can read a lot of formats.<br><img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/cardreader.jpg"
+                  alt="Card reader" title="Card reader"><br>As I said in the previous post, you’ll only need this once, so if you don’t have one, you may be able to borrow it.</p>
+              <p><strong>This will remove everything from your card</strong>. You may have to double-check that you did backup all your photos first, or whatever content that may have been on the card.<br><strong>On Windows</strong> and <strong>MAC</strong>,
+                you can format your card using <a href="https://www.sdcard.org/downloads/formatter_4/" target="_blank" rel="external">SD Card Formatter 4</a>.<br><img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/format-sdcard.png"
+                  alt="Formatting the SDCard" title="Formatting the SDCard"><br><em>Note that I don’t know why Windows is listing my 32Gb card as a “600Mb” USB device…</em></p>
+              <p>On <strong>Ubuntu</strong>, you can use <strong>GParted</strong>. Simply pick “Fat32” and start the process.<br>Once the card is empty, unzip the <code>.zip</code> you downloaded before onto the card (it should appear in your File Explorer).</p>
+              <p>Once the process is finished, simply plug the card back into the Raspberry PI. Check one last time that your gamepad is plugged. If you are using an Ethernet connection, you shouldn’t have any problem. If you are using the WiFi, you’ll need
+                one USB Keyboard to type in the WiFi SSID and password.<br><img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/raspberrycables.jpg" alt="My Raspberry PI" title="My Raspberry PI"></p>
+              <h2 id="Starting-Recalbox">
+                <a href="#Starting-Recalbox" class="headerlink" title="Starting Recalbox"></a>Starting Recalbox</h2>
+              <p>Once the power supply is plugged, the Raspberry will start, and Recalbox will install. The installation shouldn’t require any input, so just wait a bit.<br>Unfortunately, I didn’t find how to take screenshot from Recalbox <em>(if you are not running a game)</em>,
+                so instead, I had to take photos with my smartphone…<br>As you will see, the picture quality is just average when directly aiming at my monitor, even if the room is fully lit.<br><img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox00.jpg"
+                  alt="Loading Recalbox" title="Loading Recalbox"></p>
+              <p>If everything went fine, you’ll see the main screen. Note that you will only see consoles (well.. emulators) if you have at least one game installed. By default, Recalbox comes with some free games, so you should see at least one or two
+                consoles listed.
+                <br>
+                <img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox01.jpg" alt="Main screen" title="Main screen"></p>
+              <h2 id="Controller">
+                <a href="#Controller" class="headerlink" title="Controller"></a>Controller</h2>
+              <p>Most USB gamepads should be recognized, and some buttons should work out of the box, to navigate though the menus. If not, use an USB keyboard and/or mouse.<br>The first step is to configure our gamepad. Hit <code>START</code> to open the
+                main menu.<br>
+                <img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox02.jpg" alt="Main menu" title="Main menu"></p>
+              <p>Go to <strong>Controller settings</strong>, and then choose <strong>Configure a controller</strong> (with my wired Xbox controller, <code>A</code> was used to confirm, while <code>B</code> was used to cancel or go back).<br><img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox07.jpg"
+                  alt="Controller settings (You should click on the first option, not the one I had selected )" title="Controller settings (You should click on the first option, not the one I had selected )"><br><img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox08.jpg"
+                  alt="Configuring a controller" title="Configuring a controller"></p>
+              <p>Simply follow the on-screen instructions, and press each matching buttons. If the button is recognized, the configuration wizard will move to the next row.<br><img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox09.jpg"
+                  alt="Configuring the buttons" title="Configuring the buttons"></p>
+              <p>Once this is done, you should be able to change the <strong>INPUT P1</strong> from the Controller settings to your custom configuration <em>(screenshot “Controller settings”)</em></p>
+              <h2 id="Graphics">
+                <a href="#Graphics" class="headerlink" title="Graphics"></a>Graphics</h2>
+              <p>Go back to the main menu and choose <strong>Game Settings</strong>. Here is my configuration, but feel free to change it to match your liking. You can even enable filters to change your brand new widescreen LED TV to an old CRT with scanlines.<br>
+                <img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox06.jpg" alt="Game Settings" title="Game Settings"></p>
+              <h2 id="Sound">
+                <a href="#Sound" class="headerlink" title="Sound"></a>Sound</h2>
+              <p>If you want, you go to <strong>Sound settings</strong> an disable the music from playing in the main menu.</p>
+              <h2 id="UI">
+                <a href="#UI" class="headerlink" title="UI"></a>UI</h2>
+              <p>In <strong>UI Settings</strong>, you can tweak the menus a bit. Here is my configuration <em>(I don’t think I changed anything)</em>.<br><img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox10.jpg" alt="Configuring the UI"
+                  title="Configuring the UI"></p>
+              <h2 id="Network">
+                <a href="#Network" class="headerlink" title="Network"></a>Network</h2>
+              <p>This is important if you want your Raspberry to connect to your network. <em>(This will allow you to update RecalBox from the interface, but also send new games from your computer to the Raspberry, or edit configuration files directly)</em>.<br>With
+                a wired connection, everything should work fine, but with WiFi, you’ll have to type the proper SSID and password from your router.<br><img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox11.jpg" alt="Configuring WIFI"
+                  title="Configuring WIFI"><br>RecalBox should automatically connect once the proper values have been entered.</p>
+              <h1 id="Copying-and-games">
+                <a href="#Copying-and-games" class="headerlink" title="Copying and games"></a>Copying and games</h1>
+              <p>If you didn’t connect your Raspberry to your network, you’ll have to remove the SD card each time to drop the new games in the proper folder. But if everything worked fine, you can simply connect to your Raspberry by its IP <em>(you should find the IP in your router administration, where all connected devices are listed)</em>.<br>On
+                Ubuntu, you can also simply type in a terminal<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div></pre></td>
+                      <td class="code"><pre><div class="line">nmap -sn 192.168.1.0/24</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <p>The Raspberry PI should be listed <em>(but also all your computers, TVs, smartphones, etc.)</em>. If you are not sure, you can test all the entries. In my case, the IP is <code>192.168.1.18</code>.</p>
+              <p>You can now access the Raspberry in your web browser, by opening <a href="http://192.168.1.18" target="_blank" rel="external">http://192.168.1.18</a> (<em>use your IP, of course)</em><br><img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox-web.png"
+                  alt="The recalbox web interface" title="The recalbox web interface"><br>If you open the “<strong>Manage Rom files for emulated systems</strong>“ section, then pick a console, you should be able to upload games directly.<br><img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox-web2.png"
+                  alt="Uploading Games" title="Uploading Games"></p>
+              <h2 id="But-where-can-I-find-games">
+                <a href="#But-where-can-I-find-games" class="headerlink" title="But where can I find games?"></a>But where can I find games?</h2>
+              <p>Well, as you may have imagined, these games are mostly illegal copies, so I won’t give you any link from this blog <em>(in theory, you can legally own any of these copies if you own the original game)</em>. <strong>But</strong>, it’s very
+                easy to find them, if you know what you are looking for. Games running on emulators are stored as “<strong>Roms</strong>“. Any Google search of this word and the proper console next to it should be more than enough. Note that while I can’t
+                give you direct links, I can also point you in the proper direction. Simply search for <em>“Emuparadise”</em> or <em>“RomStation”</em> (fr).</p>
+              <h2 id="Alternative-to-the-web-browser">
+                <a href="#Alternative-to-the-web-browser" class="headerlink" title="Alternative to the web browser"></a>Alternative to the web browser</h2>
+              <p>On <strong>Windows</strong>, you can use <a href="https://winscp.net/eng/index.php" target="_blank" rel="external">WinSCP</a> to connect to Recalbox. Simply type the IP, choose <code>root</code> as the login/username, and <code>recalboxroot</code>                as the password <em>(this is the default password for RecalBox)</em>.<br>You can now open the <code>recalbox/share/roms</code> folder and open the directory matching the system you want to use.</p>
+              <p>On <strong>Ubuntu</strong>, simply open the File Explorer, press <code>CTRL + L</code> to edit the address, and type in <code>ssh://192.168.1.18</code> <em>(use your own IP)</em>. You’ll be prompted for the login and password, use the same
+                as above.<br>
+                <img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox-ssh.png" alt="Browsing the game directories" title="Browsing the game directories"></p>
+              <p>Once the files are copied to the proper folder <em>(I won’t detail which formats are supported, but let’s say that nearly ALL formats are supported, unless you find something very exotic)</em>, you can go back to your Raspberry, open the
+                Main Menu, Go to “Game settings”, and choose <strong>Update Games List</strong> at the very bottom of the list <em>(or you can also restart the Raspberry)</em>.</p>
+              <p>Then, pick any of the system, and you should see all your games <em>(see below for the game thumbnails)</em>.<br><img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox12.jpg" alt="SNES Emulator" title="SNES Emulator"></p>
+              <h1 id="Scraping-games">
+                <a href="#Scraping-games" class="headerlink" title="Scraping games"></a>Scraping games</h1>
+              <p>If you want to see the thumbnails and details, you’ll have to <strong>Scrape</strong> the games. This means RecalBox will query a game database to fetch informations and display them in the interface. From the Main Menu, go to <strong>Scraper</strong>,
+                ensure you are scraping from <strong>“THEGAMESDB”</strong>, and choose <strong>Scrape Now</strong>.<br>Check that all your systems are selected, and start the scraping. This may take some time, and some results may be inaccurate, requiring
+                you to manually search for the games <em>(so you’ll need your keyboard)</em>.</p>
+              <h1 id="Achievements">
+                <a href="#Achievements" class="headerlink" title="Achievements"></a>Achievements</h1>
+              <p>Recalbox also supports retro achievements from <a href="http://retroachievements.org/" target="_blank" rel="external">http://retroachievements.org/</a>. You can link your account from the options. I didn’t test it, but it will enable achievements
+                on supported games, to keep track of your progression.</p>
+              <h1 id="Final-notes">
+                <a href="#Final-notes" class="headerlink" title="Final notes"></a>Final notes</h1>
+              <p>If you want to turn off the Raspberry Pi, it’s very important to first go to the main Menu, ans select <strong>“Quit”</strong>, then <strong>“Shutdown System”</strong>. Once your screen goes black (or your TV switches to another input),
+                you can safely disconnect the power supply from the Raspberry.</p>
+              <p>This concludes the Retrogaming tutorial. I hope you will have as much fun as I had by playing old games I used to play as a kid.<br>I will also explain to you, in another tutorial, how you can convert your Raspberry PI as a very powerful
+                media center, using <strong>Kodi</strong>. You can even keep RecalBox installed if you don’t want to switch to another SDCard.</p>
+
+            </div>
+            <footer class="article-footer">
+              <div class="share-container">
+
+
+
+              </div>
+
+              <a data-url="http://kynesilverhide.github.io/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/" data-id="ciwwfb4u400029p7r5itrogx9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+              <script>
+                (function($) {
+                  // Prevent duplicate binding
+                  if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+                    __SHARE_BUTTON_BINDED__ = true;
+                  } else {
+                    return;
+                  }
+                  $('body').on('click', function() {
+                    $('.article-share-box.on').removeClass('on');
+                  }).on('click', '.article-share-link', function(e) {
+                    e.stopPropagation();
+
+                    var $this = $(this),
+                      url = $this.attr('data-url'),
+                      encodedUrl = encodeURIComponent(url),
+                      id = 'article-share-box-' + $this.attr('data-id'),
+                      offset = $this.offset(),
+                      box;
+
+                    if ($('#' + id).length) {
+                      box = $('#' + id);
+
+                      if (box.hasClass('on')) {
+                        box.removeClass('on');
+                        return;
+                      }
+                    } else {
+                      var html = [
+                        '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                        '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                        '</div>'
+                      ].join('');
+
+                      box = $(html);
+
+                      $('body').append(box);
+                    }
+
+                    $('.article-share-box.on').hide();
+
+                    box.css({
+                      top: offset.top + 25,
+                      left: offset.left
+                    }).addClass('on');
+
+                  }).on('click', '.article-share-box', function(e) {
+                    e.stopPropagation();
+                  }).on('click', '.article-share-box-input', function() {
+                    $(this).select();
+                  }).on('click', '.article-share-box-link', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+                  });
+                })(jQuery);
+              </script>
+              <a href="http://kynesilverhide.github.io/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kynesilverhide.github.io/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/">Comments</a>
+            </footer>
+          </div>
+
+          <nav id="article-nav">
+
+
+            <a href="/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/" id="article-nav-older" class="article-nav-link-wrap">
+              <strong class="article-nav-caption">Older</strong>
+              <div class="article-nav-title">A cheap retro-gaming solution : the Raspberry PI (Part 1)</div>
+            </a>
+
+          </nav>
+
+        </article>
+
+
+        <section id="comments">
+
+          <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          </div>
+
+        </section>
+      </section>
+
+      <aside id="sidebar">
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">recent</h3>
+          <div class="widget">
+            <ul id="recent-post" class="">
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_raspberry.PNG)" alt="A cheap retro-gaming solution : the Raspberry PI (Part 2)" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Gaming/">Gaming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Gaming/Raspberry-Pi/">Raspberry Pi</a></p>
+                  <p class="item-title"><a href="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/" class="title">A cheap retro-gaming solution : the Raspberry PI (Part 2)</a></p>
+                  <p class="item-date"><time datetime="2016-12-19T16:59:57.000Z" itemprop="datePublished">2016-12-19</time></p>
+                </div>
+              </li>
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_raspberry.PNG)" alt="A cheap retro-gaming solution : the Raspberry PI (Part 1)" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Gaming/">Gaming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Gaming/Raspberry-Pi/">Raspberry Pi</a></p>
+                  <p class="item-title"><a href="/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/" class="title">A cheap retro-gaming solution : the Raspberry PI (Part 1)</a></p>
+                  <p class="item-date"><time datetime="2016-12-14T18:51:07.000Z" itemprop="datePublished">2016-12-14</time></p>
+                </div>
+              </li>
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_gimp.PNG)" alt="Creating a material design wallpaper for your smartphone with GIMP" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Design/">Design</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Design/Gimp/">Gimp</a></p>
+                  <p class="item-title"><a href="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/" class="title">Creating a material design wallpaper for your smartphone with GIMP</a></p>
+                  <p class="item-date"><time datetime="2016-12-10T17:30:55.000Z" itemprop="datePublished">2016-12-10</time></p>
+                </div>
+              </li>
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/12/06/Recommended-packages-for-Atom/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_atom.PNG)" alt="Recommended packages for Atom" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Atom/">Atom</a></p>
+                  <p class="item-title"><a href="/2016/12/06/Recommended-packages-for-Atom/" class="title">Recommended packages for Atom</a></p>
+                  <p class="item-date"><time datetime="2016-12-06T19:09:32.000Z" itemprop="datePublished">2016-12-06</time></p>
+                </div>
+              </li>
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_ubuntu.PNG)" alt="Discovering and installing Ubuntu in VirtualBox P3" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Operating-System/">Operating System</a></p>
+                  <p class="item-title"><a href="/2016/12/03/Discovering-and-installing-Ubuntu-in-VirtualBox-P3/" class="title">Discovering and installing Ubuntu in VirtualBox P3</a></p>
+                  <p class="item-date"><time datetime="2016-12-03T10:58:35.000Z" itemprop="datePublished">2016-12-03</time></p>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">categories</h3>
+          <div class="widget">
+            <ul class="category-list">
+              <li class="category-list-item"><a class="category-list-link" href="/categories/Design/">Design</a><span class="category-list-count">1</span>
+                <ul class="category-list-child">
+                  <li class="category-list-item"><a class="category-list-link" href="/categories/Design/Gimp/">Gimp</a><span class="category-list-count">1</span></li>
+                </ul>
+              </li>
+              <li class="category-list-item"><a class="category-list-link" href="/categories/Gaming/">Gaming</a><span class="category-list-count">2</span>
+                <ul class="category-list-child">
+                  <li class="category-list-item"><a class="category-list-link" href="/categories/Gaming/Raspberry-Pi/">Raspberry Pi</a><span class="category-list-count">2</span></li>
+                </ul>
+              </li>
+              <li class="category-list-item"><a class="category-list-link" href="/categories/Operating-System/">Operating System</a><span class="category-list-count">3</span></li>
+              <li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">2</span>
+                <ul class="category-list-child">
+                  <li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Atom/">Atom</a><span class="category-list-count">1</span></li>
+                  <li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Hexo/">Hexo</a><span class="category-list-count">1</span></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">archives</h3>
+          <div class="widget">
+            <ul class="archive-list">
+              <li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">5</span></li>
+              <li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">tags</h3>
+          <div class="widget">
+            <ul class="tag-list">
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/Raspberry/">Raspberry</a><span class="tag-list-count">2</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/code/">code</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/design/">design</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/development/">development</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/gaming/">gaming</a><span class="tag-list-count">2</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/gimp/">gimp</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/material/">material</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/packages/">packages</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/pi/">pi</a><span class="tag-list-count">2</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/recalbox/">recalbox</a><span class="tag-list-count">2</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/retrogaming/">retrogaming</a><span class="tag-list-count">2</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/tutorial/">tutorial</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">3</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/">unity</a><span class="tag-list-count">3</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/unix/">unix</a><span class="tag-list-count">3</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/virtualbox/">virtualbox</a><span class="tag-list-count">3</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/wallpaper/">wallpaper</a><span class="tag-list-count">1</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">tag cloud</h3>
+          <div class="widget tagcloud">
+            <a href="/tags/Raspberry/" style="font-size: 15px;">Raspberry</a> <a href="/tags/atom/" style="font-size: 10px;">atom</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/code/" style="font-size: 10px;">code</a> <a href="/tags/design/"
+              style="font-size: 10px;">design</a> <a href="/tags/development/" style="font-size: 10px;">development</a> <a href="/tags/gaming/" style="font-size: 15px;">gaming</a> <a href="/tags/gimp/" style="font-size: 10px;">gimp</a> <a href="/tags/git/"
+              style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/material/"
+              style="font-size: 10px;">material</a>
+            <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/packages/" style="font-size: 10px;">packages</a> <a href="/tags/pi/" style="font-size: 15px;">pi</a> <a href="/tags/recalbox/"
+              style="font-size: 15px;">recalbox</a> <a href="/tags/retrogaming/" style="font-size: 15px;">retrogaming</a> <a href="/tags/tutorial/" style="font-size: 10px;">tutorial</a> <a href="/tags/ubuntu/" style="font-size: 20px;">ubuntu</a> <a href="/tags/unity/"
+              style="font-size: 20px;">unity</a> <a href="/tags/unix/" style="font-size: 20px;">unix</a> <a href="/tags/virtualbox/" style="font-size: 20px;">virtualbox</a> <a href="/tags/wallpaper/" style="font-size: 10px;">wallpaper</a>
+          </div>
+        </div>
+
+        <div class="widget-wrap widget-list">
+          <h3 class="widget-title">links</h3>
+          <div class="widget">
+            <ul>
+
+              <li>
+                <a href="/atom.xml">Atom Feed</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div id="toTop" class="fa fa-angle-up"></div>
+      </aside>
+
+    </div>
+    <footer id="footer">
+      <div class="outer">
+        <div id="footer-info" class="inner">
+          &copy; 2016 KyneSilverhide<br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      var disqus_config = function() {
+
+        this.page.url = 'http://kynesilverhide.github.io/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/';
+
+        this.page.identifier = 'A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2';
+      };
+      (function() {
+        var d = document,
+          s = d.createElement('script');
+        s.src = '//' + 'kynesilverhide-blog' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <script src="/libs/lightgallery/js/lightgallery.min.js">
+    </script>
+    <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+
+    <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="/js/main.js"></script>
+  </div>
+</body>
+
+</html>

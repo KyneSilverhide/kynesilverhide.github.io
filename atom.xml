@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kynesilverhide.github.io/"/>
-  <updated>2016-12-16T13:21:23.211Z</updated>
+  <updated>2016-12-19T18:36:35.603Z</updated>
   <id>http://kynesilverhide.github.io/</id>
   
   <author>
@@ -14,6 +14,122 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>A cheap retro-gaming solution : the Raspberry PI (Part 2)</title>
+    <link href="http://kynesilverhide.github.io/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/"/>
+    <id>http://kynesilverhide.github.io/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/</id>
+    <published>2016-12-19T16:59:57.000Z</published>
+    <updated>2016-12-19T18:36:35.603Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome back to this second part of the retro-gaming tutorial. Now that we have a working Raspberry, let’s install <a href="https://www.recalbox.com/" target="_blank" rel="external">RecalBox</a>. Recalbox <em>(or <strong>RecalBoxOS</strong> should I say)</em> is a free, open source
+  operating system designed to work on Raspberry machines (and equivalent). Basically, it’s a bundle of emulators to play almost any old games, with a very user friendly interface on top of it, designed to be used on a TV.</p>
+<a id="more"></a>
+<h1 id="Getting-RecalBox">
+  <a href="#Getting-RecalBox" class="headerlink" title="Getting RecalBox"></a>Getting RecalBox</h1>
+<p>First, you’ll have to download RecalBox from here : <a href="https://github.com/recalbox/recalbox-os/releases" target="_blank" rel="external">https://github.com/recalbox/recalbox-os/releases</a>. Simply pick the last <code>.zip</code> file and download it somewhere on your computer.<br>Next,
+  you’ll need to plug your micro SD card in a card slot, or some kind of card reader. In my case, I have this small USB device that can read a lot of formats.<br><img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/cardreader.jpg" alt="Card reader" title="Card reader"><br>As I said in the previous post, you’ll only need this once, so if you don’t have one, you may be able to borrow it.</p>
+<p><strong>This will remove everything from your card</strong>. You may have to double-check that you did backup all your photos first, or whatever content that may have been on the card.<br><strong>On Windows</strong> and <strong>MAC</strong>, you can format
+  your card using <a href="https://www.sdcard.org/downloads/formatter_4/" target="_blank" rel="external">SD Card Formatter 4</a>.<br><img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/format-sdcard.png" alt="Formatting the SDCard" title="Formatting the SDCard"><br><em>Note that I don’t know why Windows is listing my 32Gb card as a “600Mb” USB device…</em></p>
+<p>On <strong>Ubuntu</strong>, you can use <strong>GParted</strong>. Simply pick “Fat32” and start the process.<br>Once the card is empty, unzip the <code>.zip</code> you downloaded before onto the card (it should appear in your File Explorer).</p>
+<p>Once the process is finished, simply plug the card back into the Raspberry PI. Check one last time that your gamepad is plugged. If you are using an Ethernet connection, you shouldn’t have any problem. If you are using the WiFi, you’ll need one USB Keyboard
+  to type in the WiFi SSID and password.<br><img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/raspberrycables.jpg" alt="My Raspberry PI" title="My Raspberry PI"></p>
+<h2 id="Starting-Recalbox">
+  <a href="#Starting-Recalbox" class="headerlink" title="Starting Recalbox"></a>Starting Recalbox</h2>
+<p>Once the power supply is plugged, the Raspberry will start, and Recalbox will install. The installation shouldn’t require any input, so just wait a bit.<br>Unfortunately, I didn’t find how to take screenshot from Recalbox <em>(if you are not running a game)</em>,
+  so instead, I had to take photos with my smartphone…<br>As you will see, the picture quality is just average when directly aiming at my monitor, even if the room is fully lit.<br><img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox00.jpg" alt="Loading Recalbox" title="Loading Recalbox"></p>
+<p>If everything went fine, you’ll see the main screen. Note that you will only see consoles (well.. emulators) if you have at least one game installed. By default, Recalbox comes with some free games, so you should see at least one or two consoles listed.<br>
+  <img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox01.jpg" alt="Main screen" title="Main screen"></p>
+<h2 id="Controller">
+  <a href="#Controller" class="headerlink" title="Controller"></a>Controller</h2>
+<p>Most USB gamepads should be recognized, and some buttons should work out of the box, to navigate though the menus. If not, use an USB keyboard and/or mouse.<br>The first step is to configure our gamepad. Hit <code>START</code> to open the main menu.<br>
+  <img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox02.jpg" alt="Main menu" title="Main menu"></p>
+<p>Go to <strong>Controller settings</strong>, and then choose <strong>Configure a controller</strong> (with my wired Xbox controller, <code>A</code> was used to confirm, while <code>B</code> was used to cancel or go back).<br><img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox07.jpg" alt="Controller settings (You should click on the first option, not the one I had selected )" title="Controller settings (You should click on the first option, not the one I had selected )"><br><img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox08.jpg" alt="Configuring a controller" title="Configuring a controller"></p>
+<p>Simply follow the on-screen instructions, and press each matching buttons. If the button is recognized, the configuration wizard will move to the next row.<br><img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox09.jpg" alt="Configuring the buttons" title="Configuring the buttons"></p>
+<p>Once this is done, you should be able to change the <strong>INPUT P1</strong> from the Controller settings to your custom configuration <em>(screenshot “Controller settings”)</em></p>
+<h2 id="Graphics">
+  <a href="#Graphics" class="headerlink" title="Graphics"></a>Graphics</h2>
+<p>Go back to the main menu and choose <strong>Game Settings</strong>. Here is my configuration, but feel free to change it to match your liking. You can even enable filters to change your brand new widescreen LED TV to an old CRT with scanlines.<br>
+  <img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox06.jpg" alt="Game Settings" title="Game Settings"></p>
+<h2 id="Sound">
+  <a href="#Sound" class="headerlink" title="Sound"></a>Sound</h2>
+<p>If you want, you go to <strong>Sound settings</strong> an disable the music from playing in the main menu.</p>
+<h2 id="UI">
+  <a href="#UI" class="headerlink" title="UI"></a>UI</h2>
+<p>In <strong>UI Settings</strong>, you can tweak the menus a bit. Here is my configuration <em>(I don’t think I changed anything)</em>.<br><img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox10.jpg" alt="Configuring the UI" title="Configuring the UI"></p>
+<h2 id="Network">
+  <a href="#Network" class="headerlink" title="Network"></a>Network</h2>
+<p>This is important if you want your Raspberry to connect to your network. <em>(This will allow you to update RecalBox from the interface, but also send new games from your computer to the Raspberry, or edit configuration files directly)</em>.<br>With a
+  wired connection, everything should work fine, but with WiFi, you’ll have to type the proper SSID and password from your router.<br><img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox11.jpg" alt="Configuring WIFI" title="Configuring WIFI"><br>RecalBox
+  should automatically connect once the proper values have been entered.</p>
+<h1 id="Copying-and-games">
+  <a href="#Copying-and-games" class="headerlink" title="Copying and games"></a>Copying and games</h1>
+<p>If you didn’t connect your Raspberry to your network, you’ll have to remove the SD card each time to drop the new games in the proper folder. But if everything worked fine, you can simply connect to your Raspberry by its IP <em>(you should find the IP in your router administration, where all connected devices are listed)</em>.<br>On
+  Ubuntu, you can also simply type in a terminal<br>
+  <figure class="highlight plain">
+    <table>
+      <tr>
+        <td class="gutter"><pre><div class="line">1</div></pre></td>
+        <td class="code"><pre><div class="line">nmap -sn 192.168.1.0/24</div></pre></td>
+      </tr>
+    </table>
+  </figure>
+</p>
+<p>The Raspberry PI should be listed <em>(but also all your computers, TVs, smartphones, etc.)</em>. If you are not sure, you can test all the entries. In my case, the IP is <code>192.168.1.18</code>.</p>
+<p>You can now access the Raspberry in your web browser, by opening <a href="http://192.168.1.18" target="_blank" rel="external">http://192.168.1.18</a> (<em>use your IP, of course)</em><br><img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox-web.png" alt="The recalbox web interface" title="The recalbox web interface"><br>If you open the “<strong>Manage Rom files for emulated systems</strong>“ section, then pick a console, you should be able to upload games directly.<br><img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox-web2.png" alt="Uploading Games" title="Uploading Games"></p>
+<h2 id="But-where-can-I-find-games">
+  <a href="#But-where-can-I-find-games" class="headerlink" title="But where can I find games?"></a>But where can I find games?</h2>
+<p>Well, as you may have imagined, these games are mostly illegal copies, so I won’t give you any link from this blog <em>(in theory, you can legally own any of these copies if you own the original game)</em>. <strong>But</strong>, it’s very easy to find
+  them, if you know what you are looking for. Games running on emulators are stored as “<strong>Roms</strong>“. Any Google search of this word and the proper console next to it should be more than enough. Note that while I can’t give you direct links,
+  I can also point you in the proper direction. Simply search for <em>“Emuparadise”</em> or <em>“RomStation”</em> (fr).</p>
+<h2 id="Alternative-to-the-web-browser">
+  <a href="#Alternative-to-the-web-browser" class="headerlink" title="Alternative to the web browser"></a>Alternative to the web browser</h2>
+<p>On <strong>Windows</strong>, you can use <a href="https://winscp.net/eng/index.php" target="_blank" rel="external">WinSCP</a> to connect to Recalbox. Simply type the IP, choose <code>root</code> as the login/username, and <code>recalboxroot</code> as the password <em>(this is the default password for RecalBox)</em>.<br>You
+  can now open the <code>recalbox/share/roms</code> folder and open the directory matching the system you want to use.</p>
+<p>On <strong>Ubuntu</strong>, simply open the File Explorer, press <code>CTRL + L</code> to edit the address, and type in <code>ssh://192.168.1.18</code> <em>(use your own IP)</em>. You’ll be prompted for the login and password, use the same as above.<br>
+  <img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox-ssh.png" alt="Browsing the game directories" title="Browsing the game directories"></p>
+<p>Once the files are copied to the proper folder <em>(I won’t detail which formats are supported, but let’s say that nearly ALL formats are supported, unless you find something very exotic)</em>, you can go back to your Raspberry, open the Main Menu, Go
+  to “Game settings”, and choose <strong>Update Games List</strong> at the very bottom of the list <em>(or you can also restart the Raspberry)</em>.</p>
+<p>Then, pick any of the system, and you should see all your games <em>(see below for the game thumbnails)</em>.<br><img src="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/recalbox12.jpg" alt="SNES Emulator" title="SNES Emulator"></p>
+<h1 id="Scraping-games">
+  <a href="#Scraping-games" class="headerlink" title="Scraping games"></a>Scraping games</h1>
+<p>If you want to see the thumbnails and details, you’ll have to <strong>Scrape</strong> the games. This means RecalBox will query a game database to fetch informations and display them in the interface. From the Main Menu, go to <strong>Scraper</strong>,
+  ensure you are scraping from <strong>“THEGAMESDB”</strong>, and choose <strong>Scrape Now</strong>.<br>Check that all your systems are selected, and start the scraping. This may take some time, and some results may be inaccurate, requiring you to manually
+  search for the games <em>(so you’ll need your keyboard)</em>.</p>
+<h1 id="Achievements">
+  <a href="#Achievements" class="headerlink" title="Achievements"></a>Achievements</h1>
+<p>Recalbox also supports retro achievements from <a href="http://retroachievements.org/" target="_blank" rel="external">http://retroachievements.org/</a>. You can link your account from the options. I didn’t test it, but it will enable achievements on supported games, to keep track of
+  your progression.</p>
+<h1 id="Final-notes">
+  <a href="#Final-notes" class="headerlink" title="Final notes"></a>Final notes</h1>
+<p>If you want to turn off the Raspberry Pi, it’s very important to first go to the main Menu, ans select <strong>“Quit”</strong>, then <strong>“Shutdown System”</strong>. Once your screen goes black (or your TV switches to another input), you can safely
+  disconnect the power supply from the Raspberry.</p>
+<p>This concludes the Retrogaming tutorial. I hope you will have as much fun as I had by playing old games I used to play as a kid.<br>I will also explain to you, in another tutorial, how you can convert your Raspberry PI as a very powerful media center,
+  using <strong>Kodi</strong>. You can even keep RecalBox installed if you don’t want to switch to another SDCard.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome back to this second part of the retro-gaming tutorial. Now that we have a working Raspberry, let’s install &lt;a href=&quot;https://www.recalbox.com/&quot;&gt;RecalBox&lt;/a&gt;. Recalbox &lt;em&gt;(or &lt;strong&gt;RecalBoxOS&lt;/strong&gt; should I say)&lt;/em&gt; is a free, open source
+  operating system designed to work on Raspberry machines (and equivalent). Basically, it’s a bundle of emulators to play almost any old games, with a very user friendly interface on top of it, designed to be used on a TV.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Gaming" scheme="http://kynesilverhide.github.io/categories/Gaming/"/>
+    
+      <category term="Raspberry Pi" scheme="http://kynesilverhide.github.io/categories/Gaming/Raspberry-Pi/"/>
+    
+    
+      <category term="Raspberry" scheme="http://kynesilverhide.github.io/tags/Raspberry/"/>
+    
+      <category term="recalbox" scheme="http://kynesilverhide.github.io/tags/recalbox/"/>
+    
+      <category term="retrogaming" scheme="http://kynesilverhide.github.io/tags/retrogaming/"/>
+    
+      <category term="pi" scheme="http://kynesilverhide.github.io/tags/pi/"/>
+    
+      <category term="gaming" scheme="http://kynesilverhide.github.io/tags/gaming/"/>
+    
+  </entry>
   
   <entry>
     <title>A cheap retro-gaming solution : the Raspberry PI (Part 1)</title>
