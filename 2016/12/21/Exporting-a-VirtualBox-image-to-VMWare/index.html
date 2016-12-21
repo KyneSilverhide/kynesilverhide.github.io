@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Exporting a VirtualBox image to VMWare | KyneSilverhide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="description" content="In the first posts, I showed you how to install Ubuntu in VirtualBox. I did choose VirtualBox because the installation didn’t seem to work in VmWare Player  (Another well know product for creating and">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Exporting a VirtualBox image to VMWare">
+  <meta property="og:url" content="http://kynesilverhide.github.io/2016/12/21/Exporting-a-VirtualBox-image-to-VMWare/index.html">
+  <meta property="og:site_name" content="KyneSilverhide">
+  <meta property="og:description" content="In the first posts, I showed you how to install Ubuntu in VirtualBox. I did choose VirtualBox because the installation didn’t seem to work in VmWare Player  (Another well know product for creating and">
+  <meta property="og:image" content="http://kynesilverhide.github.io/images/thumb_virtualization.PNG">
+  <meta property="og:updated_time" content="2016-12-21T14:15:35.031Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Exporting a VirtualBox image to VMWare">
+  <meta name="twitter:description" content="In the first posts, I showed you how to install Ubuntu in VirtualBox. I did choose VirtualBox because the installation didn’t seem to work in VmWare Player  (Another well know product for creating and">
+  <meta name="twitter:image" content="http://kynesilverhide.github.io/images/thumb_virtualization.PNG">
+
+
+
+
+
+
+  <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/libs/open-sans/styles.css">
+  <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+
+
+  <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+
+  <script type="text/javascript">
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-88360865-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+      <div id="header-main" class="header-inner">
+        <div class="outer">
+          <a href="/" id="logo">
+            <i class="logo"></i>
+            <span class="site-title">KyneSilverhide</span>
+          </a>
+          <nav id="main-nav">
+
+            <a class="main-nav-link" href="/.">Home</a>
+
+            <a class="main-nav-link" href="/archives">Archives</a>
+
+            <a class="main-nav-link" href="/categories">Categories</a>
+
+            <a class="main-nav-link" href="/tags">Tags</a>
+
+            <td><a class="main-nav-link" href="CV.png">My CV (fr)</a></td>
+          </nav>
+
+
+          <nav id="sub-nav">
+            <div class="profile" id="profile-nav">
+              <a id="profile-anchor" href="javascript:;">
+                <img class="avatar" src="https://www.gravatar.com/avatar/7eb59f97f7c777721a1d5385474c0e04" />
+                <i class="fa fa-caret-down"></i>
+              </a>
+            </div>
+          </nav>
+
+          <div id="search-form-wrap">
+
+            <form class="search-form">
+              <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+              <button type="submit" class="search-form-submit"></button>
+            </form>
+            <div class="ins-search">
+              <div class="ins-search-mask"></div>
+              <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                  <input type="text" class="ins-search-input" placeholder="Type something..." />
+                  <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+                </div>
+                <div class="ins-section-wrapper">
+                  <div class="ins-section-container"></div>
+                </div>
+              </div>
+            </div>
+            <script>
+              (function(window) {
+                var INSIGHT_CONFIG = {
+                  TRANSLATION: {
+                    POSTS: 'Posts',
+                    PAGES: 'Pages',
+                    CATEGORIES: 'Categories',
+                    TAGS: 'Tags',
+                    UNTITLED: '(Untitled)',
+                  },
+                  ROOT_URL: '/',
+                  CONTENT_URL: '/content.json',
+                };
+                window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+              })(window);
+            </script>
+            <script src="/js/insight.js"></script>
+
+          </div>
+        </div>
+      </div>
+      <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+          <tr>
+
+            <td><a class="main-nav-link" href="/.">Home</a></td>
+
+            <td><a class="main-nav-link" href="/archives">Archives</a></td>
+
+            <td><a class="main-nav-link" href="/categories">Categories</a></td>
+
+            <td><a class="main-nav-link" href="/tags">Tags</a></td>
+
+            <td>
+              <div class="search-form">
+                <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </header>
+    <div class="outer">
+
+      <aside id="profile">
+        <div class="inner profile-inner">
+          <div class="base-info profile-block">
+            <img id="avatar" src="https://www.gravatar.com/avatar/7eb59f97f7c777721a1d5385474c0e04?s=128" />
+            <h2 id="name">KyneSilverhide</h2>
+            <h3 id="title">Java and Javascript software developper</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Mons, Belgium</span>
+            <a id="follow" target="_blank" href="https://github.com/kynesilverhide/">FOLLOW</a>
+          </div>
+          <div class="article-info profile-block">
+            <div class="article-info-block">
+              9
+              <span>posts</span>
+            </div>
+            <div class="article-info-block">
+              27
+              <span>tags</span>
+            </div>
+          </div>
+
+          <div class="profile-block social-links">
+            <table>
+              <tr>
+
+
+                <td>
+                  <a href="https://github.com/kynesilverhide/" target="_blank" title="github" class=tooltip>
+                    <i class="fa fa-github"></i>
+                  </a>
+                </td>
+
+                <td>
+                  <a href="https://twitter.com/ALansmanne" target="_blank" title="twitter" class=tooltip>
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </td>
+
+                <td>
+                  <a href="https://www.youtube.com/user/SilverhideKyne" target="_blank" title="youtube" class=tooltip>
+                    <i class="fa fa-youtube"></i>
+                  </a>
+                </td>
+
+              </tr>
+            </table>
+          </div>
+
+        </div>
+      </aside>
+
+      <section id="main">
+        <article id="post-Exporting-a-VirtualBox-image-to-VMWare" class="article article-type-post" itemscope itemprop="blogPost">
+          <div class="article-inner">
+
+            <img src="/images/banner_virtualization1.PNG" class="article-banner" />
+
+
+            <header class="article-header">
+              <h1 class="article-title" itemprop="name">
+                Exporting a VirtualBox image to VMWare
+              </h1>
+
+              <div class="article-meta">
+                <div class="article-date">
+                  <i class="fa fa-calendar"></i>
+                  <a href="/2016/12/21/Exporting-a-VirtualBox-image-to-VMWare/">
+                    <time datetime="2016-12-21T13:11:09.000Z" itemprop="datePublished">2016-12-21</time>
+                  </a>
+                </div>
+                <div class="article-category">
+                  <i class="fa fa-folder"></i>
+                  <a class="article-category-link" href="/categories/Virtualization/">Virtualization</a>
+                </div>
+                <div class="article-tag">
+                  <i class="fa fa-tag"></i>
+                  <a class="tag-link" href="/tags/migration/">migration</a>, <a class="tag-link" href="/tags/virtualbox/">virtualbox</a>, <a class="tag-link" href="/tags/vmware/">vmware</a>
+                </div>
+              </div>
+
+            </header>
+
+
+            <div class="article-entry" itemprop="articleBody">
+
+
+              <p>In the first posts, I showed you how to install Ubuntu in <a href="https://www.virtualbox.org/" target="_blank" rel="external">VirtualBox</a>. I did choose VirtualBox because the installation didn’t seem to work in <a href="http://www.vmware.com/products/player/playerpro-evaluation.html"
+                  target="_blank" rel="external">VmWare Player</a> <em>(Another well know product for creating and running operating systems and applications in a virtual machine)</em>. Unfortunately, I also encountered some bugs in VirtualBox whenever
+                I tried to enable 3D acceleration (screenshots were black, and
+                <a href="https://atom.io/" target="_blank" rel="external">Atom</a> was not starting properly).</p>
+              <p>So after some search, I found out it’s actually quite easy to migrate a working image from VirtualBox to VMWare Player.<br>
+                <a id="more"></a>
+              </p>
+              <h1 id="Exporting-from-VirtualBox">
+                <a href="#Exporting-from-VirtualBox" class="headerlink" title="Exporting from VirtualBox"></a>Exporting from VirtualBox</h1>
+              <p>Start VirtualBox, go to the Menu and selected <strong>Export Appliance…</strong><br><img src="/2016/12/21/Exporting-a-VirtualBox-image-to-VMWare/export01.png" alt="Exporting Step 1" title="Exporting Step 1"></p>
+              <p>Simply follow the guide and keep the default values (double check where you want to export the file)<br><img src="/2016/12/21/Exporting-a-VirtualBox-image-to-VMWare/export02.png" alt="Exporting Step 2" title="Exporting Step 2"><br><img src="/2016/12/21/Exporting-a-VirtualBox-image-to-VMWare/export03.png"
+                  alt="Exporting Step 3" title="Exporting Step 3"><br><img src="/2016/12/21/Exporting-a-VirtualBox-image-to-VMWare/export04.png" alt="Exporting Step 4" title="Exporting Step 4"></p>
+              <p>At the end, the export will start. Depending on the size of your image, it may takes some time…<br><img src="/2016/12/21/Exporting-a-VirtualBox-image-to-VMWare/export05.png" alt="Exporting Step 5" title="Exporting Step 5"></p>
+              <h1 id="Importing-into-VmWare-Player">
+                <a href="#Importing-into-VmWare-Player" class="headerlink" title="Importing into VmWare Player"></a>Importing into VmWare Player</h1>
+              <p>Once the export has been successfully completed, it’s time to import it. You can close VirtualBox, and starts VMWare Player.<br>If you have not yet installed VmWare Player, you can download it here : <a href="https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_workstation_player/12_0"
+                  target="_blank" rel="external">https://my.vmware.com/web/vmware/free#desktop_end_user_computing/vmware_workstation_player/12_0</a><br>I don’t think VMWare exists on MacOSX, but as I said, you probably won’t need Ubuntu if you are on a
+                Mac.</p>
+              <p>Go to “Open a Virtual Machine” and browse to the exported <code>.ova</code> file<br><img src="/2016/12/21/Exporting-a-VirtualBox-image-to-VMWare/import01.png" alt="Importing Step 1" title="Importing Step 1"><br>You’ll probbaly see a warning,
+                but you can ignore it safely, and hit “Retry”<br><img src="/2016/12/21/Exporting-a-VirtualBox-image-to-VMWare/import02.png" alt="Importing Step 2" title="Importing Step 2"><br>The import should start quickly… but once again, the whole
+                process will takes time.<br>
+                <img src="/2016/12/21/Exporting-a-VirtualBox-image-to-VMWare/import03.png" alt="Importing Step 3" title="Importing Step 3"></p>
+              <p>Most tutorial will leave you here, with a working image. But even if it starts, it won’t run properly as you were used to.</p>
+              <h1 id="Final-Configuration">
+                <a href="#Final-Configuration" class="headerlink" title="Final Configuration"></a>Final Configuration</h1>
+              <p>Edit the settings of the imported machine (you can safely delete the exported <code>.ova</code>) by right clicking on the image in the list.</p>
+              <ul>
+                <li>Double check the CPU and memory, to ensure the values were properly imported.</li>
+                <li>Add a soundcard to the list (use the default values or pick one if you have multiple soundcards or output ports. In my case, I chose the optical output “SPDIF”)</li>
+                <li>You can also enable 3D acceleration back, and increase the allowed memory to 2Gb (maybe more, maybe less, depending on your hardware) in the “Display” section.</li>
+                <li>You should also probably add USB controller support, just in case you need to plug an external device.<img src="/2016/12/21/Exporting-a-VirtualBox-image-to-VMWare/config02.png" alt="Adding USB ports and soundcards" title="Adding USB ports and soundcards">
+                </li>
+              </ul>
+              <p>Switch to the other tab and add your shared folders.<br><img src="/2016/12/21/Exporting-a-VirtualBox-image-to-VMWare/config01.png" alt="Importing Step 1" title="Importing Step 1"></p>
+              <h1 id="Starting-the-machine">
+                <a href="#Starting-the-machine" class="headerlink" title="Starting the machine"></a>Starting the machine</h1>
+              <p>You should now be able to start your Ubuntu machine. I a dialog appears, choose “I copied it”.<br>If everything went fine, you should have your environment back.<br><strong>I recommend to install the VMWare tools</strong> from the VMWare
+                Menu <em>(note that in my case, the option has switched to “Update”, because I already installed everything before)</em>.<br>
+                <img src="/2016/12/21/Exporting-a-VirtualBox-image-to-VMWare/starting01.png" alt="Installing the VM Tools" title="Installing the VM Tools"></p>
+              <p>Ubuntu should automatically mount the tools CD-ROM. Copy the archive somewhere else on your desktop, and extract it <em>(you can simply right click, you don’t need to use the terminal)</em>.<br>Finally, open the terminal, go to the extracted
+                folder and run the second command<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td>
+                      <td class="code"><pre><div class="line">cd ~/path/to/extracted/tools/</div><div class="line">sudo vmware-config-tools.pl</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <p>You should keep the default answer to all questions. Note that the very first question will probably recommend you to use install from a package instead, but most tutorials are still using the old version, so I decided to do the same.</p>
+              <p>Once finished, you should probably restart Ubuntu.</p>
+              <h2 id="Shared-folders-tweak">
+                <a href="#Shared-folders-tweak" class="headerlink" title="Shared folders tweak"></a>Shared folders tweak</h2>
+              <p>In my case, Shared folders didn’t work, even after a restart.<br>I had to run this command to reconfigure the <strong>VMWare Tools</strong> with the proper driver<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div></pre></td>
+                      <td class="code"><pre><div class="line">sudo vmware-config-tools.pl -d --clobber-kernel-modules=vmhgfs</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <p>Once done, simply go to <code>/mnt/hgfs/</code> using the File Explorer, and you’ll find your shared folders.<br>You can them drag&amp;drop the folder to the left menu, in order to create a shortcut.</p>
+              <h2 id="Broken-resolution">
+                <a href="#Broken-resolution" class="headerlink" title="Broken resolution?"></a>Broken resolution?</h2>
+              <p>In my case, my resolution (1920*1080) didn’t appear in Ubuntu, so I had to choose between a tiny window, or something too large.<br>I manually created a custom resolution, but I’m not sure this is the proper fix.</p>
+              <p>Anyway, if you encounter the same problem, you can run these commands.<br>first, use cvt, followed by the height, width and refresh rate.<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div></pre></td>
+                      <td class="code"><pre><div class="line">cvt 1920 1080 60</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <p>Paste the value returned by the first command, starting after “Modline”<br>
+                <figure class="highlight plain">
+                  <table>
+                    <tr>
+                      <td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td>
+                      <td class="code"><pre><div class="line">xrandr --newmode &quot;1920x1080_60.00&quot;  173.00  1920 2048 2248 2576  1080 1083 1088 1120 -hsync +vsync</div><div class="line">xrandr --addmode Virtual1 &quot;1920x1080_60.00&quot;</div><div class="line">xrandr --output Virtual1 --mode &quot;1920x1080_60.00&quot;</div></pre></td>
+                    </tr>
+                  </table>
+                </figure>
+              </p>
+              <p>If <strong>Virtual1</strong> is not your display name, simply type <code>xrandr</code> with no parameter to print your display name.<br>Your new resolution should now be applied, and listed in the “System Settings &gt; Display” menu.</p>
+              <h1 id="Conclusion">
+                <a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1>
+              <p>Congratulations, you now have another Ubuntu machine with proper 3D acceleration.<br>For now, everything seems to work as expected, but the boot is slower on my machine. I’ll continue investigating to see if it’s normal, or if I messed up
+                something in the configuration.</p>
+
+            </div>
+            <footer class="article-footer">
+              <div class="share-container">
+
+
+
+              </div>
+
+              <a data-url="http://kynesilverhide.github.io/2016/12/21/Exporting-a-VirtualBox-image-to-VMWare/" data-id="ciwz0v448000cxl7rfero3l2h" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+              <script>
+                (function($) {
+                  // Prevent duplicate binding
+                  if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+                    __SHARE_BUTTON_BINDED__ = true;
+                  } else {
+                    return;
+                  }
+                  $('body').on('click', function() {
+                    $('.article-share-box.on').removeClass('on');
+                  }).on('click', '.article-share-link', function(e) {
+                    e.stopPropagation();
+
+                    var $this = $(this),
+                      url = $this.attr('data-url'),
+                      encodedUrl = encodeURIComponent(url),
+                      id = 'article-share-box-' + $this.attr('data-id'),
+                      offset = $this.offset(),
+                      box;
+
+                    if ($('#' + id).length) {
+                      box = $('#' + id);
+
+                      if (box.hasClass('on')) {
+                        box.removeClass('on');
+                        return;
+                      }
+                    } else {
+                      var html = [
+                        '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                        '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                        '</div>'
+                      ].join('');
+
+                      box = $(html);
+
+                      $('body').append(box);
+                    }
+
+                    $('.article-share-box.on').hide();
+
+                    box.css({
+                      top: offset.top + 25,
+                      left: offset.left
+                    }).addClass('on');
+
+                  }).on('click', '.article-share-box', function(e) {
+                    e.stopPropagation();
+                  }).on('click', '.article-share-box-input', function() {
+                    $(this).select();
+                  }).on('click', '.article-share-box-link', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+                  });
+                })(jQuery);
+              </script>
+              <a href="http://kynesilverhide.github.io/2016/12/21/Exporting-a-VirtualBox-image-to-VMWare/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kynesilverhide.github.io/2016/12/21/Exporting-a-VirtualBox-image-to-VMWare/">Comments</a>
+            </footer>
+          </div>
+
+          <nav id="article-nav">
+
+
+            <a href="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/" id="article-nav-older" class="article-nav-link-wrap">
+              <strong class="article-nav-caption">Older</strong>
+              <div class="article-nav-title">A cheap retro-gaming solution : the Raspberry PI (Part 2)</div>
+            </a>
+
+          </nav>
+
+        </article>
+
+
+        <section id="comments">
+
+          <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          </div>
+
+        </section>
+      </section>
+
+      <aside id="sidebar">
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">recent</h3>
+          <div class="widget">
+            <ul id="recent-post" class="">
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/12/21/Exporting-a-VirtualBox-image-to-VMWare/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_virtualization.PNG)" alt="Exporting a VirtualBox image to VMWare" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Virtualization/">Virtualization</a></p>
+                  <p class="item-title"><a href="/2016/12/21/Exporting-a-VirtualBox-image-to-VMWare/" class="title">Exporting a VirtualBox image to VMWare</a></p>
+                  <p class="item-date"><time datetime="2016-12-21T13:11:09.000Z" itemprop="datePublished">2016-12-21</time></p>
+                </div>
+              </li>
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_raspberry.PNG)" alt="A cheap retro-gaming solution : the Raspberry PI (Part 2)" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Gaming/">Gaming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Gaming/Raspberry-Pi/">Raspberry Pi</a></p>
+                  <p class="item-title"><a href="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/" class="title">A cheap retro-gaming solution : the Raspberry PI (Part 2)</a></p>
+                  <p class="item-date"><time datetime="2016-12-19T16:59:57.000Z" itemprop="datePublished">2016-12-19</time></p>
+                </div>
+              </li>
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_raspberry.PNG)" alt="A cheap retro-gaming solution : the Raspberry PI (Part 1)" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Gaming/">Gaming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Gaming/Raspberry-Pi/">Raspberry Pi</a></p>
+                  <p class="item-title"><a href="/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/" class="title">A cheap retro-gaming solution : the Raspberry PI (Part 1)</a></p>
+                  <p class="item-date"><time datetime="2016-12-14T18:51:07.000Z" itemprop="datePublished">2016-12-14</time></p>
+                </div>
+              </li>
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_gimp.PNG)" alt="Creating a material design wallpaper for your smartphone with GIMP" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Design/">Design</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Design/Gimp/">Gimp</a></p>
+                  <p class="item-title"><a href="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/" class="title">Creating a material design wallpaper for your smartphone with GIMP</a></p>
+                  <p class="item-date"><time datetime="2016-12-10T17:30:55.000Z" itemprop="datePublished">2016-12-10</time></p>
+                </div>
+              </li>
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/12/06/Recommended-packages-for-Atom/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_atom.PNG)" alt="Recommended packages for Atom" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Programming/">Programming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Programming/Atom/">Atom</a></p>
+                  <p class="item-title"><a href="/2016/12/06/Recommended-packages-for-Atom/" class="title">Recommended packages for Atom</a></p>
+                  <p class="item-date"><time datetime="2016-12-06T19:09:32.000Z" itemprop="datePublished">2016-12-06</time></p>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">categories</h3>
+          <div class="widget">
+            <ul class="category-list">
+              <li class="category-list-item"><a class="category-list-link" href="/categories/Design/">Design</a><span class="category-list-count">1</span>
+                <ul class="category-list-child">
+                  <li class="category-list-item"><a class="category-list-link" href="/categories/Design/Gimp/">Gimp</a><span class="category-list-count">1</span></li>
+                </ul>
+              </li>
+              <li class="category-list-item"><a class="category-list-link" href="/categories/Gaming/">Gaming</a><span class="category-list-count">2</span>
+                <ul class="category-list-child">
+                  <li class="category-list-item"><a class="category-list-link" href="/categories/Gaming/Raspberry-Pi/">Raspberry Pi</a><span class="category-list-count">2</span></li>
+                </ul>
+              </li>
+              <li class="category-list-item"><a class="category-list-link" href="/categories/Operating-System/">Operating System</a><span class="category-list-count">3</span></li>
+              <li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">2</span>
+                <ul class="category-list-child">
+                  <li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Atom/">Atom</a><span class="category-list-count">1</span></li>
+                  <li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Hexo/">Hexo</a><span class="category-list-count">1</span></li>
+                </ul>
+              </li>
+              <li class="category-list-item"><a class="category-list-link" href="/categories/Virtualization/">Virtualization</a><span class="category-list-count">1</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">archives</h3>
+          <div class="widget">
+            <ul class="archive-list">
+              <li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">6</span></li>
+              <li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">tags</h3>
+          <div class="widget">
+            <ul class="tag-list">
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/Raspberry/">Raspberry</a><span class="tag-list-count">2</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/code/">code</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/design/">design</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/development/">development</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/gaming/">gaming</a><span class="tag-list-count">2</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/gimp/">gimp</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/material/">material</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/migration/">migration</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/packages/">packages</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/pi/">pi</a><span class="tag-list-count">2</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/recalbox/">recalbox</a><span class="tag-list-count">2</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/retrogaming/">retrogaming</a><span class="tag-list-count">2</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/tutorial/">tutorial</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">3</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/">unity</a><span class="tag-list-count">3</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/unix/">unix</a><span class="tag-list-count">3</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/virtualbox/">virtualbox</a><span class="tag-list-count">4</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/vmware/">vmware</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/wallpaper/">wallpaper</a><span class="tag-list-count">1</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">tag cloud</h3>
+          <div class="widget tagcloud">
+            <a href="/tags/Raspberry/" style="font-size: 13.33px;">Raspberry</a> <a href="/tags/atom/" style="font-size: 10px;">atom</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/code/" style="font-size: 10px;">code</a>
+            <a
+              href="/tags/design/" style="font-size: 10px;">design</a> <a href="/tags/development/" style="font-size: 10px;">development</a> <a href="/tags/gaming/" style="font-size: 13.33px;">gaming</a> <a href="/tags/gimp/" style="font-size: 10px;">gimp</a> <a href="/tags/git/" style="font-size: 10px;">git</a>              <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/material/" style="font-size: 10px;">material</a>
+              <a href="/tags/migration/" style="font-size: 10px;">migration</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/packages/" style="font-size: 10px;">packages</a>              <a href="/tags/pi/" style="font-size: 13.33px;">pi</a> <a href="/tags/recalbox/" style="font-size: 13.33px;">recalbox</a> <a href="/tags/retrogaming/" style="font-size: 13.33px;">retrogaming</a> <a href="/tags/tutorial/" style="font-size: 10px;">tutorial</a>              <a href="/tags/ubuntu/" style="font-size: 16.67px;">ubuntu</a> <a href="/tags/unity/" style="font-size: 16.67px;">unity</a> <a href="/tags/unix/" style="font-size: 16.67px;">unix</a> <a href="/tags/virtualbox/" style="font-size: 20px;">virtualbox</a>              <a href="/tags/vmware/" style="font-size: 10px;">vmware</a> <a href="/tags/wallpaper/" style="font-size: 10px;">wallpaper</a>
+          </div>
+        </div>
+
+        <div class="widget-wrap widget-list">
+          <h3 class="widget-title">links</h3>
+          <div class="widget">
+            <ul>
+
+              <li>
+                <a href="/atom.xml">Atom Feed</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div id="toTop" class="fa fa-angle-up"></div>
+      </aside>
+
+    </div>
+    <footer id="footer">
+      <div class="outer">
+        <div id="footer-info" class="inner">
+          &copy; 2016 KyneSilverhide<br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      var disqus_config = function() {
+
+        this.page.url = 'http://kynesilverhide.github.io/2016/12/21/Exporting-a-VirtualBox-image-to-VMWare/';
+
+        this.page.identifier = 'Exporting-a-VirtualBox-image-to-VMWare';
+      };
+      (function() {
+        var d = document,
+          s = d.createElement('script');
+        s.src = '//' + 'kynesilverhide-blog' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <script src="/libs/lightgallery/js/lightgallery.min.js">
+    </script>
+    <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+
+    <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="/js/main.js"></script>
+  </div>
+</body>
+
+</html>
