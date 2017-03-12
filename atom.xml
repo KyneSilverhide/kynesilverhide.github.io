@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kynesilverhide.github.io/"/>
-  <updated>2017-03-12T14:43:26.751Z</updated>
+  <updated>2017-03-12T14:48:10.464Z</updated>
   <id>http://kynesilverhide.github.io/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://kynesilverhide.github.io/2017/03/12/DIY-Arcade-Controller/"/>
     <id>http://kynesilverhide.github.io/2017/03/12/DIY-Arcade-Controller/</id>
     <published>2017-03-12T11:39:45.000Z</published>
-    <updated>2017-03-12T14:43:26.751Z</updated>
+    <updated>2017-03-12T14:48:10.464Z</updated>
     
-    <content type="html"><![CDATA[<p>Do you still have your raspberry somewhere on your desk or near your TV? Great ! Because we can go to the next level and build our own arcade controller with an embedded console.<br>How? Buy putting the raspberry itself inside our arcade stick !</p>
+    <content type="html"><![CDATA[<p>Do you still have your raspberry somewhere on your desk or near your TV? Great ! Because we can go to the next level and build our own arcade controller with an embedded console.<br>How? By putting the raspberry itself inside our arcade stick !</p>
 <a id="more"></a>
 <p>First and foremost, this guide will be slightly different than the previous ones, mainly because it won’t be as detailed. I’ll provide as many information as possible on each steps, but depending on the materials and skills at disposal, you may choose
   a completely different solution. I also forgot to take pictures of the building processed, but provided a link to someone else’s guide that is very similar.</p>
@@ -123,7 +123,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;Do you still have your raspberry somewhere on your desk or near your TV? Great ! Because we can go to the next level and build our own arcade controller with an embedded console.&lt;br&gt;How? Buy putting the raspberry itself inside our arcade stick !&lt;/p&gt;
+      &lt;p&gt;Do you still have your raspberry somewhere on your desk or near your TV? Great ! Because we can go to the next level and build our own arcade controller with an embedded console.&lt;br&gt;How? By putting the raspberry itself inside our arcade stick !&lt;/p&gt;
     
     </summary>
     
