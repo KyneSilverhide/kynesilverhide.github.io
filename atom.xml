@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://kynesilverhide.github.io/"/>
-  <updated>2016-12-21T14:15:35.031Z</updated>
+  <updated>2017-03-12T14:43:26.751Z</updated>
   <id>http://kynesilverhide.github.io/</id>
   
   <author>
@@ -14,6 +14,135 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DIY Arcade Controller</title>
+    <link href="http://kynesilverhide.github.io/2017/03/12/DIY-Arcade-Controller/"/>
+    <id>http://kynesilverhide.github.io/2017/03/12/DIY-Arcade-Controller/</id>
+    <published>2017-03-12T11:39:45.000Z</published>
+    <updated>2017-03-12T14:43:26.751Z</updated>
+    
+    <content type="html"><![CDATA[<p>Do you still have your raspberry somewhere on your desk or near your TV? Great ! Because we can go to the next level and build our own arcade controller with an embedded console.<br>How? Buy putting the raspberry itself inside our arcade stick !</p>
+<a id="more"></a>
+<p>First and foremost, this guide will be slightly different than the previous ones, mainly because it won’t be as detailed. I’ll provide as many information as possible on each steps, but depending on the materials and skills at disposal, you may choose
+  a completely different solution. I also forgot to take pictures of the building processed, but provided a link to someone else’s guide that is very similar.</p>
+<h1 id="What-we-will-build">
+  <a href="#What-we-will-build" class="headerlink" title="What we will build"></a>What we will build</h1><img src="/2017/03/12/DIY-Arcade-Controller/arcade-controller01.jpg" alt="The finished Arcade Controller" title="The finished Arcade Controller">
+<p>This arcade controller (or stick) is basically a box, some holes, a joystick, buttons, and a raspberry pi attached together. Based on your skills, you can either build the box yourself, use metal, re-use a cheap plastic controller, or even build it with
+  legos or transparent glass.</p>
+<h1 id="What-do-we-need">
+  <a href="#What-do-we-need" class="headerlink" title="What do we need"></a>What do we need</h1>
+<ul>
+  <li>An arcade kit (buttons, cable, joystick, encoder) <strong>OR</strong> separate parts</li>
+  <li>A Raspberry Pi</li>
+  <li>A long HDMI cable <em>(unless you want to play close to your screen, I picked a 3m long cable)</em></li>
+  <li>A long power adapter <em>(cheap models may not work with very long cable, so I picked a 2m long cable and checked it was compatible with a Raspberry Pi 3)</em></li>
+</ul>
+<h2 id="The-arcade-kit">
+  <a href="#The-arcade-kit" class="headerlink" title="The arcade kit"></a>The arcade kit</h2>
+<p>This is the part where you’ll have to choose what kind of buttons you want, and balance price and quality.<br>Typically, there are two “families” of buttons and sticks : American ones (<a href="https://www.google.be/search?q=Happ+kits+arcade&amp;tbm=isch" target="_blank" rel="external">HAPP</a>,
+  and Japanese ones (<a href="https://www.google.be/search?q=sanwa+kits+arcade&amp;tbm=isch" target="_blank" rel="external">Sanwa</a>, Seimitsu…).<br>American buttons are concave, and the sticks looks like a car shift. Japanese buttons are convex, while their sticks is literally a
+  ball on a shaft.</p>
+<p>To plug all these buttons, the easiest way is to use and USB encoder. This will allow you to plug all your buttons and sticks into a small board with an USB output. In theory, you can mix and match these buttons and sticks, as long as the encoder supports
+  both <em>(Japanese joysticks use a single pin connector, while HAPP joysticks use four smaller connectors)</em>. </p>
+<p>There are tons of kits available. If you want the best quality, you’ll have to buy the more expansive Sanwa, Seimitsu and HAPP parts. If, like me, you first want to try things without investing too much money, you’ll probably find what you want on Amazon
+  or Ebay. </p>
+<p>If you want, buttons can also come equipped with LEDs. If you stick to 5V LEDs, you should be able to power them via the USB port of your raspberry. Some kits use 12V LEDs that will require a dedicated power supply, so I strongly recommend to only buy
+  these if you want to build a <a href="https://www.google.be/search?q=bartop+cabinet&amp;tbm=isch" target="_blank" rel="external">bartop cabinet</a> instead.</p>
+<p>I myself bought <a href="http://www.ebay.com/itm/182388516489?_trksid=p2060353.m2749.l2649&amp;var=484958786510&amp;ssPageName=STRK%3AMEBIDX%3AIT" target="_blank" rel="external">this kit on Ebay</a>.<br>I was very satisfied with the quality, relatively fast shipping (from China to
+  Belgium), and support from the seller. Unfortunately, three of the eleven <em>(10 and 1 spare)</em> LEDs were not working. I contacted the seller and they sent me new LEDs that should arrive soon.<br><img src="/2017/03/12/DIY-Arcade-Controller/arcade-controller02.jpg" alt="Easyget Chrome Kit" title="Easyget Chrome Kit"></p>
+<h3 id="Pick-a-stick">
+  <a href="#Pick-a-stick" class="headerlink" title="Pick a stick"></a>Pick a stick</h3>
+<p>You can pick any stick you want, as long as you choose a compatible USB encoder <em>(see below)</em>. Based on your preferences, you can have a look at <em>(or replace later)</em> the restrictor gate <em>(there are multiple shapes : a circle, a square, a line, an octogon…)</em>.</p>
+<div class="justified-gallery"><br><img src="arcade-controller05.jpg" alt=""><br><img src="arcade-controller06.jpg" alt=""><br><img src="https://cdn1.bigcommerce.com/server6200/ajh2rr5h/product_images/uploaded_images/u360-restrictors.jpg" alt=""><br></div>
+
+<h3 id="Pick-buttons">
+  <a href="#Pick-buttons" class="headerlink" title="Pick buttons"></a>Pick buttons</h3>
+<p>Buttons also come in many shapes : concave, convex, large or small, with or without a LED. Some can be screwed in, some have to be snapped in.<br>If you are working with thick wood planks, ensure the button is high enough. Most buttons requires 28-30mm
+  holes, while smaller ones usually fit into a 24mm hole <em>(you may need to convert into inches…)</em>.<br><strong> Be very careful</strong> :</p>
+<ul>
+  <li>Find how many buttons you need. While SNES games only requires 8 buttons, you may need a bit more for other consoles. Most kit will include 10 buttons. This will allow you to emulate X, Y, A, B, L1, R1, L2, R2, Start and Select. </li>
+  <li>If you are using Recalbox (my tutorial <a href="https://kynesilverhide.github.io/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/">here</a>, more information <a href="https://www.recalbox.com/" target="_blank" rel="external">here</a>), you’ll need another “hotkey”
+    button. I decided to switch to Retropie instead, because they use a “Start + Select” combination instead. Or you can simply get rid of the “L2” and “R2” buttons.</li>
+</ul>
+<p>I decided to go “full on bling” with these 5V led “chrome” buttons.</p>
+<div class="justified-gallery"><br><img src="arcade-controller03.jpg" alt=""><br></div>
+
+<h3 id="Pick-an-USB-encoder">
+  <a href="#Pick-an-USB-encoder" class="headerlink" title="Pick an USB encoder"></a>Pick an USB encoder</h3>
+<p>Unless you want to get the top quality encoder to ensure your SNES game won’t have a pico-second input delay, any encoder is fine. Double-check that the pins are compatible with your joysticks, and support enough buttons (most encoder, even cheap ones,
+  support up to 12 buttons, and both joystick types).<br>Pick one that is bundled with the proper USB cable, to make things easier.</p>
+<div class="justified-gallery"><br><img src="arcade-controller04.jpg" alt=""><br></div>
+
+<h3 id="Don’t-forget-the-cables">
+  <a href="#Don’t-forget-the-cables" class="headerlink" title="Don’t forget the cables"></a>Don’t forget the cables</h3>
+<p>If you are buying a kit, everything should be OK. Otherwise, you’ll need to do the wirings yourself. I’ve included a schema of my encoder below. Note that basic buttons only requires two wires (5V and ground), while LED buttons will require four wires
+  (5V Led, 5V button, led ground, button ground).<br>Sometimes, the wires will all be attached to a single connector. Sometimes, you’ll have to make a daisy chain plugged to the encoder “ground”. You should find proper instructions with your USB encoder.</p>
+<div class="justified-gallery"><br><img src="arcade-controller07.jpg" alt=""><br><img src="arcade-controller-wire.jpg" alt=""><br></div>
+
+<h1 id="Instructions">
+  <a href="#Instructions" class="headerlink" title="Instructions"></a>Instructions</h1>
+<h2 id="With-Ikea-components">
+  <a href="#With-Ikea-components" class="headerlink" title="With Ikea components"></a>With Ikea components</h2>
+<p>If you want the easy way, someone on the internet decided to do the same thing, but using IKEA parts for the box.<br>You can find detailed informations on its website : <a href="http://bambooarcade.com/" target="_blank" rel="external">http://bambooarcade.com/</a></p>
+<p>
+  <div class="justified-gallery"><br><img src="http://bambooarcade.com/wp-content/uploads/2016/11/milo_image.jpg" alt=""><br></div><br>“Simply” follow the instructions and you should be good.</p>
+<h2 id="With-anything-else">
+  <a href="#With-anything-else" class="headerlink" title="With anything else"></a>With anything else</h2>
+<p>If you want to improvise, you’ll need to build a big-enough box and print some button layouts.<br>I used the same layout as the one posted in the IKEA section (<a href="http://bambooarcade.com/downloads/" target="_blank" rel="external">http://bambooarcade.com/downloads/</a>), but I
+  changed the button position slightly using <a href="www.adobe.com/Illustrator‎">Adobe Illustrator</a> <em>(there is a 7 days trial)</em>. You should be able to use <a href="https://inkscape.org/en/" target="_blank" rel="external">Inkscape</a> on Ubuntu if you want to edit the layout.
+  Otherwise, simply use the PDFs from the download section.</p>
+<img src="/2017/03/12/DIY-Arcade-Controller/arcade-layout.png" alt="The layout I used. Only print from the original PDF, not this picture !" title="The layout I used. Only print from the original PDF, not this picture !">
+<p>If you print this layout, make sure you don’t use any zoom, custom margins or “fit to page” options. You can check that the layout is properly printed by using the included scale <em>(there are two 125mm lines, horizontal and vertical, on the layout)</em>.</p>
+<p>First, I used some wood plank, put the layout on top, and drilled the holes my marking the center first <em>(use a screwdriver)</em><br>Then, I put everything together to test the buttons. You can use <a href="http://html5gamepad.com/" target="_blank" rel="external">this HTML5 website</a>  to test that everything works.<br><img src="/2017/03/12/DIY-Arcade-Controller/arcade-controller08.jpg" alt="Prototype Board" title="Prototype Board"></p>
+<p>Then, I decided to scale down the board to fit a simple A4 sheet of paper <em>(more or less…)</em>.<br>Don’t worry, you can fit everything inside, even with large buttons and four cables each.<br>I then built a wooden box and painted it black. I kept
+  a hole on the side <em>(see below)</em> to be able to access the Raspberry Pi USB, HDMI and power plugs.<br><img src="/2017/03/12/DIY-Arcade-Controller/arcade-controller09.jpg" alt="Painted box, final size" title="Painted box, final size"></p>
+<p>I was not very happy with the black painting, so I decided to use some vinyl overlay. At first, I wanted to design my own overlay, but I struggled to find a way to print it without ordering from the USA. I also had problems with colors, as most of these
+  services are related to advertising, and requires specific color profiles. So in the end, I went for a “fake carbon” overlay, such as this <a href="http://www.ebay.com/itm/24-x60-4D-Black-Premium-Gloss-Carbon-Fiber-Vinyl-Wrap-Sticker-Decal-BubbleFree-/131209618262" target="_blank" rel="external">one</a>.<br>I
+  covered the top board, and used blades to cut the holes. </p>
+<p>Then, I screwed back the buttons, the USB encoder, the stick, and the Raspberry Pi on the side. Be careful, if your screws are longer than the thickness of the board, you may need to use screw washers.<br><img src="/2017/03/12/DIY-Arcade-Controller/arcade-controller10.jpg" alt="Inside the board" title="Inside the board"></p>
+<p>Finally, I attached all the cables and… Wow, that’s a mess.<br><img src="/2017/03/12/DIY-Arcade-Controller/arcade-controller11.jpg" alt="Inside the board, with cables" title="Inside the board, with cables"></p>
+<p>As you can guess, using the provided cables is very easy, but none of them has the optimal length. In the end, I don’t care at all, because all of this will be hidden, and I don’t really want to bother with cable management.<br>I just had to close back
+  the box, screw the top board, and everything was ready for the final test.<br><img src="/2017/03/12/DIY-Arcade-Controller/arcade-controller01.jpg" alt="The finished Arcade Controller" title="The finished Arcade Controller"></p>
+<h1 id="Final-steps">
+  <a href="#Final-steps" class="headerlink" title="Final steps"></a>Final steps</h1>
+<p>I plugged my HDMI cable to my TV, then to the Raspberry, and did the same with the power plug.<br>Retropie booted with no problem and started installing by itself. I configured each buttons, copied some games using an USB stick, and tested right away.<br>I
+  was very pleased to see that everything works as expected :)</p>
+<h1 id="If-I-had-to-do-it-again-would-I-follow-the-same-steps">
+  <a href="#If-I-had-to-do-it-again-would-I-follow-the-same-steps" class="headerlink" title="If I had to do it again, would I follow the same steps?"></a>If I had to do it again, would I follow the same steps?</h1>
+<p>Yes, probably. But there are indeed some minor things that are not perfect.</p>
+<ul>
+  <li>First, the cables are a mess. It doesn’t matter, as I didn’t even bother to paint the inside of the box, and I don’t want to use custom cables.</li>
+  <li>The buttons works fine, but are a bit hard to push. I may buy better microswitches later on, at least for the most used buttons.</li>
+  <li>The provided USB cable is very long, because it’s supposed to be plugged to a consoler near the TV, not just next to the encoder itself. This is fine, because I let the cable outside the box, and directly into one of the USB ports.<img src="/2017/03/12/DIY-Arcade-Controller/arcade-controller12.jpg" alt="Inside the board, with cables" title="Inside the board, with cables"> In theory, I should be able to unplug the controller, and plug it back to my computer, another Raspberry, or a console <em>(but I don’t think the default button mapping will be practical)</em>.
+    I can even plug a gamepad for specific games, or for multiplayer games.</li>
+  <li>The box is not perfect, but I’m very happy with the final size and weight. </li>
+  <li>I could have used plexiglass on top of the vinyl overlay. But this works better if the top board is a bit lower than the side planks.</li>
+</ul>
+<p>I hope this tutorial will help you choose the right parts and build your own arcade controller.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Do you still have your raspberry somewhere on your desk or near your TV? Great ! Because we can go to the next level and build our own arcade controller with an embedded console.&lt;br&gt;How? Buy putting the raspberry itself inside our arcade stick !&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Gaming" scheme="http://kynesilverhide.github.io/categories/Gaming/"/>
+    
+      <category term="Raspberry Pi" scheme="http://kynesilverhide.github.io/categories/Gaming/Raspberry-Pi/"/>
+    
+    
+      <category term="retropie" scheme="http://kynesilverhide.github.io/tags/retropie/"/>
+    
+      <category term="arcade" scheme="http://kynesilverhide.github.io/tags/arcade/"/>
+    
+      <category term="diy" scheme="http://kynesilverhide.github.io/tags/diy/"/>
+    
+      <category term="controller" scheme="http://kynesilverhide.github.io/tags/controller/"/>
+    
+      <category term="stick" scheme="http://kynesilverhide.github.io/tags/stick/"/>
+    
+  </entry>
   
   <entry>
     <title>Exporting a VirtualBox image to VMWare</title>
@@ -250,7 +379,7 @@
     <link href="http://kynesilverhide.github.io/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/"/>
     <id>http://kynesilverhide.github.io/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/</id>
     <published>2016-12-14T18:51:07.000Z</published>
-    <updated>2016-12-16T13:21:23.211Z</updated>
+    <updated>2017-03-12T12:57:29.982Z</updated>
     
     <content type="html"><![CDATA[<p>You may already know that Nintendo recently released the <a href="https://www.nintendo.co.uk/Misc-/Nintendo-Classic-Mini-Nintendo-Entertainment-System/Nintendo-Classic-Mini-Nintendo-Entertainment-System-1124287.html" target="_blank" rel="external">Nintendo Classic Mini</a>, a smaller
   re-edition of the original NES, but with a limited set of pre-installed games.</p>
@@ -996,6 +1125,87 @@ the shapes and colors, you should really start to have something nice. Here are 
   </entry>
   
   <entry>
+    <title>Discovering and installing Ubuntu in VirtualBox (Part 2)</title>
+    <link href="http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/"/>
+    <id>http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/</id>
+    <published>2016-11-30T18:41:26.000Z</published>
+    <updated>2016-12-02T15:54:01.078Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome back to the second part of this tutorial. We’ll continue right were we left. In this second part, we’ll install Ubuntu and do some last tweaks to our installation.<br>At the end of this post, you should have a working virtual operating system.</p>
+<p><em>Note : I’ll do a third (and final) part to help your learn and configure Ubuntu.</em></p>
+<p>Let’s get going !<br>
+  <a id="more"></a>
+</p>
+<h1 id="Installation">
+  <a href="#Installation" class="headerlink" title="Installation"></a>Installation</h1>
+<p>Installing Ubuntu is very easy. It’s probably the easiest installation of all Unix systems. Everything is done using a graphical interface, were you just have to answer some questions and hit “continue” (yes, that’s very Windows-like).</p>
+<p>To start with, select your image in Virtual box, and click start (or double-click on the image). This will ask for the start-up disk. Just click on the yellow folder (with a green arrow), and browse to the downloaded <code>.iso</code> file. Then, click
+  <em>Start</em>.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install01.PNG" alt="Installation Step 1" title="Installation Step 1"></p>
+<p>The install software will start loading by itself…<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install02.PNG" alt="Installation Step 2" title="Installation Step 2"></p>
+<p>… until you see what looks like a basic desktop. Don’t worry too much if the resolution is small, you should be able to resize the window. You are presented with two options.</p>
+<ul>
+  <li><strong>Try Ubuntu</strong> : This will run a live version of Ubuntu, but any changes you do will be lost on reboot. It can be used to test Ubuntu on your computer without installing anything (<em>Note : it can also be used to restore or recover files from an OS that won’t boot.. as long as your computer is running properly</em>)</li>
+  <li><strong>Install Ubuntu</strong> This is the option we will use<img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install03.PNG" alt="Installation Step 3" title="Installation Step 3">
+  </li>
+</ul>
+<p>Check both options to allow Ubuntu to install updates and some third-party softwares to handle proprietary formats (such as MP3 files, etc), then click on <em>Continue</em>.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install04.PNG" alt="Installation Step 4" title="Installation Step 4"></p>
+<p>Choose the first option to use the whole disk (<em>remember, it’s a virtual file on your disk, so you can’t destroy your files outside the virtual machine</em>), and click <em>Install Now</em>.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install05.PNG" alt="Installation Step 5" title="Installation Step 5"></p>
+<p>A popup will show you that two partitions will be created. One big partition using the <a href="https://en.wikipedia.org/wiki/Ext4" target="_blank" rel="external">ext4</a> filesystem, and one smaller <em>Swap</em> partition (<em>it may be useless now that all computers have plenty of RAM, but older computers could still need this when the amount of physical RAM is full</em>).<br>Click
+  on <em>Continue</em>.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install06.PNG" alt="Installation Step 6" title="Installation Step 6"></p>
+<p>Next steps is easy, just select your timezone, and click on <em>Continue</em>.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install07.PNG" alt="Installation Step 7" title="Installation Step 7"></p>
+<p>Choose your keyboard layout, and hit <em>Continue</em>.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install08.PNG" alt="Installation Step 8" title="Installation Step 8"></p>
+<p>Now, you’ll have to choose a login and password. Ubuntu supports multiple accounts like most operating systems. Once it’s done, click <em>Continue</em>.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install09.PNG" alt="Installation Step 9" title="Installation Step 9"></p>
+<p>This time, the real installation will start, and the files will be copied onto the virtual disk. You can read what’s on screen to learn a bit more about Ubuntu, or just grab a cup of coffee until the process is finished.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install10.PNG" alt="Installation Step 10" title="Installation Step 10"></p>
+<p>Once the installation is complete, you’ll have to restart the virtual machine (not your computer).<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install11.PNG" alt="Installation Step 11" title="Installation Step 11"></p>
+<p>Ubuntu will ask you to hit <em>ENTER</em> and then remove the installation disk. Fortunately, VirtualBox will do that for you, and turn off the fake CD drive that was reading the ISO file.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install12.PNG" alt="Installation Step 12" title="Installation Step 12"></p>
+<p>Once restarted, you should see the Ubuntu login screen. If you properly setup the keyboard, you should have no problem to selected your account and type your password. Note hat the “Guest Session” is similar to the “Try Ubuntu” option we saw before. Everything
+  will be cleared out at the end of the session.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install13.PNG" alt="Installation Step 13" title="Installation Step 13"></p>
+<p>Ok, some final tweaks before using our brand new system. First, we’ll install the <em>Guest Additions</em> by going into the VirtualBox menu, and clicking on “Insert Guest Additions CD image…”. This will allow some features between your computer and the
+  virtual machine, such as a shared clipboard, etc.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install14.PNG" alt="Installation Step 14" title="Installation Step 14"></p>
+<p>This will once again emulates a CD drive that will be automatically discovered by Ubuntu. Just click on <em>Run</em> when this popup shows.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install15.PNG" alt="Installation Step 15" title="Installation Step 15"></p>
+<p>A terminal will start and display some logs. Just wait for the “Press Return to close this window” to show. Hit <em>Enter</em> and the terminal will close.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install16.PNG" alt="Installation Step 16" title="Installation Step 16"></p>
+<p>Now, go to the VirtualBox menu, click <em>Devices</em> and enable the bidirectional clipboard. Then, restart Ubuntu by going to the top right icon <em>(the “power icon that looks like a gear”)</em> and shutdown the system.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install17.PNG" alt="Installation Step 17" title="Installation Step 17"></p>
+<p>Now, reboot your operating system. And <em>Voila</em>, you have a fully operational operating system that can be used to work on your home development projects.</p>
+<h1 id="Conclusion">
+  <a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1>
+<p>Using Ubuntu is not hard, but you will probably struggle a bit at the beginning. That’s why I will write a full third part to this guide to help you discover your new desktop.</p>
+<p>But here are some hints to help you wait the next post :</p>
+<ul>
+  <li>If you press the “Windows” key (I think it’s the “Command” key on Mac…), a global search will be triggered. Yo can search for applications, files or configurations menu. You can also just click on the top left icon in the <em>Unity</em> menu. (the left
+    bar with all the big icons)</li>
+  <li><strong>Firefox</strong> : Firefox is installed by default, and is a very functional web browser. On Ubuntu, it seems to work a bit better than <a href="https://www.chromium.org/" target="_blank" rel="external">Chromium</a> <em>(it’s the open-source web browser project from which Google Chrome draws its source code)</em>.
+    So you can start browsing the Internet as usual</li>
+  <li><strong>Terminal</strong> : This is where you can type your commands. It’s actually very powerful, and can make you save a lot of time. We’ll use it later on to install more stuff.</li>
+  <li><strong>Files</strong> : The file explorer should also be available on the left, but you won’t have access to your Windows files for now. This will be covered in the next post.</li>
+  <li><strong>System configuration</strong> : This is similar to Windows “Control Panel”. Most of the configuration can be done there, from changing the wallpaper to switching to another keyboard layout.</li>
+  <li><strong>Ubuntu-software</strong> : This application can help you install new software, simply by searching for them by names. This is one major changes from Windows : in most Unix systems (if not all…), applications are hosted on <em>repositories</em>,
+    and you can install them without having to look them up on the Internet. Some repositories have to be added manually <em>(or enabled)</em>, and some applications are still distributed as <code>.deb</code> files (Debian packages), but they can be installed
+    simply by double-clicking on them.</li>
+</ul>
+<p>Finally, you can switch to fullscreen mode in VirtualBox by hitting <code>HOST-KEY + F</code>. “HOST-KEY” is “Right CTRL” on Windows. Simply press the same keys to go back to windowed mode.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome back to the second part of this tutorial. We’ll continue right were we left. In this second part, we’ll install Ubuntu and do some last tweaks to our installation.&lt;br&gt;At the end of this post, you should have a working virtual operating system.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Note : I’ll do a third (and final) part to help your learn and configure Ubuntu.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Let’s get going !&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Operating System" scheme="http://kynesilverhide.github.io/categories/Operating-System/"/>
+    
+    
+      <category term="ubuntu" scheme="http://kynesilverhide.github.io/tags/ubuntu/"/>
+    
+      <category term="virtualbox" scheme="http://kynesilverhide.github.io/tags/virtualbox/"/>
+    
+      <category term="unity" scheme="http://kynesilverhide.github.io/tags/unity/"/>
+    
+      <category term="unix" scheme="http://kynesilverhide.github.io/tags/unix/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Discovering and installing Ubuntu in VirtualBox (Part 1)</title>
     <link href="http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/"/>
     <id>http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-VirtualBox/</id>
@@ -1085,87 +1295,6 @@ the shapes and colors, you should really start to have something nice. Here are 
 &lt;p&gt; My goal in this post will be to show you Ubuntu, a free and open-source operating system based on Linux, and convince you that it is a very solid alternative to Windows &lt;em&gt;as a development environment&lt;/em&gt;, that it’s easy to setup, easy to use, and completely
   free. And to achieve that, I will show you how to install it without running a single command in terminal, and without any risk of losing your data.&lt;/p&gt;
 &lt;p&gt; &lt;em&gt;Note that this tutorial will be split into multiple posts. This one is the first part.&lt;/em&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Operating System" scheme="http://kynesilverhide.github.io/categories/Operating-System/"/>
-    
-    
-      <category term="ubuntu" scheme="http://kynesilverhide.github.io/tags/ubuntu/"/>
-    
-      <category term="virtualbox" scheme="http://kynesilverhide.github.io/tags/virtualbox/"/>
-    
-      <category term="unity" scheme="http://kynesilverhide.github.io/tags/unity/"/>
-    
-      <category term="unix" scheme="http://kynesilverhide.github.io/tags/unix/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Discovering and installing Ubuntu in VirtualBox (Part 2)</title>
-    <link href="http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/"/>
-    <id>http://kynesilverhide.github.io/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/</id>
-    <published>2016-11-30T18:41:26.000Z</published>
-    <updated>2016-12-02T15:54:01.078Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome back to the second part of this tutorial. We’ll continue right were we left. In this second part, we’ll install Ubuntu and do some last tweaks to our installation.<br>At the end of this post, you should have a working virtual operating system.</p>
-<p><em>Note : I’ll do a third (and final) part to help your learn and configure Ubuntu.</em></p>
-<p>Let’s get going !<br>
-  <a id="more"></a>
-</p>
-<h1 id="Installation">
-  <a href="#Installation" class="headerlink" title="Installation"></a>Installation</h1>
-<p>Installing Ubuntu is very easy. It’s probably the easiest installation of all Unix systems. Everything is done using a graphical interface, were you just have to answer some questions and hit “continue” (yes, that’s very Windows-like).</p>
-<p>To start with, select your image in Virtual box, and click start (or double-click on the image). This will ask for the start-up disk. Just click on the yellow folder (with a green arrow), and browse to the downloaded <code>.iso</code> file. Then, click
-  <em>Start</em>.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install01.PNG" alt="Installation Step 1" title="Installation Step 1"></p>
-<p>The install software will start loading by itself…<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install02.PNG" alt="Installation Step 2" title="Installation Step 2"></p>
-<p>… until you see what looks like a basic desktop. Don’t worry too much if the resolution is small, you should be able to resize the window. You are presented with two options.</p>
-<ul>
-  <li><strong>Try Ubuntu</strong> : This will run a live version of Ubuntu, but any changes you do will be lost on reboot. It can be used to test Ubuntu on your computer without installing anything (<em>Note : it can also be used to restore or recover files from an OS that won’t boot.. as long as your computer is running properly</em>)</li>
-  <li><strong>Install Ubuntu</strong> This is the option we will use<img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install03.PNG" alt="Installation Step 3" title="Installation Step 3">
-  </li>
-</ul>
-<p>Check both options to allow Ubuntu to install updates and some third-party softwares to handle proprietary formats (such as MP3 files, etc), then click on <em>Continue</em>.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install04.PNG" alt="Installation Step 4" title="Installation Step 4"></p>
-<p>Choose the first option to use the whole disk (<em>remember, it’s a virtual file on your disk, so you can’t destroy your files outside the virtual machine</em>), and click <em>Install Now</em>.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install05.PNG" alt="Installation Step 5" title="Installation Step 5"></p>
-<p>A popup will show you that two partitions will be created. One big partition using the <a href="https://en.wikipedia.org/wiki/Ext4" target="_blank" rel="external">ext4</a> filesystem, and one smaller <em>Swap</em> partition (<em>it may be useless now that all computers have plenty of RAM, but older computers could still need this when the amount of physical RAM is full</em>).<br>Click
-  on <em>Continue</em>.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install06.PNG" alt="Installation Step 6" title="Installation Step 6"></p>
-<p>Next steps is easy, just select your timezone, and click on <em>Continue</em>.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install07.PNG" alt="Installation Step 7" title="Installation Step 7"></p>
-<p>Choose your keyboard layout, and hit <em>Continue</em>.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install08.PNG" alt="Installation Step 8" title="Installation Step 8"></p>
-<p>Now, you’ll have to choose a login and password. Ubuntu supports multiple accounts like most operating systems. Once it’s done, click <em>Continue</em>.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install09.PNG" alt="Installation Step 9" title="Installation Step 9"></p>
-<p>This time, the real installation will start, and the files will be copied onto the virtual disk. You can read what’s on screen to learn a bit more about Ubuntu, or just grab a cup of coffee until the process is finished.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install10.PNG" alt="Installation Step 10" title="Installation Step 10"></p>
-<p>Once the installation is complete, you’ll have to restart the virtual machine (not your computer).<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install11.PNG" alt="Installation Step 11" title="Installation Step 11"></p>
-<p>Ubuntu will ask you to hit <em>ENTER</em> and then remove the installation disk. Fortunately, VirtualBox will do that for you, and turn off the fake CD drive that was reading the ISO file.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install12.PNG" alt="Installation Step 12" title="Installation Step 12"></p>
-<p>Once restarted, you should see the Ubuntu login screen. If you properly setup the keyboard, you should have no problem to selected your account and type your password. Note hat the “Guest Session” is similar to the “Try Ubuntu” option we saw before. Everything
-  will be cleared out at the end of the session.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install13.PNG" alt="Installation Step 13" title="Installation Step 13"></p>
-<p>Ok, some final tweaks before using our brand new system. First, we’ll install the <em>Guest Additions</em> by going into the VirtualBox menu, and clicking on “Insert Guest Additions CD image…”. This will allow some features between your computer and the
-  virtual machine, such as a shared clipboard, etc.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install14.PNG" alt="Installation Step 14" title="Installation Step 14"></p>
-<p>This will once again emulates a CD drive that will be automatically discovered by Ubuntu. Just click on <em>Run</em> when this popup shows.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install15.PNG" alt="Installation Step 15" title="Installation Step 15"></p>
-<p>A terminal will start and display some logs. Just wait for the “Press Return to close this window” to show. Hit <em>Enter</em> and the terminal will close.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install16.PNG" alt="Installation Step 16" title="Installation Step 16"></p>
-<p>Now, go to the VirtualBox menu, click <em>Devices</em> and enable the bidirectional clipboard. Then, restart Ubuntu by going to the top right icon <em>(the “power icon that looks like a gear”)</em> and shutdown the system.<br><img src="/2016/11/30/Discovering-and-installing-Ubuntu-in-Virtual-Box-P2/ubuntu-install17.PNG" alt="Installation Step 17" title="Installation Step 17"></p>
-<p>Now, reboot your operating system. And <em>Voila</em>, you have a fully operational operating system that can be used to work on your home development projects.</p>
-<h1 id="Conclusion">
-  <a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1>
-<p>Using Ubuntu is not hard, but you will probably struggle a bit at the beginning. That’s why I will write a full third part to this guide to help you discover your new desktop.</p>
-<p>But here are some hints to help you wait the next post :</p>
-<ul>
-  <li>If you press the “Windows” key (I think it’s the “Command” key on Mac…), a global search will be triggered. Yo can search for applications, files or configurations menu. You can also just click on the top left icon in the <em>Unity</em> menu. (the left
-    bar with all the big icons)</li>
-  <li><strong>Firefox</strong> : Firefox is installed by default, and is a very functional web browser. On Ubuntu, it seems to work a bit better than <a href="https://www.chromium.org/" target="_blank" rel="external">Chromium</a> <em>(it’s the open-source web browser project from which Google Chrome draws its source code)</em>.
-    So you can start browsing the Internet as usual</li>
-  <li><strong>Terminal</strong> : This is where you can type your commands. It’s actually very powerful, and can make you save a lot of time. We’ll use it later on to install more stuff.</li>
-  <li><strong>Files</strong> : The file explorer should also be available on the left, but you won’t have access to your Windows files for now. This will be covered in the next post.</li>
-  <li><strong>System configuration</strong> : This is similar to Windows “Control Panel”. Most of the configuration can be done there, from changing the wallpaper to switching to another keyboard layout.</li>
-  <li><strong>Ubuntu-software</strong> : This application can help you install new software, simply by searching for them by names. This is one major changes from Windows : in most Unix systems (if not all…), applications are hosted on <em>repositories</em>,
-    and you can install them without having to look them up on the Internet. Some repositories have to be added manually <em>(or enabled)</em>, and some applications are still distributed as <code>.deb</code> files (Debian packages), but they can be installed
-    simply by double-clicking on them.</li>
-</ul>
-<p>Finally, you can switch to fullscreen mode in VirtualBox by hitting <code>HOST-KEY + F</code>. “HOST-KEY” is “Right CTRL” on Windows. Simply press the same keys to go back to windowed mode.</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome back to the second part of this tutorial. We’ll continue right were we left. In this second part, we’ll install Ubuntu and do some last tweaks to our installation.&lt;br&gt;At the end of this post, you should have a working virtual operating system.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Note : I’ll do a third (and final) part to help your learn and configure Ubuntu.&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;Let’s get going !&lt;br&gt;
     
     </summary>
     

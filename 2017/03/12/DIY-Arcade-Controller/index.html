@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>DIY Arcade Controller | KyneSilverhide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="description" content="Do you still have your raspberry somewhere on your desk or near your TV? Great ! Because we can go to the next level and build our own arcade controller with an embedded console.How? Buy putting the r">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="DIY Arcade Controller">
+  <meta property="og:url" content="http://kynesilverhide.github.io/2017/03/12/DIY-Arcade-Controller/index.html">
+  <meta property="og:site_name" content="KyneSilverhide">
+  <meta property="og:description" content="Do you still have your raspberry somewhere on your desk or near your TV? Great ! Because we can go to the next level and build our own arcade controller with an embedded console.How? Buy putting the r">
+  <meta property="og:image" content="http://kynesilverhide.github.io/images/thumb_retropie.PNG">
+  <meta property="og:updated_time" content="2017-03-12T14:43:26.751Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="DIY Arcade Controller">
+  <meta name="twitter:description" content="Do you still have your raspberry somewhere on your desk or near your TV? Great ! Because we can go to the next level and build our own arcade controller with an embedded console.How? Buy putting the r">
+  <meta name="twitter:image" content="http://kynesilverhide.github.io/images/thumb_retropie.PNG">
+
+
+
+
+
+
+  <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/libs/open-sans/styles.css">
+  <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+
+
+  <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+
+  <script type="text/javascript">
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-88360865-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+
+<body>
+  <div id="container">
+    <header id="header">
+      <div id="header-main" class="header-inner">
+        <div class="outer">
+          <a href="/" id="logo">
+            <i class="logo"></i>
+            <span class="site-title">KyneSilverhide</span>
+          </a>
+          <nav id="main-nav">
+
+            <a class="main-nav-link" href="/.">Home</a>
+
+            <a class="main-nav-link" href="/archives">Archives</a>
+
+            <a class="main-nav-link" href="/categories">Categories</a>
+
+            <a class="main-nav-link" href="/tags">Tags</a>
+
+            <td><a class="main-nav-link" href="/angular2-cv/">My CV (fr)</a></td>
+          </nav>
+
+
+          <nav id="sub-nav">
+            <div class="profile" id="profile-nav">
+              <a id="profile-anchor" href="javascript:;">
+                <img class="avatar" src="https://www.gravatar.com/avatar/7eb59f97f7c777721a1d5385474c0e04" />
+                <i class="fa fa-caret-down"></i>
+              </a>
+            </div>
+          </nav>
+
+          <div id="search-form-wrap">
+
+            <form class="search-form">
+              <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+              <button type="submit" class="search-form-submit"></button>
+            </form>
+            <div class="ins-search">
+              <div class="ins-search-mask"></div>
+              <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                  <input type="text" class="ins-search-input" placeholder="Type something..." />
+                  <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+                </div>
+                <div class="ins-section-wrapper">
+                  <div class="ins-section-container"></div>
+                </div>
+              </div>
+            </div>
+            <script>
+              (function(window) {
+                var INSIGHT_CONFIG = {
+                  TRANSLATION: {
+                    POSTS: 'Posts',
+                    PAGES: 'Pages',
+                    CATEGORIES: 'Categories',
+                    TAGS: 'Tags',
+                    UNTITLED: '(Untitled)',
+                  },
+                  ROOT_URL: '/',
+                  CONTENT_URL: '/content.json',
+                };
+                window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+              })(window);
+            </script>
+            <script src="/js/insight.js"></script>
+
+          </div>
+        </div>
+      </div>
+      <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+          <tr>
+
+            <td><a class="main-nav-link" href="/.">Home</a></td>
+
+            <td><a class="main-nav-link" href="/archives">Archives</a></td>
+
+            <td><a class="main-nav-link" href="/categories">Categories</a></td>
+
+            <td><a class="main-nav-link" href="/tags">Tags</a></td>
+
+            <td>
+              <div class="search-form">
+                <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </header>
+    <div class="outer">
+
+      <aside id="profile">
+        <div class="inner profile-inner">
+          <div class="base-info profile-block">
+            <img id="avatar" src="https://www.gravatar.com/avatar/7eb59f97f7c777721a1d5385474c0e04?s=128" />
+            <h2 id="name">KyneSilverhide</h2>
+            <h3 id="title">Java and Javascript software developper</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Mons, Belgium</span>
+            <a id="follow" target="_blank" href="https://github.com/kynesilverhide/">FOLLOW</a>
+          </div>
+          <div class="article-info profile-block">
+            <div class="article-info-block">
+              10
+              <span>posts</span>
+            </div>
+            <div class="article-info-block">
+              32
+              <span>tags</span>
+            </div>
+          </div>
+
+          <div class="profile-block social-links">
+            <table>
+              <tr>
+
+
+                <td>
+                  <a href="https://github.com/kynesilverhide/" target="_blank" title="github" class=tooltip>
+                    <i class="fa fa-github"></i>
+                  </a>
+                </td>
+
+                <td>
+                  <a href="https://twitter.com/ALansmanne" target="_blank" title="twitter" class=tooltip>
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                </td>
+
+                <td>
+                  <a href="https://www.youtube.com/user/SilverhideKyne" target="_blank" title="youtube" class=tooltip>
+                    <i class="fa fa-youtube"></i>
+                  </a>
+                </td>
+
+              </tr>
+            </table>
+          </div>
+
+        </div>
+      </aside>
+
+      <section id="main">
+        <article id="post-DIY-Arcade-Controller" class="article article-type-post" itemscope itemprop="blogPost">
+          <div class="article-inner">
+
+            <img src="/images/banner_diycontroller.PNG" class="article-banner" />
+
+
+            <header class="article-header">
+              <h1 class="article-title" itemprop="name">
+                DIY Arcade Controller
+              </h1>
+
+              <div class="article-meta">
+                <div class="article-date">
+                  <i class="fa fa-calendar"></i>
+                  <a href="/2017/03/12/DIY-Arcade-Controller/">
+                    <time datetime="2017-03-12T11:39:45.000Z" itemprop="datePublished">2017-03-12</time>
+                  </a>
+                </div>
+                <div class="article-category">
+                  <i class="fa fa-folder"></i>
+                  <a class="article-category-link" href="/categories/Gaming/">Gaming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Gaming/Raspberry-Pi/">Raspberry Pi</a>
+                </div>
+                <div class="article-tag">
+                  <i class="fa fa-tag"></i>
+                  <a class="tag-link" href="/tags/arcade/">arcade</a>, <a class="tag-link" href="/tags/controller/">controller</a>, <a class="tag-link" href="/tags/diy/">diy</a>, <a class="tag-link" href="/tags/retropie/">retropie</a>, <a class="tag-link"
+                    href="/tags/stick/">stick</a>
+                </div>
+              </div>
+
+            </header>
+
+
+            <div class="article-entry" itemprop="articleBody">
+
+
+              <p>Do you still have your raspberry somewhere on your desk or near your TV? Great ! Because we can go to the next level and build our own arcade controller with an embedded console.<br>How? Buy putting the raspberry itself inside our arcade
+                stick !</p>
+              <a id="more"></a>
+              <p>First and foremost, this guide will be slightly different than the previous ones, mainly because it won’t be as detailed. I’ll provide as many information as possible on each steps, but depending on the materials and skills at disposal,
+                you may choose a completely different solution. I also forgot to take pictures of the building processed, but provided a link to someone else’s guide that is very similar.</p>
+              <h1 id="What-we-will-build">
+                <a href="#What-we-will-build" class="headerlink" title="What we will build"></a>What we will build</h1><img src="/2017/03/12/DIY-Arcade-Controller/arcade-controller01.jpg" alt="The finished Arcade Controller" title="The finished Arcade Controller">
+              <p>This arcade controller (or stick) is basically a box, some holes, a joystick, buttons, and a raspberry pi attached together. Based on your skills, you can either build the box yourself, use metal, re-use a cheap plastic controller, or even
+                build it with legos or transparent glass.</p>
+              <h1 id="What-do-we-need">
+                <a href="#What-do-we-need" class="headerlink" title="What do we need"></a>What do we need</h1>
+              <ul>
+                <li>An arcade kit (buttons, cable, joystick, encoder) <strong>OR</strong> separate parts</li>
+                <li>A Raspberry Pi</li>
+                <li>A long HDMI cable <em>(unless you want to play close to your screen, I picked a 3m long cable)</em></li>
+                <li>A long power adapter <em>(cheap models may not work with very long cable, so I picked a 2m long cable and checked it was compatible with a Raspberry Pi 3)</em></li>
+              </ul>
+              <h2 id="The-arcade-kit">
+                <a href="#The-arcade-kit" class="headerlink" title="The arcade kit"></a>The arcade kit</h2>
+              <p>This is the part where you’ll have to choose what kind of buttons you want, and balance price and quality.<br>Typically, there are two “families” of buttons and sticks : American ones (<a href="https://www.google.be/search?q=Happ+kits+arcade&amp;tbm=isch"
+                  target="_blank" rel="external">HAPP</a>, and Japanese ones (<a href="https://www.google.be/search?q=sanwa+kits+arcade&amp;tbm=isch" target="_blank" rel="external">Sanwa</a>, Seimitsu…).<br>American buttons are concave, and the sticks looks
+                like a car shift. Japanese buttons are convex, while their sticks is literally a ball on a shaft.</p>
+              <p>To plug all these buttons, the easiest way is to use and USB encoder. This will allow you to plug all your buttons and sticks into a small board with an USB output. In theory, you can mix and match these buttons and sticks, as long as the
+                encoder supports both <em>(Japanese joysticks use a single pin connector, while HAPP joysticks use four smaller connectors)</em>. </p>
+              <p>There are tons of kits available. If you want the best quality, you’ll have to buy the more expansive Sanwa, Seimitsu and HAPP parts. If, like me, you first want to try things without investing too much money, you’ll probably find what you
+                want on Amazon or Ebay. </p>
+              <p>If you want, buttons can also come equipped with LEDs. If you stick to 5V LEDs, you should be able to power them via the USB port of your raspberry. Some kits use 12V LEDs that will require a dedicated power supply, so I strongly recommend
+                to only buy these if you want to build a <a href="https://www.google.be/search?q=bartop+cabinet&amp;tbm=isch" target="_blank" rel="external">bartop cabinet</a> instead.</p>
+              <p>I myself bought <a href="http://www.ebay.com/itm/182388516489?_trksid=p2060353.m2749.l2649&amp;var=484958786510&amp;ssPageName=STRK%3AMEBIDX%3AIT" target="_blank" rel="external">this kit on Ebay</a>.<br>I was very satisfied with the quality,
+                relatively fast shipping (from China to Belgium), and support from the seller. Unfortunately, three of the eleven <em>(10 and 1 spare)</em> LEDs were not working. I contacted the seller and they sent me new LEDs that should arrive soon.<br>
+                <img
+                  src="/2017/03/12/DIY-Arcade-Controller/arcade-controller02.jpg" alt="Easyget Chrome Kit" title="Easyget Chrome Kit"></p>
+              <h3 id="Pick-a-stick">
+                <a href="#Pick-a-stick" class="headerlink" title="Pick a stick"></a>Pick a stick</h3>
+              <p>You can pick any stick you want, as long as you choose a compatible USB encoder <em>(see below)</em>. Based on your preferences, you can have a look at <em>(or replace later)</em> the restrictor gate <em>(there are multiple shapes : a circle, a square, a line, an octogon…)</em>.</p>
+              <div class="justified-gallery"><br><img src="arcade-controller05.jpg" alt=""><br><img src="arcade-controller06.jpg" alt=""><br><img src="https://cdn1.bigcommerce.com/server6200/ajh2rr5h/product_images/uploaded_images/u360-restrictors.jpg" alt=""><br></div>
+
+              <h3 id="Pick-buttons">
+                <a href="#Pick-buttons" class="headerlink" title="Pick buttons"></a>Pick buttons</h3>
+              <p>Buttons also come in many shapes : concave, convex, large or small, with or without a LED. Some can be screwed in, some have to be snapped in.<br>If you are working with thick wood planks, ensure the button is high enough. Most buttons requires
+                28-30mm holes, while smaller ones usually fit into a 24mm hole <em>(you may need to convert into inches…)</em>.<br><strong> Be very careful</strong> :</p>
+              <ul>
+                <li>Find how many buttons you need. While SNES games only requires 8 buttons, you may need a bit more for other consoles. Most kit will include 10 buttons. This will allow you to emulate X, Y, A, B, L1, R1, L2, R2, Start and Select. </li>
+                <li>If you are using Recalbox (my tutorial <a href="https://kynesilverhide.github.io/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/">here</a>, more information <a href="https://www.recalbox.com/" target="_blank" rel="external">here</a>),
+                  you’ll need another “hotkey” button. I decided to switch to Retropie instead, because they use a “Start + Select” combination instead. Or you can simply get rid of the “L2” and “R2” buttons.</li>
+              </ul>
+              <p>I decided to go “full on bling” with these 5V led “chrome” buttons.</p>
+              <div class="justified-gallery"><br><img src="arcade-controller03.jpg" alt=""><br></div>
+
+              <h3 id="Pick-an-USB-encoder">
+                <a href="#Pick-an-USB-encoder" class="headerlink" title="Pick an USB encoder"></a>Pick an USB encoder</h3>
+              <p>Unless you want to get the top quality encoder to ensure your SNES game won’t have a pico-second input delay, any encoder is fine. Double-check that the pins are compatible with your joysticks, and support enough buttons (most encoder, even
+                cheap ones, support up to 12 buttons, and both joystick types).<br>Pick one that is bundled with the proper USB cable, to make things easier.</p>
+              <div class="justified-gallery"><br><img src="arcade-controller04.jpg" alt=""><br></div>
+
+              <h3 id="Don’t-forget-the-cables">
+                <a href="#Don’t-forget-the-cables" class="headerlink" title="Don’t forget the cables"></a>Don’t forget the cables</h3>
+              <p>If you are buying a kit, everything should be OK. Otherwise, you’ll need to do the wirings yourself. I’ve included a schema of my encoder below. Note that basic buttons only requires two wires (5V and ground), while LED buttons will require
+                four wires (5V Led, 5V button, led ground, button ground).<br>Sometimes, the wires will all be attached to a single connector. Sometimes, you’ll have to make a daisy chain plugged to the encoder “ground”. You should find proper instructions
+                with your USB encoder.</p>
+              <div class="justified-gallery"><br><img src="arcade-controller07.jpg" alt=""><br><img src="arcade-controller-wire.jpg" alt=""><br></div>
+
+              <h1 id="Instructions">
+                <a href="#Instructions" class="headerlink" title="Instructions"></a>Instructions</h1>
+              <h2 id="With-Ikea-components">
+                <a href="#With-Ikea-components" class="headerlink" title="With Ikea components"></a>With Ikea components</h2>
+              <p>If you want the easy way, someone on the internet decided to do the same thing, but using IKEA parts for the box.<br>You can find detailed informations on its website : <a href="http://bambooarcade.com/" target="_blank" rel="external">http://bambooarcade.com/</a></p>
+              <p>
+                <div class="justified-gallery"><br><img src="http://bambooarcade.com/wp-content/uploads/2016/11/milo_image.jpg" alt=""><br></div><br>“Simply” follow the instructions and you should be good.</p>
+              <h2 id="With-anything-else">
+                <a href="#With-anything-else" class="headerlink" title="With anything else"></a>With anything else</h2>
+              <p>If you want to improvise, you’ll need to build a big-enough box and print some button layouts.<br>I used the same layout as the one posted in the IKEA section (<a href="http://bambooarcade.com/downloads/" target="_blank" rel="external">http://bambooarcade.com/downloads/</a>),
+                but I changed the button position slightly using <a href="www.adobe.com/Illustrator‎">Adobe Illustrator</a> <em>(there is a 7 days trial)</em>. You should be able to use <a href="https://inkscape.org/en/" target="_blank" rel="external">Inkscape</a>                on Ubuntu if you want to edit the layout. Otherwise, simply use the PDFs from the download section.</p>
+              <img src="/2017/03/12/DIY-Arcade-Controller/arcade-layout.png" alt="The layout I used. Only print from the original PDF, not this picture !" title="The layout I used. Only print from the original PDF, not this picture !">
+              <p>If you print this layout, make sure you don’t use any zoom, custom margins or “fit to page” options. You can check that the layout is properly printed by using the included scale <em>(there are two 125mm lines, horizontal and vertical, on the layout)</em>.</p>
+              <p>First, I used some wood plank, put the layout on top, and drilled the holes my marking the center first <em>(use a screwdriver)</em><br>Then, I put everything together to test the buttons. You can use <a href="http://html5gamepad.com/" target="_blank"
+                  rel="external">this HTML5 website</a> to test that everything works.<br><img src="/2017/03/12/DIY-Arcade-Controller/arcade-controller08.jpg" alt="Prototype Board" title="Prototype Board"></p>
+              <p>Then, I decided to scale down the board to fit a simple A4 sheet of paper <em>(more or less…)</em>.<br>Don’t worry, you can fit everything inside, even with large buttons and four cables each.<br>I then built a wooden box and painted it
+                black. I kept a hole on the side <em>(see below)</em> to be able to access the Raspberry Pi USB, HDMI and power plugs.<br><img src="/2017/03/12/DIY-Arcade-Controller/arcade-controller09.jpg" alt="Painted box, final size" title="Painted box, final size"></p>
+              <p>I was not very happy with the black painting, so I decided to use some vinyl overlay. At first, I wanted to design my own overlay, but I struggled to find a way to print it without ordering from the USA. I also had problems with colors,
+                as most of these services are related to advertising, and requires specific color profiles. So in the end, I went for a “fake carbon” overlay, such as this <a href="http://www.ebay.com/itm/24-x60-4D-Black-Premium-Gloss-Carbon-Fiber-Vinyl-Wrap-Sticker-Decal-BubbleFree-/131209618262"
+                  target="_blank" rel="external">one</a>.<br>I covered the top board, and used blades to cut the holes. </p>
+              <p>Then, I screwed back the buttons, the USB encoder, the stick, and the Raspberry Pi on the side. Be careful, if your screws are longer than the thickness of the board, you may need to use screw washers.<br><img src="/2017/03/12/DIY-Arcade-Controller/arcade-controller10.jpg"
+                  alt="Inside the board" title="Inside the board"></p>
+              <p>Finally, I attached all the cables and… Wow, that’s a mess.<br><img src="/2017/03/12/DIY-Arcade-Controller/arcade-controller11.jpg" alt="Inside the board, with cables" title="Inside the board, with cables"></p>
+              <p>As you can guess, using the provided cables is very easy, but none of them has the optimal length. In the end, I don’t care at all, because all of this will be hidden, and I don’t really want to bother with cable management.<br>I just had
+                to close back the box, screw the top board, and everything was ready for the final test.<br><img src="/2017/03/12/DIY-Arcade-Controller/arcade-controller01.jpg" alt="The finished Arcade Controller" title="The finished Arcade Controller"></p>
+              <h1 id="Final-steps">
+                <a href="#Final-steps" class="headerlink" title="Final steps"></a>Final steps</h1>
+              <p>I plugged my HDMI cable to my TV, then to the Raspberry, and did the same with the power plug.<br>Retropie booted with no problem and started installing by itself. I configured each buttons, copied some games using an USB stick, and tested
+                right away.
+                <br>I was very pleased to see that everything works as expected :)</p>
+              <h1 id="If-I-had-to-do-it-again-would-I-follow-the-same-steps">
+                <a href="#If-I-had-to-do-it-again-would-I-follow-the-same-steps" class="headerlink" title="If I had to do it again, would I follow the same steps?"></a>If I had to do it again, would I follow the same steps?</h1>
+              <p>Yes, probably. But there are indeed some minor things that are not perfect.</p>
+              <ul>
+                <li>First, the cables are a mess. It doesn’t matter, as I didn’t even bother to paint the inside of the box, and I don’t want to use custom cables.</li>
+                <li>The buttons works fine, but are a bit hard to push. I may buy better microswitches later on, at least for the most used buttons.</li>
+                <li>The provided USB cable is very long, because it’s supposed to be plugged to a consoler near the TV, not just next to the encoder itself. This is fine, because I let the cable outside the box, and directly into one of the USB ports.
+                  <img
+                    src="/2017/03/12/DIY-Arcade-Controller/arcade-controller12.jpg" alt="Inside the board, with cables" title="Inside the board, with cables"> In theory, I should be able to unplug the controller, and plug it back to my computer, another Raspberry, or a console <em>(but I don’t think the default button mapping will be practical)</em>. I can even plug a gamepad for specific
+                    games, or for multiplayer games.</li>
+                <li>The box is not perfect, but I’m very happy with the final size and weight. </li>
+                <li>I could have used plexiglass on top of the vinyl overlay. But this works better if the top board is a bit lower than the side planks.</li>
+              </ul>
+              <p>I hope this tutorial will help you choose the right parts and build your own arcade controller.</p>
+
+            </div>
+            <footer class="article-footer">
+              <div class="share-container">
+
+
+
+              </div>
+
+              <a data-url="http://kynesilverhide.github.io/2017/03/12/DIY-Arcade-Controller/" data-id="cj06sivkd0004ec7roxemmj4u" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+              <script>
+                (function($) {
+                  // Prevent duplicate binding
+                  if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+                    __SHARE_BUTTON_BINDED__ = true;
+                  } else {
+                    return;
+                  }
+                  $('body').on('click', function() {
+                    $('.article-share-box.on').removeClass('on');
+                  }).on('click', '.article-share-link', function(e) {
+                    e.stopPropagation();
+
+                    var $this = $(this),
+                      url = $this.attr('data-url'),
+                      encodedUrl = encodeURIComponent(url),
+                      id = 'article-share-box-' + $this.attr('data-id'),
+                      offset = $this.offset(),
+                      box;
+
+                    if ($('#' + id).length) {
+                      box = $('#' + id);
+
+                      if (box.hasClass('on')) {
+                        box.removeClass('on');
+                        return;
+                      }
+                    } else {
+                      var html = [
+                        '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                        '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                        '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                        '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                        '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                        '</div>'
+                      ].join('');
+
+                      box = $(html);
+
+                      $('body').append(box);
+                    }
+
+                    $('.article-share-box.on').hide();
+
+                    box.css({
+                      top: offset.top + 25,
+                      left: offset.left
+                    }).addClass('on');
+
+                  }).on('click', '.article-share-box', function(e) {
+                    e.stopPropagation();
+                  }).on('click', '.article-share-box-input', function() {
+                    $(this).select();
+                  }).on('click', '.article-share-box-link', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+                  });
+                })(jQuery);
+              </script>
+              <a href="http://kynesilverhide.github.io/2017/03/12/DIY-Arcade-Controller/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://kynesilverhide.github.io/2017/03/12/DIY-Arcade-Controller/">Comments</a>
+            </footer>
+          </div>
+
+          <nav id="article-nav">
+
+
+            <a href="/2016/12/21/Exporting-a-VirtualBox-image-to-VMWare/" id="article-nav-older" class="article-nav-link-wrap">
+              <strong class="article-nav-caption">Older</strong>
+              <div class="article-nav-title">Exporting a VirtualBox image to VMWare</div>
+            </a>
+
+          </nav>
+
+        </article>
+
+
+        <section id="comments">
+
+          <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          </div>
+
+        </section>
+      </section>
+
+      <aside id="sidebar">
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">recent</h3>
+          <div class="widget">
+            <ul id="recent-post" class="">
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2017/03/12/DIY-Arcade-Controller/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_retropie.PNG)" alt="DIY Arcade Controller" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Gaming/">Gaming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Gaming/Raspberry-Pi/">Raspberry Pi</a></p>
+                  <p class="item-title"><a href="/2017/03/12/DIY-Arcade-Controller/" class="title">DIY Arcade Controller</a></p>
+                  <p class="item-date"><time datetime="2017-03-12T11:39:45.000Z" itemprop="datePublished">2017-03-12</time></p>
+                </div>
+              </li>
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/12/21/Exporting-a-VirtualBox-image-to-VMWare/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_virtualization.PNG)" alt="Exporting a VirtualBox image to VMWare" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Virtualization/">Virtualization</a></p>
+                  <p class="item-title"><a href="/2016/12/21/Exporting-a-VirtualBox-image-to-VMWare/" class="title">Exporting a VirtualBox image to VMWare</a></p>
+                  <p class="item-date"><time datetime="2016-12-21T13:11:09.000Z" itemprop="datePublished">2016-12-21</time></p>
+                </div>
+              </li>
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_raspberry.PNG)" alt="A cheap retro-gaming solution : the Raspberry PI (Part 2)" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Gaming/">Gaming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Gaming/Raspberry-Pi/">Raspberry Pi</a></p>
+                  <p class="item-title"><a href="/2016/12/19/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-2/" class="title">A cheap retro-gaming solution : the Raspberry PI (Part 2)</a></p>
+                  <p class="item-date"><time datetime="2016-12-19T16:59:57.000Z" itemprop="datePublished">2016-12-19</time></p>
+                </div>
+              </li>
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_raspberry.PNG)" alt="A cheap retro-gaming solution : the Raspberry PI (Part 1)" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Gaming/">Gaming</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Gaming/Raspberry-Pi/">Raspberry Pi</a></p>
+                  <p class="item-title"><a href="/2016/12/14/A-cheap-retro-gaming-solution-the-Raspberry-PI-Part-1/" class="title">A cheap retro-gaming solution : the Raspberry PI (Part 1)</a></p>
+                  <p class="item-date"><time datetime="2016-12-14T18:51:07.000Z" itemprop="datePublished">2016-12-14</time></p>
+                </div>
+              </li>
+
+              <li>
+
+                <div class="item-thumbnail">
+                  <a href="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/" class="thumbnail">
+
+
+                    <span style="background-image:url(/images/thumb_gimp.PNG)" alt="Creating a material design wallpaper for your smartphone with GIMP" class="thumbnail-image"></span>
+
+                  </a>
+                </div>
+
+                <div class="item-inner">
+                  <p class="item-category"><a class="article-category-link" href="/categories/Design/">Design</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/Design/Gimp/">Gimp</a></p>
+                  <p class="item-title"><a href="/2016/12/10/Creating-a-material-design-wallpaper-for-your-smartphone-with-GIMP/" class="title">Creating a material design wallpaper for your smartphone with GIMP</a></p>
+                  <p class="item-date"><time datetime="2016-12-10T17:30:55.000Z" itemprop="datePublished">2016-12-10</time></p>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">categories</h3>
+          <div class="widget">
+            <ul class="category-list">
+              <li class="category-list-item"><a class="category-list-link" href="/categories/Design/">Design</a><span class="category-list-count">1</span>
+                <ul class="category-list-child">
+                  <li class="category-list-item"><a class="category-list-link" href="/categories/Design/Gimp/">Gimp</a><span class="category-list-count">1</span></li>
+                </ul>
+              </li>
+              <li class="category-list-item"><a class="category-list-link" href="/categories/Gaming/">Gaming</a><span class="category-list-count">3</span>
+                <ul class="category-list-child">
+                  <li class="category-list-item"><a class="category-list-link" href="/categories/Gaming/Raspberry-Pi/">Raspberry Pi</a><span class="category-list-count">3</span></li>
+                </ul>
+              </li>
+              <li class="category-list-item"><a class="category-list-link" href="/categories/Operating-System/">Operating System</a><span class="category-list-count">3</span></li>
+              <li class="category-list-item"><a class="category-list-link" href="/categories/Programming/">Programming</a><span class="category-list-count">2</span>
+                <ul class="category-list-child">
+                  <li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Atom/">Atom</a><span class="category-list-count">1</span></li>
+                  <li class="category-list-item"><a class="category-list-link" href="/categories/Programming/Hexo/">Hexo</a><span class="category-list-count">1</span></li>
+                </ul>
+              </li>
+              <li class="category-list-item"><a class="category-list-link" href="/categories/Virtualization/">Virtualization</a><span class="category-list-count">1</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">archives</h3>
+          <div class="widget">
+            <ul class="archive-list">
+              <li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">1</span></li>
+              <li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">6</span></li>
+              <li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">3</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">tags</h3>
+          <div class="widget">
+            <ul class="tag-list">
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/Raspberry/">Raspberry</a><span class="tag-list-count">2</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/arcade/">arcade</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/code/">code</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/controller/">controller</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/design/">design</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/development/">development</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/diy/">diy</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/gaming/">gaming</a><span class="tag-list-count">2</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/gimp/">gimp</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/material/">material</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/migration/">migration</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/packages/">packages</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/pi/">pi</a><span class="tag-list-count">2</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/recalbox/">recalbox</a><span class="tag-list-count">2</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/retrogaming/">retrogaming</a><span class="tag-list-count">2</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/retropie/">retropie</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/stick/">stick</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/tutorial/">tutorial</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">3</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/unity/">unity</a><span class="tag-list-count">3</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/unix/">unix</a><span class="tag-list-count">3</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/virtualbox/">virtualbox</a><span class="tag-list-count">4</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/vmware/">vmware</a><span class="tag-list-count">1</span></li>
+              <li class="tag-list-item"><a class="tag-list-link" href="/tags/wallpaper/">wallpaper</a><span class="tag-list-count">1</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="widget-wrap">
+          <h3 class="widget-title">tag cloud</h3>
+          <div class="widget tagcloud">
+            <a href="/tags/Raspberry/" style="font-size: 13.33px;">Raspberry</a> <a href="/tags/arcade/" style="font-size: 10px;">arcade</a> <a href="/tags/atom/" style="font-size: 10px;">atom</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a>            <a href="/tags/code/" style="font-size: 10px;">code</a> <a href="/tags/controller/" style="font-size: 10px;">controller</a> <a href="/tags/design/" style="font-size: 10px;">design</a> <a href="/tags/development/" style="font-size: 10px;">development</a>            <a href="/tags/diy/" style="font-size: 10px;">diy</a> <a href="/tags/gaming/" style="font-size: 13.33px;">gaming</a> <a href="/tags/gimp/" style="font-size: 10px;">gimp</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/"
+              style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/material/" style="font-size: 10px;">material</a> <a href="/tags/migration/"
+              style="font-size: 10px;">migration</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/packages/" style="font-size: 10px;">packages</a> <a href="/tags/pi/" style="font-size: 13.33px;">pi</a>            <a href="/tags/recalbox/" style="font-size: 13.33px;">recalbox</a> <a href="/tags/retrogaming/" style="font-size: 13.33px;">retrogaming</a> <a href="/tags/retropie/" style="font-size: 10px;">retropie</a> <a href="/tags/stick/" style="font-size: 10px;">stick</a>            <a href="/tags/tutorial/" style="font-size: 10px;">tutorial</a> <a href="/tags/ubuntu/" style="font-size: 16.67px;">ubuntu</a> <a href="/tags/unity/" style="font-size: 16.67px;">unity</a> <a href="/tags/unix/" style="font-size: 16.67px;">unix</a>            <a href="/tags/virtualbox/" style="font-size: 20px;">virtualbox</a> <a href="/tags/vmware/" style="font-size: 10px;">vmware</a> <a href="/tags/wallpaper/" style="font-size: 10px;">wallpaper</a>
+          </div>
+        </div>
+
+        <div class="widget-wrap widget-list">
+          <h3 class="widget-title">links</h3>
+          <div class="widget">
+            <ul>
+
+              <li>
+                <a href="/atom.xml">Atom Feed</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+
+        <div id="toTop" class="fa fa-angle-up"></div>
+      </aside>
+
+    </div>
+    <footer id="footer">
+      <div class="outer">
+        <div id="footer-info" class="inner">
+          &copy; 2017 KyneSilverhide<br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      var disqus_config = function() {
+
+        this.page.url = 'http://kynesilverhide.github.io/2017/03/12/DIY-Arcade-Controller/';
+
+        this.page.identifier = 'DIY-Arcade-Controller';
+      };
+      (function() {
+        var d = document,
+          s = d.createElement('script');
+        s.src = '//' + 'kynesilverhide-blog' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <script src="/libs/lightgallery/js/lightgallery.min.js">
+    </script>
+    <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+    <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+
+    <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="/js/main.js"></script>
+  </div>
+</body>
+
+</html>
