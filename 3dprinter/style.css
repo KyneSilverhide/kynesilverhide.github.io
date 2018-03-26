@@ -1,0 +1,11 @@
+.price {
+	text-align: center;
+}
+
+.card-content {
+	height: 100px;
+}
+
+.card-title {
+	background-color: rgba(50,50,50,0.4);
+}
